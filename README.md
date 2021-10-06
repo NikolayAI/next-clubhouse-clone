@@ -1,0 +1,1 @@
+This is a clubhouse-clone with [Next.js](https://nextjs.org/), [effector](https://effector.dev/) and [feature-sliced methodology](https://feature-sliced.design/).
