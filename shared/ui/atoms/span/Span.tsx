@@ -1,9 +1,10 @@
 import React from 'react';
-import {ISpan} from './types';
 import styled from 'styled-components';
-import {lineHeights, sizes, weights} from './constants';
 
-export const SpanTag: React.FC<ISpan> = ({
+import {ISpanTag} from './types';
+import {lineHeights, fontSizes, fontWeights} from './constants';
+
+export const SpanTag: React.FC<ISpanTag> = ({
   kind,
   weight,
   className,
@@ -14,7 +15,7 @@ export const SpanTag: React.FC<ISpan> = ({
 };
 
 export const Span = styled(SpanTag)`
-  font-size: ${({kind}) => sizes[kind] ?? '14px'};
+  font-size: ${({kind}) => fontSizes[kind] ?? '14px'};
   line-height: ${({kind}) => lineHeights[kind] ?? '20px'};
-  font-weight: ${({weight}) => weights[weight ?? 'bold'] ?? 700};
+  font-weight: ${({weight}) => fontWeights[weight ?? 'bold'] ?? 700};
 `;

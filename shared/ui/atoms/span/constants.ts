@@ -1,4 +1,4 @@
-export const sizes = {
+export const fontSizes = {
   'xxs': '14px',
   'xs': '16px',
   'sm': '18px',
@@ -16,7 +16,7 @@ export const lineHeights = {
   'xl': '54px',
 };
 
-export const weights = {
+export const fontWeights = {
   'normal': 400,
   'bold': 700,
 };

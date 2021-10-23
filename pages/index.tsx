@@ -3,6 +3,7 @@ import Head from 'next/head';
 import {H} from '../shared/ui/atoms/h/H';
 import {GlobalStyle} from '../shared/styles/globalStyles';
 import {Span} from '../shared/ui/atoms/span/Span';
+import {P} from '../shared/ui/atoms/p/P';
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       <GlobalStyle/>
       <H kind="h1">Head</H>
       <Span kind="xxs">Span</Span>
+      <P kind="md">Paragraph</P>
     </div>
   );
 };
