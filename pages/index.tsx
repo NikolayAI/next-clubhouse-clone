@@ -1,9 +1,12 @@
 import type {NextPage} from 'next';
 import Head from 'next/head';
-import {H} from '../shared/ui/atoms/h/H';
+import Image from 'next/image';
+
+import {H} from '../shared/ui/atoms/H/H';
 import {GlobalStyle} from '../shared/styles/globalStyles';
-import {Span} from '../shared/ui/atoms/span/Span';
-import {P} from '../shared/ui/atoms/p/P';
+import {Span} from '../shared/ui/atoms/Span/Span';
+import {P} from '../shared/ui/atoms/P/P';
+import {Button} from '../shared/ui/atoms/Button/Button';
 
 const Home: NextPage = () => {
   return (
@@ -17,6 +20,18 @@ const Home: NextPage = () => {
       <H kind="h1">Head</H>
       <Span kind="xxs">Span</Span>
       <P kind="md">Paragraph</P>
+      <Button
+        kind="secondary"
+        text="Button"
+        icon={
+          <Image
+            src="/arrowRight.svg"
+            alt="arrow right"
+            width={12}
+            height={11}
+          />
+        }
+      />
     </div>
   );
 };
