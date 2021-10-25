@@ -23,14 +23,6 @@ const Home: NextPage = () => {
       <Button
         kind="secondary"
         text="Button"
-        icon={
-          <Image
-            src="/arrowRight.svg"
-            alt="arrow right"
-            width={12}
-            height={11}
-          />
-        }
       />
     </div>
   );
