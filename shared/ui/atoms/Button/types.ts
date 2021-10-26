@@ -6,8 +6,8 @@ export interface IButtonTag extends React.DetailedHTMLProps<React.ButtonHTMLAttr
   kind: ButtonKindType;
   text?: string;
   icon?: React.ReactNode;
-  iconOnly?: boolean;
-  iconBefore?: boolean;
+  leadIcon?: React.ReactNode;
+  suffixIcon?: React.ReactNode;
   className?: string;
   disabled?: boolean;
 }

@@ -7,6 +7,7 @@ import {GlobalStyle} from '../shared/styles/globalStyles';
 import {Span} from '../shared/ui/atoms/Span/Span';
 import {P} from '../shared/ui/atoms/P/P';
 import {Button} from '../shared/ui/atoms/Button/Button';
+import {Input} from '../shared/ui/atoms/Input/Input';
 
 const Home: NextPage = () => {
   return (
@@ -22,8 +23,17 @@ const Home: NextPage = () => {
       <P kind="md">Paragraph</P>
       <Button
         kind="secondary"
-        text="Button"
+        text="Activate"
+        suffixIcon={
+          <Image
+            src={'/arrowRight.svg'}
+            alt="arrow right"
+            height={12}
+            width={11}
+          />
+        }
       />
+      <Input />
     </div>
   );
 };
