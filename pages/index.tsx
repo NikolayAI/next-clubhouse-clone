@@ -8,6 +8,7 @@ import {Span} from '../shared/ui/atoms/Span/Span';
 import {P} from '../shared/ui/atoms/P/P';
 import {Button} from '../shared/ui/atoms/Button/Button';
 import {Input} from '../shared/ui/atoms/Input/Input';
+import {Avatar} from '../shared/ui/molecules/Avatar/Avatar';
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico"/>
       </Head>
       <GlobalStyle/>
-      <H kind="h1">Head</H>
+      <H kind="h5">Head</H>
       <Span kind="xxs">Span</Span>
       <P kind="md">Paragraph</P>
       <Button
@@ -34,6 +35,10 @@ const Home: NextPage = () => {
         }
       />
       <Input />
+      <Avatar
+        kind="lg"
+        src={'https://i.insider.com/5ebf0f16aee6a826327d9111?width=700'}
+      />
     </div>
   );
 };

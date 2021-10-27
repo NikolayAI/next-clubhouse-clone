@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import {IInputTag} from './types';
 import {maxLengths, paddings, widths} from './constants';
 

@@ -21,8 +21,6 @@ const HTag: React.FC<IHTag> = ({
 };
 
 export const H = styled(HTag)`
-  font-weight: 700;
-  
   h1 {
     font-size: 36px;
     line-height: 50px;
