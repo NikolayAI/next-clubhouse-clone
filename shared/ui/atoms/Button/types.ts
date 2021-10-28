@@ -5,9 +5,12 @@ type ButtonKindType = 'primary' | 'secondary' | 'ghost' | 'outline' | 'link'
 export interface IButtonTag extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   kind: ButtonKindType;
   text?: string;
-  icon?: React.ReactNode;
-  leadIcon?: React.ReactNode;
-  suffixIcon?: React.ReactNode;
+  iconUrl?: string;
+  iconAlt?: string;
+  leadIconUrl?: string;
+  leadIconAlt?: string;
+  suffixIconUrl?: string;
+  suffixIconAlt?: string;
   className?: string;
   disabled?: boolean;
 }

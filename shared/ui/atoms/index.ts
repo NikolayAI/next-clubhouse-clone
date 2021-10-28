@@ -3,3 +3,4 @@ export {H} from './H';
 export {Input} from './Input';
 export {P} from './P';
 export {Span} from './Span';
+export {Avatar} from './Avatar';

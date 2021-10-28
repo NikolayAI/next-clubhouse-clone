@@ -2,48 +2,52 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import {Span} from '../../atoms';
 import {IAvatarComponent} from './types';
 import {sizes} from './constants';
+import { Span } from '../Span';
 
 const AvatarComponent: React.FC<IAvatarComponent> = ({
   kind,
-  src,
+  imageUrl,
   userName,
   className,
   ...props
 }) => {
   return (
-    <div className={`user-avatar ${className}`}>
-      <div className="user-image-wrapper">
-        <Image
-          className="user-image"
-          src={src}
+    <div className={`avatar ${className}`} {...props}>
+      <div className="avatar-image-wrapper">
+        {imageUrl && <Image
+          className="avatar-image"
+          src={imageUrl}
           alt="user avatar"
           height={sizes[kind]}
           width={sizes[kind]}
-          {...props}
-        />
+        />}
       </div>
-      {userName && <Span className="user-name" kind="sm">{userName}</Span>}
+      {userName && <Span className="avatar-user-name" kind="sm">{userName}</Span>}
     </div>
   );
 };
 
 export const Avatar = styled(AvatarComponent)`
-  .user-image-wrapper {
-    height: ${({kind}) => sizes[kind]};
+  &.avatar {
     width: ${({kind}) => sizes[kind]};
+  }
+  .avatar-image-wrapper {
+    height: ${({kind}) => sizes[kind]};
+    width: 100%;
     border-radius: 35px;
+    background-color: #E0E0E0;
     overflow: hidden;
   }
 
-  .user-image {
+  .avatar-image {
     object-fit: cover;
   }
 
-  .user-name {
+  .avatar-user-name {
     display: block;
     margin-top: 18px;
+    text-align: center;
   }
 `;
