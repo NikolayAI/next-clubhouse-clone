@@ -18,7 +18,7 @@ const ButtonTag: React.FC<IButtonTag> = ({
   ...props
 }) => {
   return (
-    <button className={className} disabled={disabled} {...props}>
+    <button className={`button ${className}`} disabled={disabled} {...props}>
       {leadIconUrl && <img
           className="button-before-icon"
           src={leadIconUrl}
@@ -46,23 +46,25 @@ const ButtonTag: React.FC<IButtonTag> = ({
 };
 
 export const Button = styled(ButtonTag)`
-  display: ${({iconUrl}) => iconUrl && 'grid'};
-  justify-content: ${({iconUrl}) => iconUrl && 'center'};
-  align-content: ${({iconUrl}) => iconUrl && 'center'};
-  height: 48px;
-  width: ${({iconUrl}) => iconUrl && '48px'};
-  padding: ${({text}) => text && '0 24px'};
-  color: ${({kind}) => colors[kind]};
-  font-family: inherit;
-  font-size: 18px;
-  font-weight: 700;
-  border: ${({kind}) => borders[kind]};
-  border-radius: 30px;
-  background-color: ${({
-    disabled,
-    kind,
-  }) => disabled ? '#DAD6CA' : backgroundColors[kind]};
-  cursor: pointer;
+  &.button {
+    display: ${({iconUrl}) => iconUrl && 'grid'};
+    justify-content: ${({iconUrl}) => iconUrl && 'center'};
+    align-content: ${({iconUrl}) => iconUrl && 'center'};
+    height: 48px;
+    width: ${({iconUrl}) => iconUrl && '48px'};
+    padding: ${({text}) => text && '0 24px'};
+    color: ${({kind}) => colors[kind]};
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    border: ${({kind}) => borders[kind]};
+    border-radius: 30px;
+    background-color: ${({
+      disabled,
+      kind,
+    }) => disabled ? '#DAD6CA' : backgroundColors[kind]};
+    cursor: pointer;
+  }
 
   .button-text {
     margin: 0 8px;
