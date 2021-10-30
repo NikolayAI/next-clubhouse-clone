@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {IHTag} from './types';
+import {fontSizes, lineHeights} from './constants';
 
 const HTag: React.FC<IHTag> = ({
+  tag,
   kind,
   className,
   children,
@@ -17,34 +19,12 @@ const HTag: React.FC<IHTag> = ({
     'h5': <h5 className={className} {...props}>{children}</h5>,
   }
 
-  return titles[kind];
+  return titles[tag];
 };
 
 export const H = styled(HTag)`
-  h1 {
-    font-size: 36px;
-    line-height: 50px;
-  }
-  
-  h2 {
-    font-size: 26px;
-    line-height: 36px;
-  }
-  
-  h3 {
-    font-size: 22px;
-    line-height: 30px;
-  }
-  
-  h4 {
-    font-size: 18px;
-    line-height: 24px;
-  }
-  
-  h4 {
-    font-size: 16px;
-    line-height: 22px;
-  }
+  font-size: ${({kind}) => fontSizes[kind]};
+  line-height: ${({kind}) => lineHeights[kind]};
 `
 
 
