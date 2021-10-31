@@ -51,7 +51,7 @@ export const Button = styled(ButtonTag)`
     justify-content: ${({iconUrl}) => iconUrl && 'center'};
     align-content: ${({iconUrl}) => iconUrl && 'center'};
     height: 48px;
-    width: ${({iconUrl}) => iconUrl && '48px'};
+    width: ${({iconUrl}) => iconUrl ? '48px' : 'max-content'};
     padding: ${({text}) => text && '0 24px'};
     color: ${({kind}) => colors[kind]};
     font-family: inherit;
