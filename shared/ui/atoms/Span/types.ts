@@ -5,7 +5,7 @@ type SpanWeightType = 'normal' | 'bold'
 
 export interface ISpanTag extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
   kind: SpanKindType;
-  weight?: SpanWeightType,
+  fontWeight?: SpanWeightType,
   className?: string;
   children?: React.ReactNode;
 }

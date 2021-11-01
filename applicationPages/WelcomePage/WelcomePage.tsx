@@ -4,12 +4,13 @@ import styled from 'styled-components';
 
 import {Button, Card, H, P, Span} from '../../shared/ui';
 import {IWelcome} from './types';
+import {Container} from '../../shared/ui';
 
 const Welcome: React.FC<IWelcome> = ({className}) => {
   return (
     <div className={`welcome-page-wrapper ${className}`}>
       <Card className="welcome-card" kind="md">
-        <div className="welcome-title">
+        <Container className="welcome-title">
           <div className="title-icon-wrapper">
             <Image
               className="title-icon"
@@ -22,63 +23,59 @@ const Welcome: React.FC<IWelcome> = ({className}) => {
           <H className="title-text" tag="h1" kind="md">
             Welcome to Clubhouse!
           </H>
-        </div>
-        <P className="welcome-description" kind="md">
-          We’re working hard to get Clubhouse ready for
-          everyone! While we wrap up the finishing youches,
-          we’re adding people gradually to make sure nothing
-          breaks :)
-        </P>
-        <div className="welcome-button-wrapper">
+        </Container>
+        <Container className="welcome-description" textAlign="center">
+          <P className="description-text" kind="md">
+            We’re working hard to get Clubhouse ready for
+            everyone! While we wrap up the finishing youches,
+            we’re adding people gradually to make sure nothing
+            breaks :)
+          </P>
+        </Container>
+        <Container className="welcome-actions">
           <Button
             className="welcome-button-next"
             text="Get your username"
             kind="primary"
             suffixIconUrl="/icons/arrowRight.svg"
           />
-        </div>
-        <div className="welcome-options">
-          <Span className="options-text" kind="xs">
-            Have an invite text? Sign in
+        </Container>
+        <Container className="welcome-options">
+          <Span className="options-questions" kind="xs" fontWeight="normal">
+            Have an invite text?
           </Span>
-        </div>
+          <Span className="options-actions" kind="xs">Sign in</Span>
+        </Container>
       </Card>
     </div>
   );
 };
 
 export const WelcomePage = styled(Welcome)`
-  .welcome-card {
+  &.welcome-page-wrapper {
+    height: 100vh;
     display: grid;
     justify-content: center;
+    align-content: center;
   }
-
-  .welcome-title {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    justify-self: center;
-    align-items: center;
-  }
-
+  
   .title-icon-wrapper {
     margin-right: 14px;
   }
 
   .welcome-description {
     width: 520px;
-    text-align: center;
-  }
-  
-  .welcome-button-wrapper {
-    display: grid;
-    justify-content: center;
   }
 
   .welcome-button-next {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
-
+  
   .welcome-options {
-    text-align: center;
+    color: #4F6FA5;
+  }
+  
+  .options-questions {
+    margin-right: 4px;
   }
 `;

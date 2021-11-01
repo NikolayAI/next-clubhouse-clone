@@ -6,7 +6,7 @@ import {lineHeights, fontSizes, fontWeights} from './constants';
 
 export const SpanTag: React.FC<ISpanTag> = ({
   kind,
-  weight,
+  fontWeight,
   className,
   children,
   ...props
@@ -17,5 +17,5 @@ export const SpanTag: React.FC<ISpanTag> = ({
 export const Span = styled(SpanTag)`
   font-size: ${({kind}) => fontSizes[kind] ?? '14px'};
   line-height: ${({kind}) => lineHeights[kind] ?? '20px'};
-  font-weight: ${({weight}) => fontWeights[weight ?? 'bold']};
+  font-weight: ${({fontWeight}) => fontWeights[fontWeight ?? 'bold']};
 `;
