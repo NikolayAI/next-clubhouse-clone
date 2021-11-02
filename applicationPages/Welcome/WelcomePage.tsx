@@ -2,16 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import {Button, Card, H, P, Span} from '../../shared/ui';
+import {Button, Card, Container, H, P, Span} from '../../shared/ui';
 import {IWelcome} from './types';
-import {Container} from '../../shared/ui';
 
 const Welcome: React.FC<IWelcome> = ({className}) => {
   return (
     <div className={`welcome-page-wrapper ${className}`}>
       <Card className="welcome-card" kind="md">
         <Container className="welcome-title">
-          <div className="title-icon-wrapper">
+          <div className="title-icon-container">
             <Image
               className="title-icon"
               src="/images/image2.png"
@@ -34,17 +33,21 @@ const Welcome: React.FC<IWelcome> = ({className}) => {
         </Container>
         <Container className="welcome-actions">
           <Button
-            className="welcome-button-next"
+            className="action-button-next"
             text="Get your username"
             kind="primary"
             suffixIconUrl="/icons/arrowRight.svg"
           />
         </Container>
         <Container className="welcome-options">
-          <Span className="options-questions" kind="xs" fontWeight="normal">
+          <Span className="options-question" kind="xs" fontWeight="normal">
             Have an invite text?
           </Span>
-          <Span className="options-actions" kind="xs">Sign in</Span>
+          <Button
+            className="options-button-sign-in"
+            text={<Span className="options-action" kind="xs">Sign in</Span>}
+            kind="link"
+          />
         </Container>
       </Card>
     </div>
@@ -58,8 +61,8 @@ export const WelcomePage = styled(Welcome)`
     justify-content: center;
     align-content: center;
   }
-  
-  .title-icon-wrapper {
+
+  .title-icon-container {
     margin-right: 14px;
   }
 
@@ -67,15 +70,18 @@ export const WelcomePage = styled(Welcome)`
     width: 520px;
   }
 
-  .welcome-button-next {
+  .action-button-next {
     margin-bottom: 16px;
   }
-  
+
   .welcome-options {
     color: #4F6FA5;
   }
-  
-  .options-questions {
-    margin-right: 4px;
+
+  .options-button-sign-in {
+    margin-left: 4px;
+    padding: 0;
+    color: #4F6FA5;
+    cursor: pointer;
   }
 `;

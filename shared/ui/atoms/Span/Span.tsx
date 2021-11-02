@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {ISpanTag} from './types';
-import {lineHeights, fontSizes, fontWeights} from './constants';
+import {fontSizes, fontWeights, lineHeights} from './constants';
 
 export const SpanTag: React.FC<ISpanTag> = ({
   kind,

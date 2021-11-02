@@ -2,13 +2,13 @@ import React from 'react';
 import type {NextPage} from 'next';
 
 import {GlobalStyle} from '../shared/styles/globalStyles';
-import {WelcomePage} from '../applicationPages/WelcomePage/WelcomePage';
+import {EnterInfoPage} from '../applicationPages';
 
 const Home: NextPage = () => {
   return (
     <div>
       <GlobalStyle/>
-      <WelcomePage/>
+      <EnterInfoPage/>
     </div>
   );
 };

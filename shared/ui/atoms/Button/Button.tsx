@@ -65,6 +65,10 @@ export const Button = styled(ButtonTag)`
     }) => disabled ? '#DAD6CA' : backgroundColors[kind]};
     cursor: pointer;
   }
+  
+  &.button:hover {
+    opacity: 0.9;
+  }
 
   .button-text {
     margin: 0 8px;
