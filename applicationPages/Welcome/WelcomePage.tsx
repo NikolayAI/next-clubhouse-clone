@@ -2,12 +2,20 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import {Button, Card, Container, H, P, Span} from '../../shared/ui';
+import {
+  Button,
+  Card,
+  Container,
+  H,
+  P,
+  PageWrapper,
+  Span,
+} from '../../shared/ui';
 import {IWelcome} from './types';
 
 const Welcome: React.FC<IWelcome> = ({className}) => {
   return (
-    <div className={`welcome-page-wrapper ${className}`}>
+    <PageWrapper className={`welcome ${className}`}>
       <Card className="welcome-card" kind="md">
         <Container className="welcome-title">
           <div className="title-icon-container">
@@ -34,8 +42,8 @@ const Welcome: React.FC<IWelcome> = ({className}) => {
         <Container className="welcome-actions">
           <Button
             className="action-button-next"
-            text="Get your username"
             kind="primary"
+            text="Get your username"
             suffixIconUrl="/icons/arrowRight.svg"
           />
         </Container>
@@ -50,18 +58,11 @@ const Welcome: React.FC<IWelcome> = ({className}) => {
           />
         </Container>
       </Card>
-    </div>
+    </PageWrapper>
   );
 };
 
 export const WelcomePage = styled(Welcome)`
-  &.welcome-page-wrapper {
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-  }
-
   .title-icon-container {
     margin-right: 14px;
   }

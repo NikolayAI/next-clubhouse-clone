@@ -1,18 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Avatar, Button, Card, Container, H, Span} from '../../shared/ui';
 import Image from 'next/image';
+
+import {
+  Avatar,
+  Button,
+  Card,
+  Container,
+  H,
+  PageWrapper,
+  Span,
+} from '../../shared/ui';
 import {IEnterInfo} from './types';
 
 const EnterInfo: React.FC<IEnterInfo> = ({className}) => {
   return (
-    <div className={`enter-info-page-wrapper ${className}`}>
+    <PageWrapper className={`enter-info ${className}`}>
       <Container className="enter-info-title" gridAutoFlow="row">
         <Container className="title-icon-container">
           <Image
             className="title-icon"
             src="/images/image3.png"
-            alt="confetti"
+            alt="fork"
             height={48}
             width={48}
           />
@@ -45,38 +54,30 @@ const EnterInfo: React.FC<IEnterInfo> = ({className}) => {
             className="action-button-manual"
             kind="link"
             text="Enter my info manually"
-            suffixIconUrl="/icons/arrowRight.svg"
           />
         </Container>
       </Card>
-    </div>
+    </PageWrapper>
   );
 };
 
 export const EnterInfoPage = styled(EnterInfo)`
-  &.enter-info-page-wrapper {
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-  }
-
   .enter-info-title {
     margin-bottom: 20px;
   }
-  
+
   .avatar-container {
     margin-bottom: 14px;
   }
-  
+
   .user-name-container {
     margin-bottom: 50px;
   }
-  
+
   .enter-info-actions + .enter-info-actions {
     margin-top: 14px;
   }
-  
+
   .action-button-manual {
     color: #4F6FA5;
     font-weight: normal;
