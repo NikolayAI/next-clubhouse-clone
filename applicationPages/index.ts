@@ -1,4 +1,4 @@
-export {Welcome} from './Welcome';
+export {WelcomePage} from './Welcome';
 export {EnterNamePage} from './EnterName';
 export {EnterInfoPage} from './EnterInfo';
 export {ChoosePhotoPage} from './ChoosePhoto';
