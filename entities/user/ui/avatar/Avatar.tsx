@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import {IAvatarComponent} from './types';
 import {sizes} from './constants';
-import { Span } from '../Span';
+import { Span } from '../../../../shared/ui';
 
 const AvatarComponent: React.FC<IAvatarComponent> = ({
   kind,
@@ -22,6 +22,7 @@ const AvatarComponent: React.FC<IAvatarComponent> = ({
           alt="user avatar"
           height={sizes[kind]}
           width={sizes[kind]}
+          unoptimized
         />}
       </div>
       {userName && <Span className="avatar-user-name" kind="sm">{userName}</Span>}

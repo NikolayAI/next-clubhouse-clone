@@ -2,18 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
-import {
-  Avatar,
-  Button,
-  Card,
-  Container,
-  H,
-  PageWrapper,
-  Span,
-} from '../../shared/ui';
+import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 import {IChoosePhoto} from './types';
+import {ChooseAvatarPhoto} from '../../features/chooseAvatarPhoto';
+import {Avatar, userModel} from '../../entities/user';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
+  const userAvatar = userModel.selectors.useUserAvatar();
+
   return (
     <PageWrapper className={`choose-photo ${className}`}>
       <Container className="choose-photo-title" gridAutoFlow="row">
@@ -39,20 +35,17 @@ const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
       </Container>
       <Card className="choose-photo-card" kind="md">
         <Container className="avatar-container">
-          <Avatar className="avatar" kind="lg"/>
+          <Avatar className="avatar" kind="lg" imageUrl={userAvatar}/>
         </Container>
         <Container className="choose-photo-actions">
-          <Button
-            className="action-button-different"
-            kind="link"
-            text="Choose a different photo"
-          />
+          <ChooseAvatarPhoto/>
         </Container>
         <Container className="choose-photo-actions">
           <Button
             className="action-button-next"
             kind="primary"
             text="Next"
+            suffixIconUrl={'/icons/arrowRight.svg'}
           />
         </Container>
       </Card>
