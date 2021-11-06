@@ -6,6 +6,7 @@ import {userModel} from '../../entities/user';
 
 export const ChooseAvatarPhoto = () => {
   const inputRef = useRef<HTMLInputElement>(null);
+  /** useEvent for use effector events */
   const setUserAvatar = useEvent(userModel.events.setUserAvatar);
 
   const handleClick = () => {
