@@ -1,16 +1,18 @@
 import {createEvent, restore} from 'effector';
-import {useStore} from 'effector-react';
+import {NumberFormatValues} from 'react-number-format';
 
-const setUserAvatar = createEvent<string>();
-const $userAvatar = restore(setUserAvatar, '');
-const useUserAvatar = (): string => {
-  return useStore($userAvatar);
-};
+const setAvatar = createEvent<string>();
+const $avatar = restore<string>(setAvatar, '');
+
+const setPhoneNumber = createEvent<NumberFormatValues>();
+const $phoneNumber = restore<NumberFormatValues>(setPhoneNumber, {} as NumberFormatValues);
 
 export const events = {
-  setUserAvatar,
+  setAvatar,
+  setPhoneNumber,
 };
 
-export const selectors = {
-  useUserAvatar,
+export const data = {
+  $avatar,
+  $phoneNumber,
 };

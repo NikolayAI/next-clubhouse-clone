@@ -3,9 +3,9 @@ import type {NextPage} from 'next';
 
 import {GlobalStyle} from '../shared/styles/globalStyles';
 import {
-  ChoosePhotoPage,
+  ChoosePhotoPage, EnterCodePage,
   EnterInfoPage,
-  EnterNamePage,
+  EnterNamePage, EnterPhonePage,
   WelcomePage,
 } from '../applicationPages';
 
@@ -14,10 +14,12 @@ const stepsComponents: Record<string, React.FC> = {
   1: EnterNamePage,
   2: EnterInfoPage,
   3: ChoosePhotoPage,
+  4: EnterPhonePage,
+  5: EnterCodePage,
 };
 
 const Home: NextPage = () => {
-  const [step, setStep] = useState<number>(3);
+  const [step, setStep] = useState<number>(5);
   const Component = stepsComponents[step];
 
   return (

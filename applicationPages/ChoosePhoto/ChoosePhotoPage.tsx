@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import {useStore} from 'effector-react';
 
 import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 import {IChoosePhoto} from './types';
@@ -8,7 +9,7 @@ import {ChooseAvatarPhoto} from '../../features/chooseAvatarPhoto';
 import {Avatar, userModel} from '../../entities/user';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
-  const userAvatar = userModel.selectors.useUserAvatar();
+  const userAvatar = useStore(userModel.data.$avatar);
 
   return (
     <PageWrapper className={`choose-photo ${className}`}>

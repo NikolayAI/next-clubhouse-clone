@@ -63,11 +63,11 @@ export const Button = styled(ButtonTag)`
       disabled,
       kind,
     }) => disabled ? '#DAD6CA' : backgroundColors[kind]};
-    cursor: pointer;
+    cursor: ${({disabled}) => disabled ? 'not-allowed' : 'pointer'};
   }
-  
+
   &.button:hover {
-    opacity: 0.9;
+    opacity: ${({disabled}) => disabled ? 1 : 0.9};
   }
 
   .button-text {

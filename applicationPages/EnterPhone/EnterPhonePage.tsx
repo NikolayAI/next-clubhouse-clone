@@ -1,19 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import NumberFormat from 'react-number-format';
+import {useStore} from 'effector-react';
 
 import {
   Button,
   Card,
   Container,
   H,
-  Input,
   P,
   PageWrapper,
   Span,
 } from '../../shared/ui';
 import {IEnterPhone} from './types';
+import {EnterPhoneNumber} from '../../features/enterPhoneNumber/ui';
+import {$isNextButtonDisable} from './model';
 
 const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
   return (
@@ -39,10 +40,7 @@ const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
       </Container>
       <Card className="enter-phone-card" kind="md">
         <Container className="card-phone-input">
-          <NumberFormat
-            className="phone-input"
-            customInput={Input}
-          />
+          <EnterPhoneNumber/>
         </Container>
         <Container className="card-button-next">
           <Button
@@ -50,6 +48,7 @@ const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
             kind="primary"
             text="Next"
             suffixIconUrl={'/icons/arrowRight.svg'}
+            disabled={useStore($isNextButtonDisable)}
           />
         </Container>
         <Container className="card-description" textAlign="center">

@@ -13,7 +13,7 @@ export const Input = styled(InputTag)`
   width: ${({kind}) => widths[`${kind}`]};
   padding: ${({kind}) => paddings[`${kind}`]};
   font-size: 28px;
-  text-align: center;
+  text-align: left;
   border: 1px solid #E3E3E3;
   border-radius: 20px;
 `;

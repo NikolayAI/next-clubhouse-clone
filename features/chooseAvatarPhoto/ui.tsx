@@ -6,8 +6,7 @@ import {userModel} from '../../entities/user';
 
 export const ChooseAvatarPhoto = () => {
   const inputRef = useRef<HTMLInputElement>(null);
-  /** useEvent for use effector events */
-  const setUserAvatar = useEvent(userModel.events.setUserAvatar);
+  const setAvatar = useEvent(userModel.events.setAvatar);
 
   const handleClick = () => {
     inputRef.current?.click();
@@ -16,7 +15,7 @@ export const ChooseAvatarPhoto = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = (e.target.files ?? [])[0];
     const imageUrl = URL.createObjectURL(file);
-    setUserAvatar(imageUrl);
+    setAvatar(imageUrl);
     e.target.value = '';
   };
 
