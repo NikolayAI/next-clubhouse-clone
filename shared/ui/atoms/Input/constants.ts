@@ -12,3 +12,8 @@ export const maxLengths = {
   'code': 1,
   'undefined': 50,
 };
+
+export const textAligns = {
+  'code': 'center',
+  'undefined': 'left',
+};

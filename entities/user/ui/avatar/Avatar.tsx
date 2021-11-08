@@ -25,7 +25,11 @@ const AvatarComponent: React.FC<IAvatarComponent> = ({
           unoptimized
         />}
       </div>
-      {userName && <Span className="avatar-user-name" kind="sm">{userName}</Span>}
+      {userName && (
+        <Span className="avatar-user-name" kind="sm">
+          {userName}
+        </Span>
+      )}
     </div>
   );
 };

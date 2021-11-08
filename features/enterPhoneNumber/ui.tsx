@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import NumberFormat, {NumberFormatValues} from 'react-number-format';
 import {useEvent, useStore} from 'effector-react';
 
 import {Input} from '../../shared/ui';
-import { userModel } from '../../entities/user';
+import {userModel} from '../../entities/user';
 
 export const EnterPhoneNumber: React.FC = () => {
   const phoneNumber = useStore(userModel.data.$phoneNumber);
