@@ -38,7 +38,11 @@ const EnterName: React.FC<IEnterName> = ({className}) => {
         </Span>
       </Container>
       <Card className="enter-name-card" kind="md">
-        <Input className="enter-name-input" placeholder="Enter fullname"/>
+        <Input
+          className="enter-name-input"
+          placeholder="Enter fullname"
+          maxLength={50}
+        />
         <Container className="enter-name-actions">
           <Button
             className="action-button-next"

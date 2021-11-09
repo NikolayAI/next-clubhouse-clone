@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {IInputTag} from './types';
-import {maxLengths, paddings, textAligns, widths} from './constants';
+import {paddings, textAligns, widths} from './constants';
 
-const InputTag: React.FC<IInputTag> = ({kind, ...props}) => {
-  return <input maxLength={maxLengths[`${kind}`]} {...props}/>
+const InputTag: React.FC<IInputTag> = ({kind, value, inputRef, ...props}) => {
+  return <input ref={inputRef} value={value} {...props}/>;
 };
 
 export const Input = styled(InputTag)`

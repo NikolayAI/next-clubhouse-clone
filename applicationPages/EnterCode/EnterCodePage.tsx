@@ -5,9 +5,9 @@ import Image from 'next/image';
 import {
   Button,
   Card,
+  CodeInput,
   Container,
   H,
-  Input,
   P,
   PageWrapper,
 } from '../../shared/ui';
@@ -32,10 +32,7 @@ const EnterCode: React.FC<IEnterCode> = ({className}) => {
       </Container>
       <Card className="enter-code-card" kind="md">
         <Container className="card-code-input">
-          <Input className="code-input" kind="code"/>
-          <Input className="code-input" kind="code"/>
-          <Input className="code-input" kind="code"/>
-          <Input className="code-input" kind="code"/>
+          <CodeInput className="enter-code-input"/>
         </Container>
         <Container className="card-actions">
           <Button
@@ -66,10 +63,6 @@ export const EnterCodePage = styled(EnterCode)`
 
   .card-actions {
     margin-bottom: 20px;
-  }
-
-  .code-input + .code-input {
-    margin-left: 16px;
   }
 
   .card-description {
