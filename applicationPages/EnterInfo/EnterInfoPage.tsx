@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
+import {IEnterInfo} from './types';
+import { Avatar } from '../../entities/user';
 import {
-  Avatar,
   Button,
   Card,
   Container,
@@ -11,7 +12,6 @@ import {
   PageWrapper,
   Span,
 } from '../../shared/ui';
-import {IEnterInfo} from './types';
 
 const EnterInfo: React.FC<IEnterInfo> = ({className}) => {
   return (

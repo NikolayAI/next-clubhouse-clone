@@ -1,2 +1,2 @@
-export * from './ui/avatar';
+export * from './ui';
 export * as userModel from './model';

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import {IButtonTag} from './types';
 import {backgroundColors, borders, colors} from './constants';
+import {Spinner} from '../Spinner';
 
 const ButtonTag: React.FC<IButtonTag> = ({
   kind,
@@ -13,6 +14,8 @@ const ButtonTag: React.FC<IButtonTag> = ({
   leadIconAlt,
   suffixIconUrl,
   suffixIconAlt,
+  isLoading,
+  loadingDescription,
   className,
   disabled,
   ...props
@@ -26,7 +29,10 @@ const ButtonTag: React.FC<IButtonTag> = ({
           height={12}
           width={11}
       />}
-      {text && <span className="button-text">{text}</span>}
+      {!isLoading && text && <span className="button-text">{text}</span>}
+      {isLoading && loadingDescription && (
+        <span className="button-text">{loadingDescription}</span>
+      )}
       {iconUrl && <img
           className="button-icon"
           src={iconUrl}
@@ -34,19 +40,20 @@ const ButtonTag: React.FC<IButtonTag> = ({
           height={18}
           width={18}
       />}
-      {suffixIconUrl && <img
+      {!isLoading && suffixIconUrl && <img
           className="button-suffix-icon"
           src={suffixIconUrl}
           alt={suffixIconAlt}
           height={12}
           width={11}
       />}
+      {isLoading && <Spinner height={12} width={12}/>}
     </button>
   );
 };
 
 export const Button = styled(ButtonTag)`
-  &.button {
+  & {
     display: ${({iconUrl}) => iconUrl && 'grid'};
     justify-content: ${({iconUrl}) => iconUrl && 'center'};
     align-content: ${({iconUrl}) => iconUrl && 'center'};
@@ -66,7 +73,7 @@ export const Button = styled(ButtonTag)`
     cursor: ${({disabled}) => disabled ? 'not-allowed' : 'pointer'};
   }
 
-  &.button:hover {
+  &:hover {
     opacity: ${({disabled}) => disabled ? 1 : 0.9};
   }
 

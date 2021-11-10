@@ -16,7 +16,7 @@ const ContainerComponent: React.FC<IContainerComponent> = ({
 };
 
 export const Container = styled(ContainerComponent)`
-  &.container {
+  & {
     display: grid;
     grid-auto-flow: ${({gridAutoFlow}) => gridAutoFlow ?? 'column'};
     justify-content: ${({justifyContent}) => justifyContent ?? 'center'};

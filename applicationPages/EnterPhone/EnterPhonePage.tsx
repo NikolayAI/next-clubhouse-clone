@@ -1,8 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import Image from 'next/image';
-import {useStore} from 'effector-react';
+import {useEvent, useStore} from 'effector-react';
+import styled from 'styled-components';
 
+import {EnterPhoneNumber, userModel} from '../../entities/user';
+import {$isNextButtonDisable} from './model';
+import {IEnterPhone} from './types';
 import {
   Button,
   Card,
@@ -12,11 +15,11 @@ import {
   PageWrapper,
   Span,
 } from '../../shared/ui';
-import {IEnterPhone} from './types';
-import {EnterPhoneNumber} from '../../features/enterPhoneNumber/ui';
-import {$isNextButtonDisable} from './model';
 
 const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
+  const phoneNumber = useStore(userModel.data.$phoneNumber);
+  const setPhoneNumber = useEvent(userModel.events.setPhoneNumber);
+  const isNextButtonDisable = useStore($isNextButtonDisable);
   return (
     <PageWrapper className={`enter-phone ${className}`}>
       <Container className="enter-phone-title" gridAutoFlow="row">
@@ -40,7 +43,11 @@ const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
       </Container>
       <Card className="enter-phone-card" kind="md">
         <Container className="card-phone-input">
-          <EnterPhoneNumber/>
+          <EnterPhoneNumber
+            className="phone-input"
+            phoneNumber={phoneNumber}
+            setPhoneNumber={setPhoneNumber}
+          />
         </Container>
         <Container className="card-button-next">
           <Button
@@ -48,7 +55,7 @@ const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
             kind="primary"
             text="Next"
             suffixIconUrl={'/icons/arrowRight.svg'}
-            disabled={useStore($isNextButtonDisable)}
+            disabled={isNextButtonDisable}
           />
         </Container>
         <Container className="card-description" textAlign="center">

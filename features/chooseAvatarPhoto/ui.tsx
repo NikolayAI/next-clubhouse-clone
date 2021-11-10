@@ -1,12 +1,10 @@
 import React, {useRef} from 'react';
-import {useEvent} from 'effector-react';
 
+import {IChooseAvatarPhoto} from './types';
 import {Button} from '../../shared/ui';
-import {userModel} from '../../entities/user';
 
-export const ChooseAvatarPhoto = () => {
+export const ChooseAvatarPhoto: React.FC<IChooseAvatarPhoto> = ({setAvatar}) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const setAvatar = useEvent(userModel.events.setAvatar);
 
   const handleClick = () => {
     inputRef.current?.click();

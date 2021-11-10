@@ -11,6 +11,8 @@ export interface IButtonTag extends React.DetailedHTMLProps<React.ButtonHTMLAttr
   leadIconAlt?: string;
   suffixIconUrl?: string;
   suffixIconAlt?: string;
+  isLoading?: boolean;
+  loadingDescription?: string;
   className?: string;
   disabled?: boolean;
 }

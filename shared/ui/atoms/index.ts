@@ -7,3 +7,4 @@ export {Badge} from './Badge';
 export {Card} from './Card';
 export {Container} from './Container';
 export {PageWrapper} from './PageWrapper';
+export {Spinner} from './Spinner';

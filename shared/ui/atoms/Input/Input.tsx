@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import {IInputTag} from './types';
 import {paddings, textAligns, widths} from './constants';
 
-const InputTag: React.FC<IInputTag> = ({kind, value, inputRef, ...props}) => {
-  return <input ref={inputRef} value={value} {...props}/>;
+const InputTag: React.FC<IInputTag> = ({kind, value, className, ...props}) => {
+  return <input className={className} value={value} {...props}/>;
 };
 
 export const Input = styled(InputTag)`

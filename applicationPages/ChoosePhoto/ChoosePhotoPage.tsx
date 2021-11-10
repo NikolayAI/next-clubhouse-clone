@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useStore} from 'effector-react';
+import {useEvent, useStore} from 'effector-react';
 
-import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 import {IChoosePhoto} from './types';
 import {ChooseAvatarPhoto} from '../../features/chooseAvatarPhoto';
 import {Avatar, userModel} from '../../entities/user';
+import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
   const userAvatar = useStore(userModel.data.$avatar);
-
+  const setAvatar = useEvent(userModel.events.setAvatar);
   return (
     <PageWrapper className={`choose-photo ${className}`}>
       <Container className="choose-photo-title" gridAutoFlow="row">
@@ -36,10 +36,10 @@ const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
       </Container>
       <Card className="choose-photo-card" kind="md">
         <Container className="avatar-container">
-          <Avatar className="avatar" kind="lg" imageUrl={userAvatar}/>
+          <Avatar className="avatar-photo" kind="lg" imageUrl={userAvatar}/>
         </Container>
         <Container className="choose-photo-actions">
-          <ChooseAvatarPhoto/>
+          <ChooseAvatarPhoto setAvatar={setAvatar}/>
         </Container>
         <Container className="choose-photo-actions">
           <Button

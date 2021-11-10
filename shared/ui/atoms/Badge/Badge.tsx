@@ -25,7 +25,7 @@ const BadgeComponent: React.FC<IBadgeComponent> = ({
 };
 
 export const Badge = styled(BadgeComponent)`
-  &.badge {
+  & {
     display: grid;
     grid-template-columns: auto 1fr;
     align-content: center;

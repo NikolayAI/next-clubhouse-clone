@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import {useEvent, useStore} from 'effector-react';
 
-import {
-  Button,
-  Card,
-  CodeInput,
-  Container,
-  H,
-  P,
-  PageWrapper,
-} from '../../shared/ui';
+import {CodeInput, userModel} from '../../entities/user';
+import {$isActivateButtonDisable} from './model';
 import {IEnterCode} from './types';
+import {Button, Card, Container, H, P, PageWrapper} from '../../shared/ui';
 
 const EnterCode: React.FC<IEnterCode> = ({className}) => {
+  const codes = useStore(userModel.data.$codeNumber);
+  const isActivateButtonDisable = useStore($isActivateButtonDisable);
+  const setCodeNumber = useEvent(userModel.events.setCodeNumber);
   return (
     <PageWrapper className={`enter-phone ${className}`}>
       <Container className="enter-code-title" gridAutoFlow="row">
@@ -32,13 +30,19 @@ const EnterCode: React.FC<IEnterCode> = ({className}) => {
       </Container>
       <Card className="enter-code-card" kind="md">
         <Container className="card-code-input">
-          <CodeInput className="enter-code-input"/>
+          <CodeInput
+            className="enter-code-input"
+            codes={codes}
+            setCodes={setCodeNumber}
+          />
         </Container>
         <Container className="card-actions">
           <Button
             kind="primary"
             text="Activate"
+            loadingDescription="Activate in progress..."
             suffixIconUrl={'/icons/arrowRight.svg'}
+            disabled={isActivateButtonDisable}
           />
         </Container>
         <Container className="card-description" textAlign="center">

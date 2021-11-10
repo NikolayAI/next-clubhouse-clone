@@ -17,7 +17,7 @@ const CardComponent: React.FC<ICardComponent> = ({
 };
 
 export const Card = styled(CardComponent)`
-  &.card {
+  & {
     height: max-content;
     width: ${({fullWidth}) => fullWidth ? 'auto' : 'max-content'};
     padding: ${({kind}) => paddings[kind]};

@@ -1,13 +1,18 @@
 import React, {useState} from 'react';
 import type {NextPage} from 'next';
+import {useRouter} from 'next/router';
+import {useGate} from 'effector-react';
 
-import {GlobalStyle} from '../shared/styles/globalStyles';
 import {
-  ChoosePhotoPage, EnterCodePage,
+  ChoosePhotoPage,
+  EnterCodePage,
   EnterInfoPage,
-  EnterNamePage, EnterPhonePage,
+  EnterNamePage,
+  EnterPhonePage,
   WelcomePage,
 } from '../applicationPages';
+import {navigatorModel} from '../entities/navigator';
+import {GlobalStyle} from '../shared/styles/globalStyles';
 
 const stepsComponents: Record<string, React.FC> = {
   0: WelcomePage,
@@ -19,6 +24,8 @@ const stepsComponents: Record<string, React.FC> = {
 };
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  useGate(navigatorModel.events.NavigatorGate, router);
   const [step, setStep] = useState<number>(5);
   const Component = stepsComponents[step];
 
