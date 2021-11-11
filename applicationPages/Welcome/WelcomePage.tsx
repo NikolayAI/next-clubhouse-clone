@@ -1,7 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
+import {useEvent} from 'effector-react';
 
+import {IWelcome} from './types';
+import {goToNextPageEvent} from './model';
+import {GoToEnterUserName} from '../../features/auth';
 import {
   Button,
   Card,
@@ -11,9 +15,11 @@ import {
   PageWrapper,
   Span,
 } from '../../shared/ui';
-import {IWelcome} from './types';
+import {useRouter} from 'next/router';
 
 const Welcome: React.FC<IWelcome> = ({className}) => {
+  const a = useRouter()
+  const goToNextPage = useEvent(goToNextPageEvent);
   return (
     <PageWrapper className={`welcome ${className}`}>
       <Card className="welcome-card" kind="md">
@@ -40,12 +46,7 @@ const Welcome: React.FC<IWelcome> = ({className}) => {
           </P>
         </Container>
         <Container className="welcome-actions">
-          <Button
-            className="action-button-next"
-            kind="primary"
-            text="Get your username"
-            suffixIconUrl="/icons/arrowRight.svg"
-          />
+          <GoToEnterUserName className="next" onClick={goToNextPage}/>
         </Container>
         <Container className="welcome-options">
           <Span className="options-question" kind="xs" fontWeight="normal">

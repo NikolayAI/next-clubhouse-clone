@@ -26,13 +26,13 @@ const stepsComponents: Record<string, React.FC> = {
 const Home: NextPage = () => {
   const router = useRouter();
   useGate(navigatorModel.events.NavigatorGate, router);
-  const [step, setStep] = useState<number>(5);
+  const [step, setStep] = useState<number>(1);
   const Component = stepsComponents[step];
 
   return (
     <div>
       <GlobalStyle/>
-      <Component/>
+      <WelcomePage/>
     </div>
   );
 };

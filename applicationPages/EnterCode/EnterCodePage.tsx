@@ -1,16 +1,16 @@
 import React from 'react';
+import {useEvent, useStore} from 'effector-react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useEvent, useStore} from 'effector-react';
 
-import {CodeInput, userModel} from '../../entities/user';
-import {$isActivateButtonDisable} from './model';
 import {IEnterCode} from './types';
+import {$isCodeNumberValid} from './model';
+import {CodeInput, userModel} from '../../entities/user';
 import {Button, Card, Container, H, P, PageWrapper} from '../../shared/ui';
 
 const EnterCode: React.FC<IEnterCode> = ({className}) => {
   const codes = useStore(userModel.data.$codeNumber);
-  const isActivateButtonDisable = useStore($isActivateButtonDisable);
+  const isCodeNumberValid = useStore($isCodeNumberValid);
   const setCodeNumber = useEvent(userModel.events.setCodeNumber);
   return (
     <PageWrapper className={`enter-phone ${className}`}>
@@ -42,7 +42,7 @@ const EnterCode: React.FC<IEnterCode> = ({className}) => {
             text="Activate"
             loadingDescription="Activate in progress..."
             suffixIconUrl={'/icons/arrowRight.svg'}
-            disabled={isActivateButtonDisable}
+            disabled={!isCodeNumberValid}
           />
         </Container>
         <Container className="card-description" textAlign="center">

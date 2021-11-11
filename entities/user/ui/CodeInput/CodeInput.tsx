@@ -46,7 +46,7 @@ const CodeInputComponent: React.FC<ICodeInputComponent> = ({
     e: React.ChangeEvent<HTMLInputElement>,
     id: number,
   ) => {
-    setCodes({...codes, [id]: e.target.value});
+    setCodes({id, value: e.target.value});
     focusNextElement(e);
   };
 

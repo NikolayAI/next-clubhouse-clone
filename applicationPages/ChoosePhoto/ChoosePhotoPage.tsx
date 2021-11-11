@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {useEvent, useStore} from 'effector-react';
 
 import {IChoosePhoto} from './types';
-import {ChooseAvatarPhoto} from '../../features/chooseAvatarPhoto';
+import {ChooseAvatarPhoto} from '../../features/auth/chooseAvatarPhoto';
 import {Avatar, userModel} from '../../entities/user';
 import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 
