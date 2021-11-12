@@ -3,7 +3,10 @@ import React, {useRef} from 'react';
 import {IChooseAvatarPhoto} from './types';
 import {Button} from '../../../shared/ui';
 
-export const ChooseAvatarPhoto: React.FC<IChooseAvatarPhoto> = ({setAvatar}) => {
+export const ChooseAvatarPhoto: React.FC<IChooseAvatarPhoto> = ({
+  setAvatar,
+  className,
+}) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleClick = () => {
@@ -20,7 +23,7 @@ export const ChooseAvatarPhoto: React.FC<IChooseAvatarPhoto> = ({setAvatar}) => 
   return (
     <>
       <Button
-        className="action-button-different"
+        className={`action-button-different ${className}`}
         kind="link"
         text="Choose a different photo"
         onClick={handleClick}

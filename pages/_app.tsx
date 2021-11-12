@@ -1,6 +1,9 @@
+import React from 'react';
 import type {AppProps} from 'next/app';
-import {Scope, fork, serialize} from 'effector'
-import {Provider} from 'effector-react/scope'
+import {fork, Scope, serialize} from 'effector';
+import {Provider} from 'effector-react/scope';
+
+import {GlobalStyle} from '../shared/styles/globalStyles';
 
 let clientScope: Scope
 
@@ -15,6 +18,7 @@ export default function App({Component, pageProps}: AppProps) {
   console.log('scope', serialize(scope))
   return (
     <Provider value={scope}>
+      <GlobalStyle/>
       <Component {...pageProps} />
     </Provider>
   )

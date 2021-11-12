@@ -2,6 +2,9 @@ import {createEvent, createStore, restore} from 'effector';
 import {NumberFormatValues} from 'react-number-format';
 import {ICodeNumber, ICodeNumberEventParam} from '../types';
 
+const setFullName = createEvent<string>();
+const $fullName = restore<string>(setFullName, '');
+
 const setAvatar = createEvent<string>();
 const $avatar = restore<string>(setAvatar, '');
 
@@ -20,12 +23,14 @@ $codeNumber.on(setCodeNumber, (state, {id, value}) => {
 });
 
 export const events = {
+  setFullName,
   setAvatar,
   setPhoneNumber,
   setCodeNumber,
 };
 
-export const data = {
+export const stores = {
+  $fullName,
   $avatar,
   $phoneNumber,
   $codeNumber,

@@ -1,2 +1,2 @@
 export * from './chooseAvatarPhoto';
-export * from './goToEnterUserName';
+export * from './goToTheNextAuthStep';
