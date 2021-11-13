@@ -31,7 +31,7 @@ const ButtonTag: React.FC<IButtonTag> = ({
       />}
       {!isLoading && text && <span className="button-text">{text}</span>}
       {isLoading && loadingDescription && (
-        <span className="button-text">{loadingDescription}</span>
+        <span className="button-description">{loadingDescription}</span>
       )}
       {iconUrl && <img
           className="button-icon"
@@ -77,7 +77,8 @@ export const Button = styled(ButtonTag)`
     opacity: ${({disabled}) => disabled ? 1 : 0.9};
   }
 
-  .button-text {
+  .button-text,
+  .button-description {
     margin: 0 8px;
   }
 `;
