@@ -1,13 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import {useEvent, useGate, useStore} from 'effector-react';
+import {useEvent, useStore} from 'effector-react';
 import styled from 'styled-components';
-import {useRouter} from 'next/router';
 
 import {IEnterPhone} from './types';
 import {$isNextButtonDisable, goToNextStep} from './model';
 import {PhoneNumberInput, userModel} from '../../entities/user';
-import {navigatorModel} from '../../entities/navigator';
 import {
   Button,
   Card,
@@ -19,8 +17,6 @@ import {
 } from '../../shared/ui';
 
 const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
-  const router = useRouter();
-  useGate(navigatorModel.events.NavigatorGate, router);
   const phoneNumber = useStore(userModel.stores.$phoneNumber);
   const isNextButtonDisable = useStore($isNextButtonDisable);
   const setPhoneNumber = useEvent(userModel.events.setPhoneNumber);

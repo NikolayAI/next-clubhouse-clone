@@ -2,10 +2,8 @@ import {createEvent, sample} from 'effector';
 import {createGate} from 'effector-react';
 import {NextRouter} from 'next/router';
 
-import {Pages} from '../../shared/constants';
-
 const NavigatorGate = createGate<NextRouter>();
-const pushToThePath = createEvent<Pages>();
+const pushToThePath = createEvent<string>();
 const $navigator = NavigatorGate.state.map((router) => router);
 $navigator.watch(data => console.log('nav',data))
 

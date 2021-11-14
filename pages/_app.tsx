@@ -2,10 +2,19 @@ import React from 'react';
 import type {AppProps} from 'next/app';
 import {fork, Scope, serialize} from 'effector';
 import {Provider} from 'effector-react/scope';
+import {useGate} from 'effector-react';
 
+import {navigatorModel} from '../entities/navigator';
 import {GlobalStyle} from '../shared/styles/globalStyles';
+import {useRouter} from 'next/router';
 
-let clientScope: Scope
+let clientScope: Scope;
+
+const WithRouterComponent = ({Component, pageProps}: AppProps) => {
+  const router = useRouter();
+  useGate(navigatorModel.events.NavigatorGate, router);
+  return <Component {...pageProps} />;
+};
 
 export default function App({Component, pageProps}: AppProps) {
   const scope = fork({
@@ -13,13 +22,13 @@ export default function App({Component, pageProps}: AppProps) {
       ...(clientScope && serialize(clientScope)),
       ...pageProps.initialState,
     },
-  })
-  if (typeof window !== 'undefined') clientScope = scope
-  console.log('scope', serialize(scope))
+  });
+  if (typeof window !== 'undefined') clientScope = scope;
+  console.log('scope', serialize(scope));
   return (
     <Provider value={scope}>
       <GlobalStyle/>
-      <Component {...pageProps} />
+      <WithRouterComponent Component={Component}{...pageProps}/>
     </Provider>
-  )
+  );
 }

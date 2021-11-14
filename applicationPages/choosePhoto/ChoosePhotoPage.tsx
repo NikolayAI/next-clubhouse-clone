@@ -1,19 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useEvent, useGate, useStore} from 'effector-react';
-import {useRouter} from 'next/router';
+import {useEvent, useStore} from 'effector-react';
 
 import {IChoosePhoto} from './types';
 import {goToNextStep} from './model';
 import {ChooseAvatarPhoto} from '../../features/auth';
 import {Avatar, userModel} from '../../entities/user';
-import {navigatorModel} from '../../entities/navigator';
 import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
-  const router = useRouter();
-  useGate(navigatorModel.events.NavigatorGate, router);
   const userAvatar = useStore(userModel.stores.$avatar);
   const setAvatar = useEvent(userModel.events.setAvatar);
   const goToNextPage = useEvent(goToNextStep);

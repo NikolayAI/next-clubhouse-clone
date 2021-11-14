@@ -1,12 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
-import {useEvent, useGate} from 'effector-react';
-import {useRouter} from 'next/router';
+import {useEvent} from 'effector-react';
 
 import {IWelcome} from './types';
 import {goToAuthorization} from './model';
-import {navigatorModel} from '../../entities/navigator';
 import {
   Button,
   Card,
@@ -18,8 +16,6 @@ import {
 } from '../../shared/ui';
 
 const Welcome: React.FC<IWelcome> = ({className}) => {
-  const router = useRouter();
-  useGate(navigatorModel.events.NavigatorGate, router);
   const goToAuth = useEvent(goToAuthorization);
   return (
     <PageWrapper className={`welcome ${className}`}>

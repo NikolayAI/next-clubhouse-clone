@@ -1,18 +1,14 @@
 import React from 'react';
-import {useEvent, useGate, useStore} from 'effector-react';
+import {useEvent, useStore} from 'effector-react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useRouter} from 'next/router';
 
 import {IEnterCode} from './types';
 import {$isActivateButtonDisabled, goToNextStep} from './model';
 import {CodeInput, userModel} from '../../entities/user';
-import {navigatorModel} from '../../entities/navigator';
 import {Button, Card, Container, H, P, PageWrapper} from '../../shared/ui';
 
 const EnterCode: React.FC<IEnterCode> = ({className}) => {
-  const router = useRouter();
-  useGate(navigatorModel.events.NavigatorGate, router);
   const codes = useStore(userModel.stores.$codeNumber);
   const isActivateButtonDisabled = useStore($isActivateButtonDisabled);
   const setCodeNumber = useEvent(userModel.events.setCodeNumber);

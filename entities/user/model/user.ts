@@ -1,6 +1,6 @@
 import {createEvent, createStore, restore} from 'effector';
 import {NumberFormatValues} from 'react-number-format';
-import {ICodeNumber, ICodeNumberEventParam} from '../types';
+import {ICodeNumber, ICodeNumberEventParam} from './types';
 
 const setFullName = createEvent<string>();
 const $fullName = restore<string>(setFullName, '');

@@ -1,25 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useRouter} from 'next/router';
-import {useEvent, useGate} from 'effector-react';
+import {useEvent} from 'effector-react';
 
 import {IEnterInfo} from './types';
 import {goToNextStep} from './model';
 import {Avatar} from '../../entities/user';
-import {navigatorModel} from '../../entities/navigator';
-import {
-  Button,
-  Card,
-  Container,
-  H,
-  PageWrapper,
-  Span,
-} from '../../shared/ui';
+import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 
 const EnterInfo: React.FC<IEnterInfo> = ({className}) => {
-  const router = useRouter();
-  useGate(navigatorModel.events.NavigatorGate, router);
   const goToNextPage = useEvent(goToNextStep);
   return (
     <PageWrapper className={`enter-info ${className}`}>

@@ -1,6 +1,7 @@
-import {userModel} from '../../entities/user';
 import {createEvent, forward} from 'effector';
-import {goToTheNextAuthStep} from '../../features/auth';
+
+import {userModel} from '../../entities/user';
+import {navigatorModel} from '../../entities/navigator';
 import {Pages} from '../../shared/constants';
 
 export const goToNextStep = createEvent();
@@ -13,5 +14,5 @@ export const $isActivateButtonDisabled = userModel.stores.$codeNumber.map(
 
 forward({
   from: goToNextStep,
-  to: goToTheNextAuthStep.prepend(() => Pages.ROOMS),
+  to: navigatorModel.events.pushToThePath.prepend(() => Pages.ROOMS),
 });

@@ -1,18 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useEvent, useGate, useStore} from 'effector-react';
-import {useRouter} from 'next/router';
+import {useEvent, useStore} from 'effector-react';
 
 import {IEnterName} from './types';
 import {$isNextButtonDisabled, goToNextStep} from './model';
 import {FullNameInput, userModel} from '../../entities/user';
-import {navigatorModel} from '../../entities/navigator';
 import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 
 const EnterName: React.FC<IEnterName> = ({className}) => {
-  const router = useRouter();
-  useGate(navigatorModel.events.NavigatorGate, router);
   const fullName = useStore(userModel.stores.$fullName);
   const isNextButtonDisabled = useStore($isNextButtonDisabled);
   const setFullName = useEvent(userModel.events.setFullName);

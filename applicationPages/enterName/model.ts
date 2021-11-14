@@ -1,7 +1,7 @@
 import {createEvent, forward} from 'effector';
 
-import {goToTheNextAuthStep} from '../../features/auth';
 import {userModel} from '../../entities/user';
+import {navigatorModel} from '../../entities/navigator';
 import {Pages} from '../../shared/constants';
 
 export const goToNextStep = createEvent();
@@ -12,5 +12,5 @@ export const $isNextButtonDisabled = userModel.stores.$fullName.map((fullName) =
 
 forward({
   from: goToNextStep,
-  to: goToTheNextAuthStep.prepend(() => Pages.ENTER_INFO),
+  to: navigatorModel.events.pushToThePath.prepend(() => Pages.ENTER_INFO),
 });

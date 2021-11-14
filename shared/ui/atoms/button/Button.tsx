@@ -23,7 +23,7 @@ const ButtonTag: React.FC<IButtonTag> = ({
   return (
     <button className={`button ${className}`} disabled={disabled} {...props}>
       {leadIconUrl && <img
-          className="button-before-icon"
+          className="button-suffix-icon"
           src={leadIconUrl}
           alt={leadIconAlt}
           height={12}

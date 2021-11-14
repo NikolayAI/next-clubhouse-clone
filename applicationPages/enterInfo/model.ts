@@ -1,11 +1,11 @@
 import {createEvent, forward} from 'effector';
 
-import {goToTheNextAuthStep} from '../../features/auth';
+import {navigatorModel} from '../../entities/navigator';
 import {Pages} from '../../shared/constants';
 
 export const goToNextStep = createEvent();
 
 forward({
   from: goToNextStep,
-  to: goToTheNextAuthStep.prepend(() => Pages.CHOOSE_PHOTO),
+  to: navigatorModel.events.pushToThePath.prepend(() => Pages.CHOOSE_PHOTO),
 });

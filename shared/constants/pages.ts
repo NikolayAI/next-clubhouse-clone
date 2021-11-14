@@ -6,4 +6,5 @@ export enum Pages {
   ENTER_PHONE = 'enter-phone',
   ENTER_CODE = 'enter-code',
   ROOMS = 'rooms',
+  PROFILE = 'profile',
 }

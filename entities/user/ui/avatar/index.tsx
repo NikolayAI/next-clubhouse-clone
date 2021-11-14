@@ -3,8 +3,8 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 import {IAvatarComponent} from './types';
-import {sizes} from './constants';
-import { Span } from '../../../../shared/ui';
+import {borderRadius, sizes} from './constants';
+import {Span} from '../../../../shared/ui';
 
 const AvatarComponent: React.FC<IAvatarComponent> = ({
   kind,
@@ -41,7 +41,7 @@ export const Avatar = styled(AvatarComponent)`
   .avatar-image-wrapper {
     height: ${({kind}) => sizes[kind]};
     width: 100%;
-    border-radius: 35px;
+    border-radius: ${({kind}) => borderRadius[kind]};
     background-color: #E0E0E0;
     overflow: hidden;
   }

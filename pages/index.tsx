@@ -9,7 +9,6 @@ import {
   EnterPhonePage,
   WelcomePage,
 } from '../applicationPages';
-import {ProfilePage} from '../applicationPages/profile/ProfilePage';
 
 const stepsComponents: Record<string, React.FC> = {
   0: WelcomePage,
@@ -26,7 +25,7 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <ProfilePage/>
+      <WelcomePage/>
     </div>
   );
 };
