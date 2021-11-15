@@ -5,7 +5,7 @@ import {useEvent, useStore} from 'effector-react';
 
 import {IChoosePhoto} from './types';
 import {goToNextStep} from './model';
-import {ChooseAvatarPhoto} from '../../features/auth';
+import {ChooseAvatarPhoto} from '../../features/registration';
 import {Avatar, userModel} from '../../entities/user';
 import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 

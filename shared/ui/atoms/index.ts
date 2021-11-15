@@ -1,4 +1,4 @@
-export {Button} from './button';
+export * from './button';
 export {H} from './h';
 export {Input} from './input';
 export {P} from './p';

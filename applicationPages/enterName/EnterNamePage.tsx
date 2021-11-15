@@ -4,15 +4,15 @@ import Image from 'next/image';
 import {useEvent, useStore} from 'effector-react';
 
 import {IEnterName} from './types';
-import {$isNextButtonDisabled, goToNextStep} from './model';
+import {$isNextButtonDisabled} from './model';
+import {EnterNameButton} from '../../features/registration';
 import {FullNameInput, userModel} from '../../entities/user';
-import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
+import {Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 
 const EnterName: React.FC<IEnterName> = ({className}) => {
   const fullName = useStore(userModel.stores.$fullName);
   const isNextButtonDisabled = useStore($isNextButtonDisabled);
   const setFullName = useEvent(userModel.events.setFullName);
-  const goToNextPage = useEvent(goToNextStep);
   return (
     <PageWrapper className={`enter-name ${className}`}>
       <Container className="enter-name-title" gridAutoFlow="row">
@@ -43,14 +43,7 @@ const EnterName: React.FC<IEnterName> = ({className}) => {
           setFullName={setFullName}
         />
         <Container className="enter-name-actions">
-          <Button
-            className="action-button-next"
-            kind="primary"
-            text="Next"
-            suffixIconUrl="/icons/arrowRight.svg"
-            onClick={goToNextPage}
-            disabled={isNextButtonDisabled}
-          />
+          <EnterNameButton disabled={isNextButtonDisabled}/>
         </Container>
       </Card>
     </PageWrapper>

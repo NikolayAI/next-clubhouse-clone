@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 
 import {IChooseAvatarPhoto} from './types';
-import {Button} from '../../../shared/ui';
+import {Button} from '../../shared/ui';
 
 export const ChooseAvatarPhoto: React.FC<IChooseAvatarPhoto> = ({
   setAvatar,
