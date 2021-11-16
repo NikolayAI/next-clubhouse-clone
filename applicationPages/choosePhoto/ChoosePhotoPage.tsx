@@ -4,15 +4,18 @@ import Image from 'next/image';
 import {useEvent, useStore} from 'effector-react';
 
 import {IChoosePhoto} from './types';
-import {goToNextStep} from './model';
-import {ChooseAvatarPhoto} from '../../features/registration';
+import {
+  ChangeRegistrationStepButton,
+  ChooseAvatarPhoto,
+  goToEnterPhone,
+} from '../../features';
 import {Avatar, userModel} from '../../entities/user';
-import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
+import {Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
   const userAvatar = useStore(userModel.stores.$avatar);
   const setAvatar = useEvent(userModel.events.setAvatar);
-  const goToNextPage = useEvent(goToNextStep);
+  const goToNextPage = useEvent(goToEnterPhone);
   return (
     <PageWrapper className={`choose-photo ${className}`}>
       <Container className="choose-photo-title" gridAutoFlow="row">
@@ -44,7 +47,7 @@ const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
           <ChooseAvatarPhoto className="choose-photo" setAvatar={setAvatar}/>
         </Container>
         <Container className="choose-photo-actions">
-          <Button
+          <ChangeRegistrationStepButton
             className="action-button-next"
             kind="primary"
             text="Next"

@@ -4,15 +4,19 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 import {IEnterCode} from './types';
-import {$isActivateButtonDisabled, goToNextStep} from './model';
+import {
+  $isCodeActivateButtonDisabled,
+  ChangeRegistrationStepButton,
+  goToRooms,
+} from '../../features';
 import {CodeInput, userModel} from '../../entities/user';
-import {Button, Card, Container, H, P, PageWrapper} from '../../shared/ui';
+import {Card, Container, H, P, PageWrapper} from '../../shared/ui';
 
 const EnterCode: React.FC<IEnterCode> = ({className}) => {
   const codes = useStore(userModel.stores.$codeNumber);
-  const isActivateButtonDisabled = useStore($isActivateButtonDisabled);
+  const isActivateButtonDisabled = useStore($isCodeActivateButtonDisabled);
   const setCodeNumber = useEvent(userModel.events.setCodeNumber);
-  const goToNextPage = useEvent(goToNextStep);
+  const goToNextPage = useEvent(goToRooms);
   return (
     <PageWrapper className={`enter-phone ${className}`}>
       <Container className="enter-code-title" gridAutoFlow="row">
@@ -38,7 +42,7 @@ const EnterCode: React.FC<IEnterCode> = ({className}) => {
           />
         </Container>
         <Container className="card-actions">
-          <Button
+          <ChangeRegistrationStepButton
             kind="primary"
             text="Activate"
             loadingDescription="Activate in progress..."

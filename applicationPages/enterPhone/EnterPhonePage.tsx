@@ -4,23 +4,19 @@ import {useEvent, useStore} from 'effector-react';
 import styled from 'styled-components';
 
 import {IEnterPhone} from './types';
-import {$isNextButtonDisable, goToNextStep} from './model';
-import {PhoneNumberInput, userModel} from '../../entities/user';
 import {
-  Button,
-  Card,
-  Container,
-  H,
-  P,
-  PageWrapper,
-  Span,
-} from '../../shared/ui';
+  $isPhoneNextButtonDisabled,
+  ChangeRegistrationStepButton,
+  goToEnterCode,
+} from '../../features';
+import {PhoneNumberInput, userModel} from '../../entities/user';
+import {Card, Container, H, P, PageWrapper, Span} from '../../shared/ui';
 
 const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
   const phoneNumber = useStore(userModel.stores.$phoneNumber);
-  const isNextButtonDisable = useStore($isNextButtonDisable);
+  const isNextButtonDisable = useStore($isPhoneNextButtonDisabled);
   const setPhoneNumber = useEvent(userModel.events.setPhoneNumber);
-  const goToNextPage = useEvent(goToNextStep);
+  const goToNextPage = useEvent(goToEnterCode);
   return (
     <PageWrapper className={`enter-phone ${className}`}>
       <Container className="enter-phone-title" gridAutoFlow="row">
@@ -51,7 +47,7 @@ const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
           />
         </Container>
         <Container className="card-button-next">
-          <Button
+          <ChangeRegistrationStepButton
             className="button-next"
             kind="primary"
             text="Next"

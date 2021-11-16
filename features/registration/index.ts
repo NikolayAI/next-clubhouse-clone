@@ -1,3 +1,1 @@
-export * from './goToRegistration';
-export * from './enterName';
-export * from '../chooseAvatarPhoto';
+export * from './goToRegistrationStep';

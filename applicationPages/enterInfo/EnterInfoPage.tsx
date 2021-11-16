@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import {useEvent} from 'effector-react';
 
 import {IEnterInfo} from './types';
-import {Avatar} from '../../entities/user';
+import {ChangeRegistrationStepButton, goToChoosePhoto} from '../../features';
+import {Avatar} from '../../entities';
 import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
-import ImportInfoButton from '../../features/registration/importInfo/ui';
 
 const EnterInfo: React.FC<IEnterInfo> = ({className}) => {
+  const goToNextPage = useEvent(goToChoosePhoto);
   return (
     <PageWrapper className={`enter-info ${className}`}>
       <Container className="enter-info-title" gridAutoFlow="row">
@@ -36,7 +38,14 @@ const EnterInfo: React.FC<IEnterInfo> = ({className}) => {
           </Span>
         </Container>
         <Container className="enter-info-actions">
-          <ImportInfoButton/>
+          <ChangeRegistrationStepButton
+            className="enter-info-button"
+            kind="primary"
+            leadIconUrl="/icons/sparrow.svg"
+            text="Import from Twitter"
+            suffixIconUrl="/icons/arrowRight.svg"
+            onClick={goToNextPage}
+          />
         </Container>
         <Container className="enter-info-actions">
           <Button
