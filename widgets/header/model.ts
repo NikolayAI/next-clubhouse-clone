@@ -8,10 +8,10 @@ export const goToProfilePath = createEvent();
 
 forward({
   from: goToHomePath,
-  to: navigatorModel.events.pushToThePath.prepend(() => `/${Pages.WELCOME}`)
-})
+  to: navigatorModel.events.pushToThePath.prepend(() => `/${Pages.WELCOME}`),
+});
 
 forward({
   from: goToProfilePath,
-  to: navigatorModel.events.pushToThePath.prepend(() => `/${Pages.PROFILE}/1`)
-})
+  to: navigatorModel.events.pushToThePath.prepend(() => `/${Pages.PROFILE}/1`),
+});

@@ -7,7 +7,7 @@ import {IWelcome} from './types';
 import {
   ChangeRegistrationStepButton,
   goToEnterName,
-} from '../../features/registration';
+} from '../../features';
 import {
   Button,
   Card,
