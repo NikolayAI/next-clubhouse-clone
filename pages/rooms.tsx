@@ -1,11 +1,9 @@
 import React from 'react';
 
+import {RoomsPage} from '../applicationPages';
+
 const Rooms = () => {
-  return (
-    <div>
-      rooms page
-    </div>
-  );
+  return <RoomsPage/>;
 };
 
 export default Rooms;

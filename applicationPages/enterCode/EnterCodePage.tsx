@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 import {IEnterCode} from './types';
+import {$isCodeActivateButtonDisabled} from './model';
 import {
-  $isCodeActivateButtonDisabled,
   ChangeRegistrationStepButton,
   goToRooms,
 } from '../../features';

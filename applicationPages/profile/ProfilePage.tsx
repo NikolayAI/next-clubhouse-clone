@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import {useEvent} from 'effector-react/ssr';
 
 import {IProfile} from './types';
-import {Avatar} from '../../entities/user';
-import {navigatorModel} from '../../entities/navigator';
+import {Header} from '../../widgets';
+import {Avatar, navigatorModel} from '../../entities';
 import {Pages} from '../../shared/constants';
 import {Button, Card, Container, H, P, Span} from '../../shared/ui';
-import {Header} from '../../widgets/header/ui';
 
 const Profile: React.FC<IProfile> = ({className}) => {
   const goToThePath = useEvent(navigatorModel.events.pushToThePath);
@@ -71,6 +70,8 @@ const Profile: React.FC<IProfile> = ({className}) => {
 
 export const ProfilePage = styled(Profile)`
   & {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 44px 100px 100px;
   }
 
@@ -85,11 +86,11 @@ export const ProfilePage = styled(Profile)`
   .button-back {
     padding: 0;
     font-size: 26px;
-  }
 
-  .button-suffix-icon {
-    height: 18px;
-    width: 18px;
+    .button-lead-icon {
+      height: 18px;
+      width: 18px;
+    }
   }
 
   .avatar {

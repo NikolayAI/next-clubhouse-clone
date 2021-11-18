@@ -4,8 +4,8 @@ import {useEvent, useStore} from 'effector-react';
 import styled from 'styled-components';
 
 import {IEnterPhone} from './types';
+import {$isPhoneNextButtonDisabled} from './model';
 import {
-  $isPhoneNextButtonDisabled,
   ChangeRegistrationStepButton,
   goToEnterCode,
 } from '../../features';

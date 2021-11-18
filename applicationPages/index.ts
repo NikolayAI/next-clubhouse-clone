@@ -5,3 +5,4 @@ export {ChoosePhotoPage} from './choosePhoto';
 export {EnterPhonePage} from './enterPhone';
 export {EnterCodePage} from './enterCode';
 export {ProfilePage} from './profile';
+export {RoomsPage} from './rooms';

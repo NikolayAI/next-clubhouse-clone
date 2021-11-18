@@ -35,7 +35,10 @@ const HeaderComponent: React.FC<IHeaderComponent> = ({className}) => {
 export const Header = styled(HeaderComponent)`
   & {
     height: 84px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 100px;
+    border-bottom: 1px solid #EAE6DA;
   }
 
   .home-button {
@@ -43,7 +46,7 @@ export const Header = styled(HeaderComponent)`
     font-size: 22px;
   }
 
-  .button-suffix-icon {
+  .button-lead-icon {
     height: 24px;
     width: 24px;
   }

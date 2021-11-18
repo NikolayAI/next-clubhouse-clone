@@ -4,8 +4,8 @@ import Image from 'next/image';
 import {useEvent, useStore} from 'effector-react';
 
 import {IEnterName} from './types';
+import {$isFullNameNextButtonDisabled} from './model';
 import {
-  $isFullNameNextButtonDisabled,
   ChangeRegistrationStepButton,
   goToEnterInfo,
 } from '../../features';
