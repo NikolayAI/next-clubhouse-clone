@@ -6,18 +6,38 @@ import {IConversationCardComponent} from './types';
 import {Avatar} from '../../entities';
 import {Card, Container, H, Span} from '../../shared/ui';
 
-const ConversationCardComponent: React.FC<IConversationCardComponent> = ({className}) => {
+const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
+  className,
+}) => {
   return (
     <Card className={`conversation ${className}`} kind="sm">
-      <H className="conversation-title" tag="h3" kind="md">Next or Remix?</H>
-      <Container justifyContent="start">
-        <Container className="speakers-avatars">
-          <Avatar kind="sm"/>
-          <Avatar kind="sm"/>
-        </Container>
-        <div className="speakers-description">
-          <div className="speakers-names">
-            <div className="speaker-name">
+      <Container
+        className="conversation-container"
+        gridAutoFlow="row"
+        justifyContent="start"
+      >
+        <H className="conversation-title" tag="h3" kind="md">Next or Remix?</H>
+        <Container
+          className="conversation-content"
+          justifyContent="start"
+          alignItems="start"
+        >
+          <Container
+            className="speakers-avatars"
+            justifyContent="start"
+            alignItems="start"
+          >
+            {/*<Avatar className="alone-avatar" kind="md"/>*/}
+            <Avatar className="first-avatar" kind="sm"/>
+            <Avatar className="second-avatar" kind="sm"/>
+          </Container>
+          <Container
+            className="conversation-description"
+            gridAutoFlow="row"
+            justifyContent="space-between"
+            alignItems="start"
+          >
+            <Container gridAutoFlow="row">
               <Span className="name" kind="sm" fontWeight="normal">
                 Bruce Lee
                 <Image
@@ -27,10 +47,8 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({classN
                   width={14}
                 />
               </Span>
-            </div>
-            <div className="speaker-name">
               <Span className="name" kind="sm" fontWeight="normal">
-                Chack Noris
+                Bruce Lee
                 <Image
                   src="/images/image10.png"
                   alt="talk"
@@ -38,29 +56,33 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({classN
                   width={14}
                 />
               </Span>
-            </div>
-          </div>
-          <div className="conversation-statistics">
-            <Span className="name" kind="sm" fontWeight="normal">
-              87
-              <Image
-                src="/icons/body.svg"
-                alt="body"
-                height={14}
-                width={14}
-              />
-            </Span>
-            <Span className="name" kind="sm" fontWeight="normal">
-              21
-              <Image
-                src="/icons/dots.svg"
-                alt="dots"
-                height={14}
-                width={14}
-              />
-            </Span>
-          </div>
-        </div>
+            </Container>
+            <Container
+              className="conversation-statistics"
+              justifyContent="start"
+              alignItems="end"
+            >
+              <Span className="stat" kind="sm" fontWeight="normal">
+                87
+                <Image
+                  src="/icons/body.svg"
+                  alt="body"
+                  height={14}
+                  width={14}
+                />
+              </Span>
+              <Span className="stat" kind="sm" fontWeight="normal">
+                21
+                <Image
+                  src="/icons/dots.svg"
+                  alt="dots"
+                  height={14}
+                  width={14}
+                />
+              </Span>
+            </Container>
+          </Container>
+        </Container>
       </Container>
     </Card>
   );
@@ -71,21 +93,41 @@ export const ConversationCard = styled(ConversationCardComponent)`
     height: 180px;
     width: 380px;
   }
-  
-  .speakers-avatars {
-    margin-right: 26px;
+
+  .conversation-container,
+  .conversation-content,
+  .conversation-description,
+  .conversation-statistics {
+    height: 100%;
   }
   
-  .name > span {
+  .conversation-title {
+    margin: 0;
+  }
+
+  .speakers-avatars {
+    height: 80px;
+    width: 80px;
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  .second-avatar {
+    position: absolute;
+    top: 26px;
+    left: 26px
+  }
+
+  .name > span,
+  .stat > span {
     margin-left: 8px !important;
   }
   
-  .speakers-description {
-    display: flex;
-    flex-direction: column;
+  .stat + .stat {
+    margin-left: 16px;
   }
   
-  .conversation-statistics {
-    margin-top: auto;
+  .stat {
+    opacity: 0.5;
   }
 `;
