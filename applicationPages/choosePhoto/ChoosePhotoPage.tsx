@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useEvent, useStore} from 'effector-react';
+import {useEvent, useStore} from 'effector-react/ssr';
 
 import {IChoosePhoto} from './types';
 import {
@@ -9,7 +9,7 @@ import {
   ChooseAvatarPhoto,
   goToEnterPhone,
 } from '../../features';
-import {Avatar, userModel} from '../../entities/user';
+import {Avatar, userModel} from '../../entities';
 import {Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {

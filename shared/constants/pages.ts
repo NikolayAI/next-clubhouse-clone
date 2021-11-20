@@ -1,10 +1,10 @@
 export enum Pages {
   WELCOME = '/',
-  ENTER_NAME = 'enter-name',
-  ENTER_INFO = 'enter-info',
-  CHOOSE_PHOTO = 'choose-photo',
-  ENTER_PHONE = 'enter-phone',
-  ENTER_CODE = 'enter-code',
-  ROOMS = 'rooms',
-  PROFILE = 'profile',
+  ENTER_NAME = '/registration/enter-name',
+  ENTER_INFO = '/registration/enter-info',
+  CHOOSE_PHOTO = '/registration/choose-photo',
+  ENTER_PHONE = '/registration/enter-phone',
+  ENTER_CODE = '/registration/enter-code',
+  ROOMS = '/rooms',
+  PROFILE = '/profile',
 }

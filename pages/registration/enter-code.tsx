@@ -1,5 +1,5 @@
 import React from 'react';
-import {EnterCodePage} from '../applicationPages';
+import {EnterCodePage} from '../../applicationPages';
 
 const EnterCode = () => {
   return <EnterCodePage/>;

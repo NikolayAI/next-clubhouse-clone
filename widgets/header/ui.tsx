@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useEvent} from 'effector-react';
+import {useEvent} from 'effector-react/ssr';
 
 import {IHeaderComponent} from './types';
 import {goToHomePath, goToProfilePath} from './model';
-import {Avatar} from '../../entities/user';
+import {Avatar} from '../../entities';
 import {Button, Container} from '../../shared/ui';
 
 const HeaderComponent: React.FC<IHeaderComponent> = ({className}) => {

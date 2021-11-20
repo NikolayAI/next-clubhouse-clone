@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useEvent, useStore} from 'effector-react';
+import {useEvent, useStore} from 'effector-react/ssr';
 
 import {IEnterName} from './types';
 import {$isFullNameNextButtonDisabled} from './model';

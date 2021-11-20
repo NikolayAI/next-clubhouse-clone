@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import {useEvent, useStore} from 'effector-react';
+import {useEvent, useStore} from 'effector-react/ssr';
 import styled from 'styled-components';
 
 import {IEnterPhone} from './types';

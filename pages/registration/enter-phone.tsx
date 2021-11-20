@@ -1,5 +1,5 @@
 import React from 'react';
-import {EnterPhonePage} from '../applicationPages';
+import {EnterPhonePage} from '../../applicationPages';
 
 const EnterPhone = () => {
   return <EnterPhonePage/>;

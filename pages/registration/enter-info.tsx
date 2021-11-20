@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {EnterInfoPage} from '../applicationPages';
+import {EnterInfoPage} from '../../applicationPages';
 
 const EnterInfo = () => {
   return <EnterInfoPage/>;

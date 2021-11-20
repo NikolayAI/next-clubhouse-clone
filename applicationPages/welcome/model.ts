@@ -8,4 +8,3 @@ forward({
   from: goToEnterName,
   to: navigatorModel.events.pushToThePath.prepend(() => Pages.ENTER_NAME),
 });
-goToEnterName.watch(data => console.log('hello1'))

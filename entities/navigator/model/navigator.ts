@@ -5,7 +5,7 @@ import {NextRouter} from 'next/router';
 const NavigatorGate = createGate<NextRouter>();
 const pushToThePath = createEvent<string>();
 const $navigator = NavigatorGate.state.map((router) => router);
-$navigator.watch(data => console.log('nav',data))
+$navigator.watch(data => console.log('nav: ', data))
 
 sample({
   clock: pushToThePath,
@@ -16,4 +16,8 @@ sample({
 export const events = {
   NavigatorGate,
   pushToThePath,
+};
+
+export const stores = {
+  $navigator,
 };

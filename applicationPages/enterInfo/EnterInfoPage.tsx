@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useEvent} from 'effector-react';
+import {useEvent} from 'effector-react/ssr';
 
 import {IEnterInfo} from './types';
 import {ChangeRegistrationStepButton, goToChoosePhoto} from '../../features';

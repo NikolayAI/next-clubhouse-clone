@@ -21,7 +21,7 @@ const Profile: React.FC<IProfile> = ({className}) => {
               kind="link"
               text="Back"
               leadIconUrl="/images/image6.png"
-              onClick={() => goToThePath(`/${Pages.ROOMS}`)}
+              onClick={() => goToThePath(Pages.ROOMS)}
             />
           </Container>
         </Container>

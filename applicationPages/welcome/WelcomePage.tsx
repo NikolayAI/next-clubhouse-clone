@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
-import {useEvent} from 'effector-react';
+import {useEvent} from 'effector-react/ssr';
 
 import {IWelcome} from './types';
 import {

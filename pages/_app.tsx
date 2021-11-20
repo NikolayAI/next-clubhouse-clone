@@ -1,12 +1,16 @@
 import React from 'react';
 import type {AppProps} from 'next/app';
 import {fork, Scope, serialize} from 'effector';
-import {Provider} from 'effector-react/scope';
-import {useGate} from 'effector-react';
+import {Provider, useGate} from 'effector-react/ssr';
+import {useRouter} from 'next/router';
 
+import {registrationProcessModel} from '../processes';
 import {navigatorModel} from '../entities/navigator';
 import {GlobalStyle} from '../shared/styles/globalStyles';
-import {useRouter} from 'next/router';
+
+const initProcesses = {
+  ...registrationProcessModel,
+};
 
 let clientScope: Scope;
 
