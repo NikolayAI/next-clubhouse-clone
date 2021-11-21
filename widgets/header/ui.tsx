@@ -3,16 +3,16 @@ import styled from 'styled-components';
 import {useEvent} from 'effector-react/ssr';
 
 import {IHeaderComponent} from './types';
-import {goToHomePath, goToProfilePath} from './model';
+import {goToHome, goToProfile, GoToThePathButton} from '../../features';
 import {Avatar} from '../../entities';
-import {Button, Container} from '../../shared/ui';
+import {Container} from '../../shared/ui';
 
 const HeaderComponent: React.FC<IHeaderComponent> = ({className}) => {
-  const onHomeClick = useEvent(goToHomePath);
-  const onUserClick = useEvent(goToProfilePath);
+  const onHomeClick = useEvent(goToHome);
+  const onUserClick = useEvent(goToProfile);
   return (
     <Container className={`header ${className}`} justifyContent="space-between">
-      <Button
+      <GoToThePathButton
         className="home-button"
         kind="link"
         text="Clubhouse"
@@ -20,7 +20,7 @@ const HeaderComponent: React.FC<IHeaderComponent> = ({className}) => {
         onClick={onHomeClick}
       />
       <Container className="user-info">
-        <Button
+        <GoToThePathButton
           className="user-name-button"
           kind="link"
           text="User Name"

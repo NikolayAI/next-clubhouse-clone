@@ -1,14 +1,32 @@
 import {forward} from 'effector';
 
 import {
+  goToHome,
+  goToEnterName,
   goToChoosePhoto,
-  goToEnterCode,
   goToEnterInfo,
   goToEnterPhone,
+  goToEnterCode,
   goToRooms,
+  goToProfile,
 } from '../../features';
 import {navigatorModel} from '../../entities/navigator';
 import {Pages} from '../../shared/constants';
+
+forward({
+  from: goToHome,
+  to: navigatorModel.events.pushToThePath.prepend(() => Pages.WELCOME),
+});
+
+forward({
+  from: goToEnterName,
+  to: navigatorModel.events.pushToThePath.prepend(() => Pages.ENTER_NAME),
+});
+
+forward({
+  from: goToProfile,
+  to: navigatorModel.events.pushToThePath.prepend(() => `${Pages.PROFILE}/1`),
+});
 
 forward({
   from: goToEnterInfo,
@@ -35,4 +53,4 @@ forward({
   to: navigatorModel.events.pushToThePath.prepend(() => Pages.ROOMS),
 });
 
-export const registrationProcessModel = {};
+export const navigationProcess = {};

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {Button, IButtonTag} from '../../../shared/ui';
+import {Button, IButtonTag} from '../../shared/ui';
 
 /* возможно оставить только модель, а данный компонент не использовать как фичу ради фичи */
-export const ChangeRegistrationStepButton: React.FC<IButtonTag> = ({
+export const GoToThePathButton: React.FC<IButtonTag> = ({
   onClick,
   kind,
   text,

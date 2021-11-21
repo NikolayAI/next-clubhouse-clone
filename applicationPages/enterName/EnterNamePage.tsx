@@ -6,7 +6,7 @@ import {useEvent, useStore} from 'effector-react/ssr';
 import {IEnterName} from './types';
 import {$isFullNameNextButtonDisabled} from './model';
 import {
-  ChangeRegistrationStepButton,
+  GoToThePathButton,
   goToEnterInfo,
 } from '../../features';
 import {FullNameInput, userModel} from '../../entities/user';
@@ -47,7 +47,7 @@ const EnterName: React.FC<IEnterName> = ({className}) => {
           setFullName={setFullName}
         />
         <Container className="enter-name-actions">
-          <ChangeRegistrationStepButton
+          <GoToThePathButton
             className="enter-name-button"
             kind="primary"
             text="Next"

@@ -1,2 +1,2 @@
 export * from './chooseAvatarPhoto';
-export * from './registration';
+export * from './goToThePath';

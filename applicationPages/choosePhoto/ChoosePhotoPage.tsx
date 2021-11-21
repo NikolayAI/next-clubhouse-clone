@@ -5,7 +5,7 @@ import {useEvent, useStore} from 'effector-react/ssr';
 
 import {IChoosePhoto} from './types';
 import {
-  ChangeRegistrationStepButton,
+  GoToThePathButton,
   ChooseAvatarPhoto,
   goToEnterPhone,
 } from '../../features';
@@ -47,7 +47,7 @@ const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
           <ChooseAvatarPhoto className="choose-photo" setAvatar={setAvatar}/>
         </Container>
         <Container className="choose-photo-actions">
-          <ChangeRegistrationStepButton
+          <GoToThePathButton
             className="action-button-next"
             kind="primary"
             text="Next"

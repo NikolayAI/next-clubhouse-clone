@@ -5,7 +5,7 @@ import {useEvent} from 'effector-react/ssr';
 
 import {IWelcome} from './types';
 import {
-  ChangeRegistrationStepButton,
+  GoToThePathButton,
   goToEnterName,
 } from '../../features';
 import {
@@ -46,7 +46,7 @@ const Welcome: React.FC<IWelcome> = ({className}) => {
           </P>
         </Container>
         <Container className="welcome-actions">
-          <ChangeRegistrationStepButton
+          <GoToThePathButton
             className="start-auth"
             kind="primary"
             text="Get your username"

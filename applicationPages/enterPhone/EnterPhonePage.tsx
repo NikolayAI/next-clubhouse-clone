@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import {IEnterPhone} from './types';
 import {$isPhoneNextButtonDisabled} from './model';
 import {
-  ChangeRegistrationStepButton,
+  GoToThePathButton,
   goToEnterCode,
 } from '../../features';
 import {PhoneNumberInput, userModel} from '../../entities/user';
@@ -47,7 +47,7 @@ const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
           />
         </Container>
         <Container className="card-button-next">
-          <ChangeRegistrationStepButton
+          <GoToThePathButton
             className="button-next"
             kind="primary"
             text="Next"

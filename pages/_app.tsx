@@ -4,13 +4,13 @@ import {fork, Scope, serialize} from 'effector';
 import {Provider, useGate} from 'effector-react/ssr';
 import {useRouter} from 'next/router';
 
-import {registrationProcessModel} from '../processes';
+import {navigationProcess} from '../processes';
 import {navigatorModel} from '../entities/navigator';
 import {GlobalStyle} from '../shared/styles/globalStyles';
 
 const initProcesses = {
-  ...registrationProcessModel,
-};
+  ...navigationProcess,
+}
 
 let clientScope: Scope;
 

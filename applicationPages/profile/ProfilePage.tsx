@@ -4,24 +4,24 @@ import {useEvent} from 'effector-react/ssr';
 
 import {IProfile} from './types';
 import {Header} from '../../widgets';
-import {Avatar, navigatorModel} from '../../entities';
-import {Pages} from '../../shared/constants';
+import {goToRooms, GoToThePathButton} from '../../features';
+import {Avatar} from '../../entities';
 import {Button, Card, Container, H, P, Span} from '../../shared/ui';
 
 const Profile: React.FC<IProfile> = ({className}) => {
-  const goToThePath = useEvent(navigatorModel.events.pushToThePath);
+  const goToMainPage = useEvent(goToRooms);
   return (
     <>
       <Header/>
       <div className={`profile-page ${className}`}>
         <Container className="profile-navigation" justifyContent="start">
           <Container className="back-from-profile">
-            <Button
+            <GoToThePathButton
               className="button-back"
               kind="link"
               text="Back"
               leadIconUrl="/images/image6.png"
-              onClick={() => goToThePath(Pages.ROOMS)}
+              onClick={goToMainPage}
             />
           </Container>
         </Container>
@@ -75,7 +75,8 @@ export const ProfilePage = styled(Profile)`
     padding: 44px 100px 100px;
   }
 
-  .profile-navigation {
+  .profile-navigation,
+  .profile-info {
     margin-bottom: 44px;
   }
 
@@ -105,14 +106,7 @@ export const ProfilePage = styled(Profile)`
     margin: 0;
   }
 
-  .user-alias {
-    opacity: 0.5;
-  }
-
-  .profile-info {
-    margin-bottom: 44px;
-  }
-
+  .user-alias,
   .follow-info .text {
     opacity: 0.5;
   }

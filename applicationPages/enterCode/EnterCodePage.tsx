@@ -6,7 +6,7 @@ import Image from 'next/image';
 import {IEnterCode} from './types';
 import {$isCodeActivateButtonDisabled} from './model';
 import {
-  ChangeRegistrationStepButton,
+  GoToThePathButton,
   goToRooms,
 } from '../../features';
 import {CodeInput, userModel} from '../../entities/user';
@@ -42,7 +42,7 @@ const EnterCode: React.FC<IEnterCode> = ({className}) => {
           />
         </Container>
         <Container className="card-actions">
-          <ChangeRegistrationStepButton
+          <GoToThePathButton
             kind="primary"
             text="Activate"
             loadingDescription="Activate in progress..."
