@@ -9,6 +9,7 @@ import {
   goToEnterName,
 } from '../../features';
 import {
+  Badge,
   Button,
   Card,
   Container,

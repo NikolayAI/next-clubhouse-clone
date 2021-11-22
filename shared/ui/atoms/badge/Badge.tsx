@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {Span} from '../span';
 import {IBadgeComponent} from './types';
+import {backgroundColors, borders, boxShadows, titleColors} from './constants';
 
 const BadgeComponent: React.FC<IBadgeComponent> = ({
   title,
@@ -32,10 +33,10 @@ export const Badge = styled(BadgeComponent)`
     height: 46px;
     width: min-content;
     padding: 0 20px;
-    background-color: ${({checked}) => checked ? '#5677AD' : '#FFFFFF'};
-    border: ${({checked}) => `1px solid ${checked ? '#5677AD' : '#E8E3D7'}`};
+    background-color: ${({checked}) => backgroundColors[`${checked}`]};
+    border: ${({checked}) => borders[`${checked}`]};
     border-radius: 15px;
-    box-shadow: ${({checked}) => checked ? 'inset 0 3px 1px rgba(0, 0, 0, 0.15)' : '0 2px 1px rgba(0, 0, 0, 0.05)'};
+    box-shadow: ${({checked}) => boxShadows[`${checked}`]};
     cursor: pointer;
   }
 
@@ -46,6 +47,6 @@ export const Badge = styled(BadgeComponent)`
   
   .badge-title {
     line-height: initial;
-    color: ${({checked}) => checked && '#FFFFFF'};
+    color: ${({checked}) => titleColors[`${checked}`]};
   }
 `;

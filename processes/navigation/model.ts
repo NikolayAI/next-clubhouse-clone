@@ -10,7 +10,7 @@ import {
   goToRooms,
   goToProfile,
 } from '../../features';
-import {navigatorModel} from '../../entities/navigator';
+import {navigatorModel} from '../../entities';
 import {Pages} from '../../shared/constants';
 
 forward({

@@ -2,7 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {IButtonTag} from './types';
-import {backgroundColors, borders, colors} from './constants';
+import {
+  alignContents,
+  backgroundColors,
+  borders,
+  colors,
+  cursors,
+  displays,
+  hoverOpacity,
+  justifyContents,
+  paddings,
+  widths,
+} from './constants';
 import {Spinner} from '../spinner';
 
 const ButtonTag: React.FC<IButtonTag> = ({
@@ -54,27 +65,24 @@ const ButtonTag: React.FC<IButtonTag> = ({
 
 export const Button = styled(ButtonTag)`
   & {
-    display: ${({iconUrl}) => iconUrl && 'grid'};
-    justify-content: ${({iconUrl}) => iconUrl && 'center'};
-    align-content: ${({iconUrl}) => iconUrl && 'center'};
+    display: ${({iconUrl}) => displays[`${!!iconUrl}`]};
+    justify-content: ${({iconUrl}) => justifyContents[`${!!iconUrl}`]};
+    align-content: ${({iconUrl}) => alignContents[`${!!iconUrl}`]};
     height: 48px;
-    width: ${({iconUrl}) => iconUrl ? '48px' : 'max-content'};
-    padding: ${({text}) => text && '0 24px'};
+    width: ${({iconUrl}) => widths[`${!!iconUrl}`]};
+    padding: ${({text}) => paddings[`${!!text}`]};
     color: ${({kind}) => colors[kind]};
     font-family: inherit;
     font-size: 18px;
     font-weight: 700;
     border: ${({kind}) => borders[kind]};
     border-radius: 30px;
-    background-color: ${({
-      disabled,
-      kind,
-    }) => disabled ? '#DAD6CA' : backgroundColors[kind]};
-    cursor: ${({disabled}) => disabled ? 'not-allowed' : 'pointer'};
+    background-color: ${({disabled, kind}) => backgroundColors[disabled ? 'disabled' : kind]};
+    cursor: ${({disabled}) => cursors[`${disabled}`]};
   }
 
   &:hover {
-    opacity: ${({disabled}) => disabled ? 1 : 0.9};
+    opacity: ${({disabled}) => hoverOpacity[`${disabled}`]};
   }
 
   .button-text,
