@@ -7,7 +7,6 @@ import {
   backgroundColors,
   borders,
   colors,
-  cursors,
   displays,
   hoverOpacity,
   justifyContents,
@@ -32,7 +31,11 @@ const ButtonTag: React.FC<IButtonTag> = ({
   ...props
 }) => {
   return (
-    <button className={`button ${className}`} disabled={disabled} {...props}>
+    <button
+      className={`button ${className} ${disabled ? 'disabled' : ''}`}
+      disabled={disabled}
+      {...props}
+    >
       {leadIconUrl && <img
           className="button-lead-icon"
           src={leadIconUrl}
@@ -77,12 +80,17 @@ export const Button = styled(ButtonTag)`
     font-weight: 700;
     border: ${({kind}) => borders[kind]};
     border-radius: 30px;
-    background-color: ${({disabled, kind}) => backgroundColors[disabled ? 'disabled' : kind]};
-    cursor: ${({disabled}) => cursors[`${disabled}`]};
+    background-color: ${({kind}) => backgroundColors[kind]};
+    cursor: pointer;
   }
 
   &:hover {
     opacity: ${({disabled}) => hoverOpacity[`${disabled}`]};
+  }
+
+  &.disabled {
+    background-color: #DAD6CA;
+    cursor: not-allowed;
   }
 
   .button-text,

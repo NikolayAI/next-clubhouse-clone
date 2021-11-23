@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {ICardComponent} from './types';
-import {paddings} from './constants';
+import {paddings, widths} from './constants';
 
 const CardComponent: React.FC<ICardComponent> = ({
   className,
@@ -19,7 +19,7 @@ const CardComponent: React.FC<ICardComponent> = ({
 export const Card = styled(CardComponent)`
   & {
     height: max-content;
-    width: ${({fullWidth}) => fullWidth ? 'auto' : 'max-content'};
+    width: ${({fullWidth}) => widths[`${fullWidth}`]};
     padding: ${({kind}) => paddings[kind]};
     background-color: #FFFFFF;
     border: 1px solid #E8E3D7;

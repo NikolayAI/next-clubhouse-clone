@@ -14,7 +14,7 @@ export const PTag: React.FC<IPTag> = ({
 };
 
 export const P = styled(PTag)`
-  font-size: ${({kind}) => fontSizes[kind] ?? '14px'};
-  line-height: ${({kind}) => lineHeights[kind] ?? '20px'};
+  font-size: ${({kind}) => fontSizes[kind]};
+  line-height: ${({kind}) => lineHeights[kind]};
   font-weight: 400;
 `;
