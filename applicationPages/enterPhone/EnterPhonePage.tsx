@@ -4,17 +4,13 @@ import {useEvent, useStore} from 'effector-react/ssr';
 import styled from 'styled-components';
 
 import {IEnterPhone} from './types';
-import {$isPhoneNextButtonDisabled} from './model';
-import {
-  GoToThePathButton,
-  goToEnterCode,
-} from '../../features';
+import {goToEnterCode, GoToThePathButton} from '../../features';
 import {PhoneNumberInput, userModel} from '../../entities/user';
 import {Card, Container, H, P, PageWrapper, Span} from '../../shared/ui';
 
 const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
   const phoneNumber = useStore(userModel.stores.$phoneNumber);
-  const isNextButtonDisable = useStore($isPhoneNextButtonDisabled);
+  const isPhoneNumberValid = useStore(userModel.stores.$isPhoneNumberValid);
   const setPhoneNumber = useEvent(userModel.events.setPhoneNumber);
   const goToNextPage = useEvent(goToEnterCode);
   return (
@@ -52,7 +48,7 @@ const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
             kind="primary"
             text="Next"
             suffixIconUrl="/icons/arrowRight.svg"
-            disabled={isNextButtonDisable}
+            disabled={!isPhoneNumberValid}
             onClick={goToNextPage}
           />
         </Container>

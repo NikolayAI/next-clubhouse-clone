@@ -1,5 +1,6 @@
 import {createEvent, createStore, restore} from 'effector';
 import {NumberFormatValues} from 'react-number-format';
+
 import {ICodeNumber, ICodeNumberEventParam} from './types';
 
 const setFullName = createEvent<string>();
@@ -18,8 +19,21 @@ const $codeNumber = createStore<ICodeNumber>({
   3: '',
   4: '',
 });
+
 $codeNumber.on(setCodeNumber, (state, {id, value}) => {
   return {...state, [id]: value};
+});
+
+const $isFullNameValid = $fullName.map((fullName) => {
+  return fullName.length > 0;
+});
+
+const $isPhoneNumberValid = $phoneNumber.map(({formattedValue}) => {
+  return formattedValue?.length === 18 && !formattedValue?.includes('_');
+});
+
+const $isCodeNumberValid = $codeNumber.map((codeNumber) => {
+  return Object.values(codeNumber).every((number) => !!number);
 });
 
 export const events = {
@@ -30,8 +44,11 @@ export const events = {
 };
 
 export const stores = {
-  $fullName,
   $avatar,
+  $fullName,
+  $isFullNameValid,
   $phoneNumber,
+  $isPhoneNumberValid,
   $codeNumber,
+  $isCodeNumberValid,
 };

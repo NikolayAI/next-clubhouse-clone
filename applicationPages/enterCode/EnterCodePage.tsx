@@ -4,17 +4,13 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 import {IEnterCode} from './types';
-import {$isCodeActivateButtonDisabled} from './model';
-import {
-  GoToThePathButton,
-  goToRooms,
-} from '../../features';
+import {goToRooms, GoToThePathButton} from '../../features';
 import {CodeInput, userModel} from '../../entities/user';
 import {Card, Container, H, P, PageWrapper} from '../../shared/ui';
 
 const EnterCode: React.FC<IEnterCode> = ({className}) => {
   const codes = useStore(userModel.stores.$codeNumber);
-  const isActivateButtonDisabled = useStore($isCodeActivateButtonDisabled);
+  const isCodeNumberValid = useStore(userModel.stores.$isCodeNumberValid);
   const setCodeNumber = useEvent(userModel.events.setCodeNumber);
   const goToNextPage = useEvent(goToRooms);
   return (
@@ -48,7 +44,7 @@ const EnterCode: React.FC<IEnterCode> = ({className}) => {
             loadingDescription="Activate in progress..."
             suffixIconUrl="/icons/arrowRight.svg"
             onClick={goToNextPage}
-            disabled={isActivateButtonDisabled}
+            disabled={!isCodeNumberValid}
           />
         </Container>
         <Container className="card-description" textAlign="center">
