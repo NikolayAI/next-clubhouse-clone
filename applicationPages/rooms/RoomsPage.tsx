@@ -29,7 +29,7 @@ const Rooms: React.FC<IRooms> = ({className}) => {
             />
           </Container>
         </Container>
-        <Container>
+        <Container justifyContent="start">
           <ConversationCard/>
         </Container>
       </div>
@@ -49,7 +49,7 @@ export const RoomsPage = styled(Rooms)`
   }
 
   .nav-title {
-    margin-right: 26px;
+    margin: 0 26px 0 0;
   }
 
   .button-explore .button-lead-icon {

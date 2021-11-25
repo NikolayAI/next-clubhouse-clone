@@ -9,6 +9,7 @@ import {
   goToEnterCode,
   goToRooms,
   goToProfile,
+  goToRoom,
 } from '../../features';
 import {navigatorModel} from '../../entities';
 import {Pages} from '../../shared/constants';
@@ -51,6 +52,11 @@ forward({
 forward({
   from: goToRooms,
   to: navigatorModel.events.pushToThePath.prepend(() => Pages.ROOMS),
+});
+
+forward({
+  from: goToRoom,
+  to: navigatorModel.events.pushToThePath.prepend(() => `${Pages.ROOMS}/2314`),
 });
 
 export const navigationProcess = {};

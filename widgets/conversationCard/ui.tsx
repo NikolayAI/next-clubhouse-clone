@@ -1,16 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import {useEvent} from 'effector-react/ssr';
 
 import {IConversationCardComponent} from './types';
 import {Avatar} from '../../entities';
 import {Card, Container, H, Span} from '../../shared/ui';
+import {goToRoom} from '../../features';
 
 const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
   className,
 }) => {
+  const goToRoomPage = useEvent(goToRoom);
   return (
-    <Card className={`conversation ${className}`} kind="sm">
+    <Card
+      className={`conversation ${className}`}
+      kind="sm"
+      onClick={goToRoomPage}
+    >
       <Container
         className="conversation-container"
         gridAutoFlow="row"
@@ -38,6 +45,15 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
             alignItems="start"
           >
             <Container gridAutoFlow="row">
+              <Span className="name" kind="sm" fontWeight="normal">
+                Bruce Lee
+                <Image
+                  src="/images/image10.png"
+                  alt="talk"
+                  height={14}
+                  width={14}
+                />
+              </Span>
               <Span className="name" kind="sm" fontWeight="normal">
                 Bruce Lee
                 <Image
@@ -90,8 +106,8 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
 
 export const ConversationCard = styled(ConversationCardComponent)`
   & {
-    height: 180px;
     width: 380px;
+    cursor: pointer;
   }
 
   .conversation-container,
@@ -100,9 +116,9 @@ export const ConversationCard = styled(ConversationCardComponent)`
   .conversation-statistics {
     height: 100%;
   }
-  
+
   .conversation-title {
-    margin: 0;
+    margin-top: 0;
   }
 
   .speakers-avatars {
@@ -111,7 +127,7 @@ export const ConversationCard = styled(ConversationCardComponent)`
     margin-right: 20px;
     position: relative;
   }
-  
+
   .second-avatar {
     position: absolute;
     top: 26px;
@@ -122,11 +138,15 @@ export const ConversationCard = styled(ConversationCardComponent)`
   .stat > span {
     margin-left: 8px !important;
   }
-  
+
+  .conversation-description {
+    margin-bottom: 26px;
+  }
+
   .stat + .stat {
     margin-left: 16px;
   }
-  
+
   .stat {
     opacity: 0.5;
   }

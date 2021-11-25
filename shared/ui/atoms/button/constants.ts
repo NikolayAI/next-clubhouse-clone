@@ -10,7 +10,7 @@ export const backgroundColors: Record<string, string> = {
   disabled: '#DAD6CA',
   primary: '#5677AD',
   secondary: '#20BD5F',
-  ghost: '#D2CDC0',
+  ghost: '#F2F2F2',
   outline: 'transparent',
   link: 'transparent',
 };

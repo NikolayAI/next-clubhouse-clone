@@ -6,3 +6,4 @@ export {EnterPhonePage} from './enterPhone';
 export {EnterCodePage} from './enterCode';
 export {ProfilePage} from './profile';
 export {RoomsPage} from './rooms';
+export {RoomPage} from './room';
