@@ -5,7 +5,7 @@ import {useGate} from "effector-react/ssr";
 
 import {navigatorModel} from "../../entities/navigator";
 
-// TODO сделать нормальный хок
+// TODO сделать нормальный hoc
 export const WithRouterComponent = ({Component, pageProps}: AppProps) => {
     const router = useRouter();
     useGate(navigatorModel.events.NavigatorGate, router);
