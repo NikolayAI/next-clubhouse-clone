@@ -5,11 +5,13 @@ import {useEvent, useStore} from 'effector-react/ssr';
 
 import {IChoosePhoto} from './types';
 import {
-  GoToThePathButton,
   ChooseAvatarPhoto,
+} from '../../features/chooseAvatarPhoto';
+import {
+  GoToThePathButton,
   goToEnterPhone,
-} from '../../features';
-import {Avatar, userModel} from '../../entities';
+} from '../../features/goToThePath';
+import {Avatar, userModel} from '../../entities/user';
 import {Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {

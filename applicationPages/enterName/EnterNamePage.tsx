@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {useEvent, useStore} from 'effector-react/ssr';
 
 import {IEnterName} from './types';
-import {goToEnterInfo, GoToThePathButton} from '../../features';
+import {goToEnterInfo, GoToThePathButton} from '../../features/goToThePath';
 import {FullNameInput, userModel} from '../../entities/user';
 import {Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 

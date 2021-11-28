@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import {useEvent} from 'effector-react/ssr';
 
 import {IRoomPage} from './types';
-import {Header} from '../../widgets';
-import {goToRooms, GoToThePathButton} from '../../features';
+import {Header} from '../../widgets/header';
+import {goToRooms, GoToThePathButton} from '../../features/goToThePath';
 import {Card, Container, H} from '../../shared/ui';
 
 export const Room: React.FC<IRoomPage> = ({className}) => {

@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {IRooms} from './types';
-import {ConversationCard, Header} from '../../widgets';
+import {Header} from '../../widgets/header';
+import {ConversationCard} from '../../widgets/conversationCard';
 import {Button, Container, H} from '../../shared/ui';
 
 const Rooms: React.FC<IRooms> = ({className}) => {

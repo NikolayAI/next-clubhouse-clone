@@ -4,9 +4,9 @@ import Image from 'next/image';
 import {useEvent} from 'effector-react/ssr';
 
 import {IConversationCardComponent} from './types';
-import {Avatar} from '../../entities';
+import {goToRoom} from '../../features/goToThePath';
+import {Avatar} from '../../entities/user';
 import {Card, Container, H, Span} from '../../shared/ui';
-import {goToRoom} from '../../features';
 
 const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
   className,

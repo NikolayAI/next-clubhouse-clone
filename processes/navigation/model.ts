@@ -10,8 +10,8 @@ import {
   goToRooms,
   goToProfile,
   goToRoom,
-} from '../../features';
-import {navigatorModel} from '../../entities';
+} from '../../features/goToThePath';
+import {navigatorModel} from '../../entities/navigator';
 import {Pages} from '../../shared/constants';
 
 forward({

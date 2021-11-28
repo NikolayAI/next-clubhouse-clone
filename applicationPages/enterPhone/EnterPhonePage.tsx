@@ -4,7 +4,7 @@ import {useEvent, useStore} from 'effector-react/ssr';
 import styled from 'styled-components';
 
 import {IEnterPhone} from './types';
-import {goToEnterCode, GoToThePathButton} from '../../features';
+import {goToEnterCode, GoToThePathButton} from '../../features/goToThePath';
 import {PhoneNumberInput, userModel} from '../../entities/user';
 import {Card, Container, H, P, PageWrapper, Span} from '../../shared/ui';
 

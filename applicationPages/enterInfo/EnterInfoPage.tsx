@@ -4,8 +4,8 @@ import Image from 'next/image';
 import {useEvent} from 'effector-react/ssr';
 
 import {IEnterInfo} from './types';
-import {GoToThePathButton, goToChoosePhoto} from '../../features';
-import {Avatar} from '../../entities';
+import {GoToThePathButton, goToChoosePhoto} from '../../features/goToThePath';
+import {Avatar} from '../../entities/user';
 import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
 
 const EnterInfo: React.FC<IEnterInfo> = ({className}) => {

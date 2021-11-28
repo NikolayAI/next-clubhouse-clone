@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import {useEvent} from 'effector-react/ssr';
 
 import {IHeaderComponent} from './types';
-import {goToHome, goToProfile, GoToThePathButton} from '../../features';
-import {Avatar} from '../../entities';
+import {goToHome, goToProfile, GoToThePathButton} from '../../features/goToThePath';
+import {Avatar} from '../../entities/user';
 import {Container} from '../../shared/ui';
 
 const HeaderComponent: React.FC<IHeaderComponent> = ({className}) => {
