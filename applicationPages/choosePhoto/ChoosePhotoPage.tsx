@@ -1,20 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useEvent, useStore} from 'effector-react/ssr';
+import { useEvent, useStore } from 'effector-react/ssr';
 
-import {IChoosePhoto} from './types';
-import {
-  ChooseAvatarPhoto,
-} from '../../features/chooseAvatarPhoto';
-import {
-  GoToThePathButton,
-  goToEnterPhone,
-} from '../../features/goToThePath';
-import {Avatar, userModel} from '../../entities/user';
-import {Card, Container, H, PageWrapper, Span} from '../../shared/ui';
+import { IChoosePhoto } from './types';
+import { ChooseAvatarPhoto } from '../../features/chooseAvatarPhoto';
+import { GoToThePathButton, goToEnterPhone } from '../../features/goToThePath';
+import { Avatar, userModel } from '../../entities/user';
+import { Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
-const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
+const ChoosePhoto: React.FC<IChoosePhoto> = ({ className }) => {
   const userAvatar = useStore(userModel.stores.$avatar);
   const setAvatar = useEvent(userModel.events.setAvatar);
   const goToNextPage = useEvent(goToEnterPhone);
@@ -43,10 +38,10 @@ const ChoosePhoto: React.FC<IChoosePhoto> = ({className}) => {
       </Container>
       <Card className="choose-photo-card" kind="md">
         <Container className="avatar-container">
-          <Avatar className="avatar-photo" kind="lg" imageUrl={userAvatar}/>
+          <Avatar className="avatar-photo" kind="lg" imageUrl={userAvatar} />
         </Container>
         <Container className="choose-photo-actions">
-          <ChooseAvatarPhoto className="choose-photo" setAvatar={setAvatar}/>
+          <ChooseAvatarPhoto className="choose-photo" setAvatar={setAvatar} />
         </Container>
         <Container className="choose-photo-actions">
           <GoToThePathButton
@@ -69,7 +64,7 @@ export const ChoosePhotoPage = styled(ChoosePhoto)`
 
   .action-button-different {
     margin-bottom: 20px;
-    color: #4F6FA5;
+    color: #4f6fa5;
     font-size: 16px;
     font-weight: normal;
   }
