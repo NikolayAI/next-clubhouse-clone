@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useEvent} from 'effector-react/ssr';
+import { useEvent } from 'effector-react/ssr';
 
-import {IProfile} from './types';
-import {Header} from '../../widgets/header';
-import {goToRooms, GoToThePathButton} from '../../features/goToThePath';
-import {Avatar} from '../../entities/user';
-import {Button, Card, Container, H, P, Span} from '../../shared/ui';
+import { IProfile } from './types';
+import { Header } from '../../widgets/header';
+import { goToRooms, GoToThePathButton } from '../../features/goToThePath';
+import { Avatar } from '../../entities/user';
+import { Button, Card, Container, H, P, Span } from '../../shared/ui';
 
-const Profile: React.FC<IProfile> = ({className}) => {
+const Profile: React.FC<IProfile> = ({ className }) => {
   const goToMainPage = useEvent(goToRooms);
   return (
     <>
-      <Header/>
+      <Header />
       <div className={`profile-page ${className}`}>
         <Container className="profile-navigation" justifyContent="start">
           <Container className="back-from-profile">
@@ -27,12 +27,16 @@ const Profile: React.FC<IProfile> = ({className}) => {
         </Container>
         <Container className="profile-info" justifyContent="space-between">
           <Container className="user-info">
-            <Avatar kind="lg"/>
+            <Avatar kind="lg" />
             <Container gridAutoFlow="row">
-              <H className="user-name" tag="h1" kind="xl">User Name</H>
-              <Span className="user-alias" kind="md">@alias</Span>
+              <H className="user-name" tag="h1" kind="xl">
+                User Name
+              </H>
+              <Span className="user-alias" kind="md">
+                @alias
+              </Span>
             </Container>
-            <Button className="button-follow" text="Follow" kind="outline"/>
+            <Button className="button-follow" text="Follow" kind="outline" />
           </Container>
           <Card className="follow-info" kind="sm">
             <Container>
@@ -41,16 +45,24 @@ const Profile: React.FC<IProfile> = ({className}) => {
                 gridAutoFlow="row"
                 textAlign="center"
               >
-                <Span className="number" kind="xl">2</Span>
-                <Span className="text" kind="md">followers</Span>
+                <Span className="number" kind="xl">
+                  2
+                </Span>
+                <Span className="text" kind="md">
+                  followers
+                </Span>
               </Container>
               <Container
                 className="following"
                 gridAutoFlow="row"
                 textAlign="center"
               >
-                <Span className="number" kind="xl">0</Span>
-                <Span className="text" kind="md">following</Span>
+                <Span className="number" kind="xl">
+                  0
+                </Span>
+                <Span className="text" kind="md">
+                  following
+                </Span>
               </Container>
             </Container>
           </Card>

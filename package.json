@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "clsx": "^1.1.1",
@@ -26,6 +27,7 @@
     "babel-plugin-styled-components": "^1.13.3",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
     "prettier": "^2.5.0",
@@ -37,8 +39,6 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
-    ]
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
