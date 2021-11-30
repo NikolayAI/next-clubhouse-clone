@@ -1,16 +1,26 @@
 import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
-import {useEvent} from 'effector-react/ssr';
+import { useEvent } from 'effector-react/ssr';
 
-import {IWelcome} from './types';
-import {goToEnterName, GoToThePathButton} from "../../features/goToThePath";
-import {Button, Card, Container, H, P, PageWrapper, Span,} from '../../shared/ui';
+import { IWelcome } from './types';
+import { goToEnterName, GoToThePathButton } from '../../features/goToThePath';
+import {
+  Badge,
+  Button,
+  Card,
+  Container,
+  H,
+  P,
+  PageWrapper,
+  Span,
+} from '../../shared/ui';
 
-const Welcome: React.FC<IWelcome> = ({className}) => {
+const Welcome: React.FC<IWelcome> = ({ className }) => {
   const goToNextPage = useEvent(goToEnterName);
   return (
     <PageWrapper className={`welcome ${className}`}>
+      <Badge title="sjhdgc" iconUrl="/images/image2.png" />
       <Card className="welcome-card" kind="md">
         <Container className="welcome-title">
           <div className="title-icon-container">
@@ -28,10 +38,9 @@ const Welcome: React.FC<IWelcome> = ({className}) => {
         </Container>
         <Container className="welcome-description" textAlign="center">
           <P className="description-text" kind="md">
-            We’re working hard to get Clubhouse ready for
-            everyone! While we wrap up the finishing youches,
-            we’re adding people gradually to make sure nothing
-            breaks :)
+            We’re working hard to get Clubhouse ready for everyone! While we
+            wrap up the finishing youches, we’re adding people gradually to make
+            sure nothing breaks :)
           </P>
         </Container>
         <Container className="welcome-actions">
@@ -49,7 +58,11 @@ const Welcome: React.FC<IWelcome> = ({className}) => {
           </Span>
           <Button
             className="options-button-sign-in"
-            text={<Span className="options-action" kind="xs">Sign in</Span>}
+            text={
+              <Span className="options-action" kind="xs">
+                Sign in
+              </Span>
+            }
             kind="link"
           />
         </Container>
@@ -72,13 +85,13 @@ export const WelcomePage = styled(Welcome)`
   }
 
   .welcome-options {
-    color: #4F6FA5;
+    color: #4f6fa5;
   }
 
   .options-button-sign-in {
     margin-left: 4px;
     padding: 0;
-    color: #4F6FA5;
+    color: #4f6fa5;
     cursor: pointer;
   }
 `;

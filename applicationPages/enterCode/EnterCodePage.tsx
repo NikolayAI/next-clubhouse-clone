@@ -1,14 +1,14 @@
 import React from 'react';
-import {useEvent, useStore} from 'effector-react/ssr';
+import { useEvent, useStore } from 'effector-react/ssr';
 import styled from 'styled-components';
 import Image from 'next/image';
 
-import {IEnterCode} from './types';
-import {goToRooms, GoToThePathButton} from '../../features/goToThePath';
-import {CodeInput, userModel} from '../../entities/user';
-import {Card, Container, H, P, PageWrapper} from '../../shared/ui';
+import { IEnterCode } from './types';
+import { goToRooms, GoToThePathButton } from '../../features/goToThePath';
+import { CodeInput, userModel } from '../../entities/user';
+import { Card, Container, H, P, PageWrapper } from '../../shared/ui';
 
-const EnterCode: React.FC<IEnterCode> = ({className}) => {
+const EnterCode: React.FC<IEnterCode> = ({ className }) => {
   const codes = useStore(userModel.stores.$codeNumber);
   const isCodeNumberValid = useStore(userModel.stores.$isCodeNumberValid);
   const setCodeNumber = useEvent(userModel.events.setCodeNumber);
@@ -26,7 +26,9 @@ const EnterCode: React.FC<IEnterCode> = ({className}) => {
           />
         </Container>
         <Container className="title-heading">
-          <H className="heading" tag="h1" kind="md">Enter your activate code</H>
+          <H className="heading" tag="h1" kind="md">
+            Enter your activate code
+          </H>
         </Container>
       </Container>
       <Card className="enter-code-card" kind="md">
@@ -49,8 +51,8 @@ const EnterCode: React.FC<IEnterCode> = ({className}) => {
         </Container>
         <Container className="card-description" textAlign="center">
           <P kind="sm">
-            By entering your number, you’re agreeing to our Terms of Service
-            and Privacy Policy. Thanks!
+            By entering your number, you’re agreeing to our Terms of Service and
+            Privacy Policy. Thanks!
           </P>
         </Container>
       </Card>
@@ -73,6 +75,6 @@ export const EnterCodePage = styled(EnterCode)`
 
   .card-description {
     width: 330px;
-    color: #817F7A;
+    color: #817f7a;
   }
 `;

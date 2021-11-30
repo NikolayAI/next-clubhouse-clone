@@ -1,8 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Span} from '../span';
-import {IBadgeComponent} from './types';
-import {backgroundColors, borders, boxShadows, titleColors} from './constants';
+import Image from 'next/image';
+
+import { Span } from '../span';
+import { IBadgeComponent } from './types';
+import {
+  backgroundColors,
+  borders,
+  boxShadows,
+  titleColors,
+} from './constants';
 
 const BadgeComponent: React.FC<IBadgeComponent> = ({
   title,
@@ -13,14 +20,18 @@ const BadgeComponent: React.FC<IBadgeComponent> = ({
 }) => {
   return (
     <div className={`badge ${className}`} {...props}>
-      {iconUrl && <img
+      {iconUrl && (
+        <Image
           className="badge-icon"
           src={iconUrl}
           alt="badge icon"
           height={18}
           width={18}
-      />}
-      <Span className="badge-title" kind="sm">{title}</Span>
+        />
+      )}
+      <Span className="badge-title" kind="sm">
+        {title}
+      </Span>
     </div>
   );
 };
@@ -31,22 +42,24 @@ export const Badge = styled(BadgeComponent)`
     grid-template-columns: auto 1fr;
     align-content: center;
     height: 46px;
-    width: min-content;
+    width: max-content;
     padding: 0 20px;
-    background-color: ${({checked}) => backgroundColors[`${checked}`]};
-    border: ${({checked}) => borders[`${checked}`]};
+    background-color: ${({ checked }) => backgroundColors[`${checked}`]};
+    border: ${({ checked }) => borders[`${checked}`]};
     border-radius: 15px;
-    box-shadow: ${({checked}) => boxShadows[`${checked}`]};
+    box-shadow: ${({ checked }) => boxShadows[`${checked}`]};
     cursor: pointer;
   }
 
-  .badge-icon {
+  & > span {
+    height: 18px !important;
+    width: 18px !important;
     object-fit: cover;
-    margin-right: 8px;
   }
-  
+
   .badge-title {
     line-height: initial;
-    color: ${({checked}) => titleColors[`${checked}`]};
+    color: ${({ checked }) => titleColors[`${checked}`]};
+    margin-left: 8px;
   }
 `;
