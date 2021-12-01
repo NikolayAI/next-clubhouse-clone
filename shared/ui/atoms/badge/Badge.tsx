@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
-import { Span } from '../span';
 import { IBadgeComponent } from './types';
 import {
   backgroundColors,
@@ -10,6 +9,7 @@ import {
   boxShadows,
   titleColors,
 } from './constants';
+import { Span } from '../span';
 
 const BadgeComponent: React.FC<IBadgeComponent> = ({
   title,
@@ -51,9 +51,9 @@ export const Badge = styled(BadgeComponent)`
     cursor: pointer;
   }
 
-  & > span {
-    height: 18px !important;
-    width: 18px !important;
+  & + span {
+    height: 18px;
+    width: 18px;
     object-fit: cover;
   }
 

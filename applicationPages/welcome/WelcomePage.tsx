@@ -6,7 +6,6 @@ import { useEvent } from 'effector-react/ssr';
 import { IWelcome } from './types';
 import { goToEnterName, GoToThePathButton } from '../../features/goToThePath';
 import {
-  Badge,
   Button,
   Card,
   Container,
@@ -20,8 +19,8 @@ const Welcome: React.FC<IWelcome> = ({ className }) => {
   const goToNextPage = useEvent(goToEnterName);
   return (
     <PageWrapper className={`welcome ${className}`}>
-      <Badge title="sjhdgc" iconUrl="/images/image2.png" />
       <Card className="welcome-card" kind="md">
+        <Button kind="primary" iconUrl="/images/image2.png" />
         <Container className="welcome-title">
           <div className="title-icon-container">
             <Image
