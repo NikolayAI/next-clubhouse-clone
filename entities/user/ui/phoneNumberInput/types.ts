@@ -1,4 +1,4 @@
-import {NumberFormatValues} from 'react-number-format';
+import { NumberFormatValues } from 'react-number-format';
 
 export interface IEnterPhoneNumber {
   phoneNumber: NumberFormatValues;

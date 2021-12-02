@@ -1,13 +1,17 @@
 import React from 'react';
-import NumberFormat, {NumberFormatValues} from 'react-number-format';
+import NumberFormat, { NumberFormatValues } from 'react-number-format';
 
-import {Input} from '../../../../shared/ui';
-import {IEnterPhoneNumber} from './types';
+import { Input } from '../../../../shared/ui';
+import { IEnterPhoneNumber } from './types';
 
-export const PhoneNumberInput: React.FC<IEnterPhoneNumber> = ({phoneNumber, setPhoneNumber, className}) => {
+export const PhoneNumberInput: React.FC<IEnterPhoneNumber> = ({
+  phoneNumber,
+  setPhoneNumber,
+  className,
+}) => {
   const handleChange = (value: NumberFormatValues) => {
-    setPhoneNumber(value)
-  }
+    setPhoneNumber(value);
+  };
   return (
     <NumberFormat
       className={`input ${className}`}

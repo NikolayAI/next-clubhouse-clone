@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {Input} from '../../../../shared/ui';
-import {ICodeInputComponent} from './types';
+import { Input } from '../../../../shared/ui';
+import { ICodeInputComponent } from './types';
 
 const CodeInputComponent: React.FC<ICodeInputComponent> = ({
   codes,
@@ -42,29 +42,25 @@ const CodeInputComponent: React.FC<ICodeInputComponent> = ({
     }, 0);
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    id: number,
-  ) => {
-    setCodes({id, value: e.target.value});
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, id: number) => {
+    setCodes({ id, value: e.target.value });
     focusNextElement(e);
   };
 
   return (
     <div className={`code-input ${className}`}>
-      {codeInputsConfig.map(({id, value, inputDisabled}) => (
-          <Input
-            key={id}
-            className={`input input-code-${id}`}
-            kind="code"
-            maxLength={1}
-            placeholder="X"
-            value={value}
-            disabled={disabled || inputDisabled}
-            onChange={(e) => handleChange(e, id)}
-          />
-        ),
-      )}
+      {codeInputsConfig.map(({ id, value, inputDisabled }) => (
+        <Input
+          key={id}
+          className={`input input-code-${id}`}
+          kind="code"
+          maxLength={1}
+          placeholder="X"
+          value={value}
+          disabled={disabled || inputDisabled}
+          onChange={(e) => handleChange(e, id)}
+        />
+      ))}
     </div>
   );
 };

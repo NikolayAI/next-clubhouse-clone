@@ -1,19 +1,12 @@
 import React from 'react';
-import type {NextPage} from 'next';
+import type { NextPage } from 'next';
 
-import {WelcomePage} from '../applicationPages';
-
-// 0: WelcomePage,
-// 1: EnterNamePage,
-// 2: EnterInfoPage,
-// 3: ChoosePhotoPage,
-// 4: EnterPhonePage,
-// 5: EnterCodePage,
+import { WelcomePage } from '../applicationPages';
 
 const Home: NextPage = () => {
   return (
     <div>
-      <WelcomePage/>
+      <WelcomePage />
     </div>
   );
 };

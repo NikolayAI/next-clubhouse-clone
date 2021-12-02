@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {IPTag} from './types';
-import {fontSizes, lineHeights} from './constants';
+import { IPTag } from './types';
+import { fontSizes, lineHeights } from './constants';
 
 export const PTag: React.FC<IPTag> = ({
   kind,
@@ -10,11 +10,15 @@ export const PTag: React.FC<IPTag> = ({
   children,
   ...props
 }) => {
-  return <p className={className} {...props}>{children}</p>;
+  return (
+    <p className={className} {...props}>
+      {children}
+    </p>
+  );
 };
 
 export const P = styled(PTag)`
-  font-size: ${({kind}) => fontSizes[kind]};
-  line-height: ${({kind}) => lineHeights[kind]};
+  font-size: ${({ kind }) => fontSizes[kind]};
+  line-height: ${({ kind }) => lineHeights[kind]};
   font-weight: 400;
 `;

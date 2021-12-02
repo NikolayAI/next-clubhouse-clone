@@ -1,7 +1,7 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 
-import {IChooseAvatarPhoto} from './types';
-import {Button} from '../../shared/ui';
+import { IChooseAvatarPhoto } from './types';
+import { Button } from '../../shared/ui';
 
 export const ChooseAvatarPhoto: React.FC<IChooseAvatarPhoto> = ({
   setAvatar,
@@ -28,12 +28,7 @@ export const ChooseAvatarPhoto: React.FC<IChooseAvatarPhoto> = ({
         text="Choose a different photo"
         onClick={handleClick}
       />
-      <input
-        ref={inputRef}
-        type="file"
-        onChange={handleChange}
-        hidden
-      />
+      <input ref={inputRef} type="file" onChange={handleChange} hidden />
     </>
   );
 };

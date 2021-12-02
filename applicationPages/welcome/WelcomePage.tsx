@@ -20,7 +20,6 @@ const Welcome: React.FC<IWelcome> = ({ className }) => {
   return (
     <PageWrapper className={`welcome ${className}`}>
       <Card className="welcome-card" kind="md">
-        <Button kind="primary" iconUrl="/images/image2.png" />
         <Container className="welcome-title">
           <div className="title-icon-container">
             <Image

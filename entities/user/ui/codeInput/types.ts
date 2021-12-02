@@ -1,5 +1,5 @@
-import {ICodeNumber} from '../../model';
-import {ICodeNumberEventParam} from '../../model/types';
+import { ICodeNumber } from '../../model';
+import { ICodeNumberEventParam } from '../../model/types';
 
 export interface ICodeInputComponent {
   codes: ICodeNumber;

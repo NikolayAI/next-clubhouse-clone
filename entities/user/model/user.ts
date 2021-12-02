@@ -1,7 +1,7 @@
-import {createEvent, createStore, restore} from 'effector';
-import {NumberFormatValues} from 'react-number-format';
+import { createEvent, createStore, restore } from 'effector';
+import { NumberFormatValues } from 'react-number-format';
 
-import {ICodeNumber, ICodeNumberEventParam} from './types';
+import { ICodeNumber, ICodeNumberEventParam } from './types';
 
 const setFullName = createEvent<string>();
 const $fullName = restore<string>(setFullName, '');
@@ -10,7 +10,10 @@ const setAvatar = createEvent<string>();
 const $avatar = restore<string>(setAvatar, '');
 
 const setPhoneNumber = createEvent<NumberFormatValues>();
-const $phoneNumber = restore<NumberFormatValues>(setPhoneNumber, {} as NumberFormatValues);
+const $phoneNumber = restore<NumberFormatValues>(
+  setPhoneNumber,
+  {} as NumberFormatValues
+);
 
 const setCodeNumber = createEvent<ICodeNumberEventParam>();
 const $codeNumber = createStore<ICodeNumber>({
@@ -20,15 +23,15 @@ const $codeNumber = createStore<ICodeNumber>({
   4: '',
 });
 
-$codeNumber.on(setCodeNumber, (state, {id, value}) => {
-  return {...state, [id]: value};
+$codeNumber.on(setCodeNumber, (state, { id, value }) => {
+  return { ...state, [id]: value };
 });
 
 const $isFullNameValid = $fullName.map((fullName) => {
   return fullName.length > 0;
 });
 
-const $isPhoneNumberValid = $phoneNumber.map(({formattedValue}) => {
+const $isPhoneNumberValid = $phoneNumber.map(({ formattedValue }) => {
   return formattedValue?.length === 18 && !formattedValue?.includes('_');
 });
 

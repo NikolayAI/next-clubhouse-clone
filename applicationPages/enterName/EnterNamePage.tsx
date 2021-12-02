@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useEvent, useStore} from 'effector-react/ssr';
+import { useEvent, useStore } from 'effector-react/ssr';
 
-import {IEnterName} from './types';
-import {goToEnterInfo, GoToThePathButton} from '../../features/goToThePath';
-import {FullNameInput, userModel} from '../../entities/user';
-import {Card, Container, H, PageWrapper, Span} from '../../shared/ui';
+import { IEnterName } from './types';
+import { goToEnterInfo, GoToThePathButton } from '../../features/goToThePath';
+import { FullNameInput, userModel } from '../../entities/user';
+import { Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
-const EnterName: React.FC<IEnterName> = ({className}) => {
+const EnterName: React.FC<IEnterName> = ({ className }) => {
   const fullName = useStore(userModel.stores.$fullName);
   const setFullName = useEvent(userModel.events.setFullName);
   const isFullNameValid = useStore(userModel.stores.$isFullNameValid);

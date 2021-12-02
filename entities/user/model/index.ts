@@ -1,2 +1,2 @@
 export * from './user';
-export type {ICodeNumber} from './types';
+export type { ICodeNumber } from './types';

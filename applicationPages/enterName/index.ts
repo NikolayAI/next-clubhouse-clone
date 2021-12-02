@@ -1,1 +1,1 @@
-export {EnterNamePage} from './EnterNamePage';
+export { EnterNamePage } from './EnterNamePage';

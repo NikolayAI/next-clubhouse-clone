@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Button, IButtonTag} from '../../shared/ui';
+import { Button, IButtonTag } from '../../shared/ui';
 
 /* возможно оставить только модель, а данный компонент не использовать как фичу ради фичи */
 export const GoToThePathButton: React.FC<IButtonTag> = ({
@@ -16,7 +16,7 @@ export const GoToThePathButton: React.FC<IButtonTag> = ({
   isLoading,
   loadingDescription,
   className,
-  disabled
+  disabled,
 }) => {
   return (
     <Button

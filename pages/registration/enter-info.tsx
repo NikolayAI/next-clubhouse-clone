@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {EnterInfoPage} from '../../applicationPages';
+import { EnterInfoPage } from '../../applicationPages';
 
 const EnterInfo = () => {
-  return <EnterInfoPage/>;
+  return <EnterInfoPage />;
 };
 
 export default EnterInfo;

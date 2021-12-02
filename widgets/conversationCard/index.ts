@@ -1,1 +1,1 @@
-export {ConversationCard} from './ui';
+export { ConversationCard } from './ui';

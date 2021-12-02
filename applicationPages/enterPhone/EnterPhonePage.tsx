@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
-import {useEvent, useStore} from 'effector-react/ssr';
+import { useEvent, useStore } from 'effector-react/ssr';
 import styled from 'styled-components';
 
-import {IEnterPhone} from './types';
-import {goToEnterCode, GoToThePathButton} from '../../features/goToThePath';
-import {PhoneNumberInput, userModel} from '../../entities/user';
-import {Card, Container, H, P, PageWrapper, Span} from '../../shared/ui';
+import { IEnterPhone } from './types';
+import { goToEnterCode, GoToThePathButton } from '../../features/goToThePath';
+import { PhoneNumberInput, userModel } from '../../entities/user';
+import { Card, Container, H, P, PageWrapper, Span } from '../../shared/ui';
 
-const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
+const EnterPhone: React.FC<IEnterPhone> = ({ className }) => {
   const phoneNumber = useStore(userModel.stores.$phoneNumber);
   const isPhoneNumberValid = useStore(userModel.stores.$isPhoneNumberValid);
   const setPhoneNumber = useEvent(userModel.events.setPhoneNumber);
@@ -26,7 +26,9 @@ const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
           />
         </Container>
         <Container className="title-heading">
-          <H className="heading" tag="h1" kind="md">Enter your phone #</H>
+          <H className="heading" tag="h1" kind="md">
+            Enter your phone #
+          </H>
         </Container>
         <Container className="title-description">
           <Span className="description" kind="md" fontWeight="normal">
@@ -54,8 +56,8 @@ const EnterPhone: React.FC<IEnterPhone> = ({className}) => {
         </Container>
         <Container className="card-description" textAlign="center">
           <P className="description" kind="sm">
-            By entering your number, you’re agreeing to our Terms of Service
-            and Privacy Policy. Thanks!
+            By entering your number, you’re agreeing to our Terms of Service and
+            Privacy Policy. Thanks!
           </P>
         </Container>
       </Card>
@@ -78,6 +80,6 @@ export const EnterPhonePage = styled(EnterPhone)`
 
   .card-description {
     width: 330px;
-    color: #817F7A;
+    color: #817f7a;
   }
 `;

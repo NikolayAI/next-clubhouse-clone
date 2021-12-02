@@ -1,1 +1,1 @@
-export {H} from './H';
+export { H } from './H';

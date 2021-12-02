@@ -1,4 +1,4 @@
-import {forward} from 'effector';
+import { forward } from 'effector';
 
 import {
   goToHome,
@@ -11,8 +11,8 @@ import {
   goToProfile,
   goToRoom,
 } from '../../features/goToThePath';
-import {navigatorModel} from '../../entities/navigator';
-import {Pages} from '../../shared/constants';
+import { navigatorModel } from '../../entities/navigator';
+import { Pages } from '../../shared/constants';
 
 forward({
   from: goToHome,

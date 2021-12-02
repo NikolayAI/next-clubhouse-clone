@@ -1,8 +1,8 @@
 import React from 'react';
-import {ChoosePhotoPage} from '../../applicationPages';
+import { ChoosePhotoPage } from '../../applicationPages';
 
 const ChoosePhoto = () => {
-  return <ChoosePhotoPage/>;
+  return <ChoosePhotoPage />;
 };
 
 export default ChoosePhoto;

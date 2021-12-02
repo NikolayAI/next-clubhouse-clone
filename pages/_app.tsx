@@ -1,19 +1,19 @@
 import React from 'react';
-import type {AppProps} from 'next/app';
-import {fork, Scope, serialize} from 'effector';
-import {Provider} from 'effector-react/ssr';
+import type { AppProps } from 'next/app';
+import { fork, Scope, serialize } from 'effector';
+import { Provider } from 'effector-react/ssr';
 
-import {Application} from "../app";
-import {navigationProcess} from '../processes';
-import {GlobalStyle} from '../shared/styles/globalStyles';
+import { Application } from '../app';
+import { navigationProcess } from '../processes';
+import { GlobalStyle } from '../shared/styles/globalStyles';
 
 const initProcesses = {
   ...navigationProcess,
-}
+};
 
 let clientScope: Scope;
 
-export default function App({Component, pageProps}: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   const scope = fork({
     values: {
       ...(clientScope && serialize(clientScope)),
@@ -24,8 +24,8 @@ export default function App({Component, pageProps}: AppProps) {
   console.log('scope', serialize(scope));
   return (
     <Provider value={scope}>
-      <GlobalStyle/>
-      <Application Component={Component}{...pageProps}/>
+      <GlobalStyle />
+      <Application Component={Component} {...pageProps} />
     </Provider>
   );
 }

@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useEvent} from 'effector-react/ssr';
+import { useEvent } from 'effector-react/ssr';
 
-import {IRoomPage} from './types';
-import {Header} from '../../widgets/header';
-import {goToRooms, GoToThePathButton} from '../../features/goToThePath';
-import {Card, Container, H} from '../../shared/ui';
+import { IRoomPage } from './types';
+import { Header } from '../../widgets/header';
+import { goToRooms, GoToThePathButton } from '../../features/goToThePath';
+import { Card, Container, H } from '../../shared/ui';
 
-export const Room: React.FC<IRoomPage> = ({className}) => {
+export const Room: React.FC<IRoomPage> = ({ title, className }) => {
   const goToRoomsPage = useEvent(goToRooms);
   return (
     <>
-      <Header/>
+      <Header />
       <div className={`room-page ${className}`}>
         <Container className="room-navigation" justifyContent="space-between">
           <Container>
@@ -27,7 +27,9 @@ export const Room: React.FC<IRoomPage> = ({className}) => {
         <Container className="room-content-container" justifyContent="stretch">
           <Card className="room-content" kind="lg" fullWidth>
             <Container className="content-nav" justifyContent="space-between">
-              <H tag="h1" kind="lg">Any Room Theme</H>
+              <H tag="h1" kind="lg">
+                {title}
+              </H>
               <GoToThePathButton
                 className="button-leave"
                 kind="ghost"
@@ -58,7 +60,7 @@ export const RoomPage = styled(Room)`
   .nav-title {
     margin-right: 26px;
   }
-  
+
   .button-back,
   .button-leave {
     .button-lead-icon {
@@ -71,10 +73,10 @@ export const RoomPage = styled(Room)`
     padding: 0;
     font-size: 26px;
   }
-  
+
   .button-leave {
     .button-text {
-      color: #FF656D;  
+      color: #ff656d;
     }
   }
 `;

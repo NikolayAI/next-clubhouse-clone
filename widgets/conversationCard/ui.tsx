@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useEvent} from 'effector-react/ssr';
+import { useEvent } from 'effector-react/ssr';
 
-import {IConversationCardComponent} from './types';
-import {goToRoom} from '../../features/goToThePath';
-import {Avatar} from '../../entities/user';
-import {Card, Container, H, Span} from '../../shared/ui';
+import { IConversationCardComponent } from './types';
+import { goToRoom } from '../../features/goToThePath';
+import { Avatar } from '../../entities/user';
+import { Card, Container, H, Span } from '../../shared/ui';
 
 const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
+  title,
+  guests,
+  avatars,
+  guestsCount,
+  speakersCount,
   className,
 }) => {
   const goToRoomPage = useEvent(goToRoom);
@@ -23,7 +28,9 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
         gridAutoFlow="row"
         justifyContent="start"
       >
-        <H className="conversation-title" tag="h3" kind="md">Next or Remix?</H>
+        <H className="conversation-title" tag="h3" kind="md">
+          Next or Remix?
+        </H>
         <Container
           className="conversation-content"
           justifyContent="start"
@@ -35,8 +42,8 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
             alignItems="start"
           >
             {/*<Avatar className="alone-avatar" kind="md"/>*/}
-            <Avatar className="first-avatar" kind="sm"/>
-            <Avatar className="second-avatar" kind="sm"/>
+            <Avatar className="first-avatar" kind="sm" />
+            <Avatar className="second-avatar" kind="sm" />
           </Container>
           <Container
             className="conversation-description"
@@ -131,7 +138,7 @@ export const ConversationCard = styled(ConversationCardComponent)`
   .second-avatar {
     position: absolute;
     top: 26px;
-    left: 26px
+    left: 26px;
   }
 
   .name > span,

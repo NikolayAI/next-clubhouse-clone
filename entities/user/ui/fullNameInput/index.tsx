@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {IEnterFullName} from './types';
-import {Input} from '../../../../shared/ui';
+import { IEnterFullName } from './types';
+import { Input } from '../../../../shared/ui';
 
 export const FullNameInput: React.FC<IEnterFullName> = ({
   fullName,

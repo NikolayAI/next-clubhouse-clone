@@ -1,1 +1,1 @@
-export {Span} from './Span';
+export { Span } from './Span';

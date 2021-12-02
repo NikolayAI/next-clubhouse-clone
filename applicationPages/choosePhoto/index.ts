@@ -1,1 +1,1 @@
-export {ChoosePhotoPage} from './ChoosePhotoPage';
+export { ChoosePhotoPage } from './ChoosePhotoPage';

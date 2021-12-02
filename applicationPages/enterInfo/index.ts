@@ -1,1 +1,1 @@
-export {EnterInfoPage} from './EnterInfoPage'
+export { EnterInfoPage } from './EnterInfoPage';

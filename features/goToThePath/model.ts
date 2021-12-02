@@ -1,4 +1,4 @@
-import {createEvent} from 'effector';
+import { createEvent } from 'effector';
 
 export const goToHome = createEvent<void>();
 export const goToEnterName = createEvent<void>();

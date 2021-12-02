@@ -1,2 +1,2 @@
-export {Button} from './Button';
-export type {IButtonTag} from './types';
+export { Button } from './Button';
+export type { IButtonTag } from './types';

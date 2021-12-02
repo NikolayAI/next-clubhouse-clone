@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import {useEvent} from 'effector-react/ssr';
+import { useEvent } from 'effector-react/ssr';
 
-import {IEnterInfo} from './types';
-import {GoToThePathButton, goToChoosePhoto} from '../../features/goToThePath';
-import {Avatar} from '../../entities/user';
-import {Button, Card, Container, H, PageWrapper, Span} from '../../shared/ui';
+import { IEnterInfo } from './types';
+import { GoToThePathButton, goToChoosePhoto } from '../../features/goToThePath';
+import { Avatar } from '../../entities/user';
+import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
-const EnterInfo: React.FC<IEnterInfo> = ({className}) => {
+const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
   const goToNextPage = useEvent(goToChoosePhoto);
   return (
     <PageWrapper className={`enter-info ${className}`}>
@@ -30,7 +30,7 @@ const EnterInfo: React.FC<IEnterInfo> = ({className}) => {
       </Container>
       <Card className="enter-info-card" kind="md">
         <Container className="avatar-container">
-          <Avatar className="avatar" kind="lg"/>
+          <Avatar className="avatar" kind="lg" />
         </Container>
         <Container className="user-name-container">
           <Span className="user-name" kind="sm">
@@ -77,7 +77,7 @@ export const EnterInfoPage = styled(EnterInfo)`
   }
 
   .action-button-manual {
-    color: #4F6FA5;
+    color: #4f6fa5;
     font-weight: normal;
   }
 `;

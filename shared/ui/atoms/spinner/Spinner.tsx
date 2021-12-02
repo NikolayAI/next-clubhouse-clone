@@ -1,26 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {ISpinnerComponent} from './types';
+import { ISpinnerComponent } from './types';
 
-const SpinnerComponent: React.FC<ISpinnerComponent> = ({
-  className,
-}) => {
-  return <div className={`spinner ${className}`}/>
-}
+const SpinnerComponent: React.FC<ISpinnerComponent> = ({ className }) => {
+  return <div className={`spinner ${className}`} />;
+};
 
 export const Spinner = styled(SpinnerComponent)`
   & {
     display: inline-block;
-    width: ${({width}) => `${width}px`};
-    height: ${({height}) => `${height}px`};
+    width: ${({ width }) => `${width}px`};
+    height: ${({ height }) => `${height}px`};
   }
 
   &:after {
-    content: " ";
+    content: ' ';
     display: block;
-    width: ${({width}) => `${width * 0.7}px`};
-    height: ${({height}) => `${height * 0.7}px`};
+    width: ${({ width }) => `${width * 0.7}px`};
+    height: ${({ height }) => `${height * 0.7}px`};
     border-radius: 50%;
     border: 3px solid #fff;
     border-color: #fff transparent #fff transparent;

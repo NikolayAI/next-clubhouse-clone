@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {IPageWrapperComponent} from './types';
+import { IPageWrapperComponent } from './types';
 
 const PageWrapperComponent: React.FC<IPageWrapperComponent> = ({
   className,
@@ -8,7 +8,9 @@ const PageWrapperComponent: React.FC<IPageWrapperComponent> = ({
   ...props
 }) => {
   return (
-    <div className={`page-wrapper ${className}`} {...props}>{children}</div>
+    <div className={`page-wrapper ${className}`} {...props}>
+      {children}
+    </div>
   );
 };
 

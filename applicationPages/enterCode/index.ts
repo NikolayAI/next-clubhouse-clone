@@ -1,1 +1,1 @@
-export {EnterCodePage} from './EnterCodePage'
+export { EnterCodePage } from './EnterCodePage';

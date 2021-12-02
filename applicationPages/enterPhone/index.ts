@@ -1,1 +1,1 @@
-export {EnterPhonePage} from './EnterPhonePage';
+export { EnterPhonePage } from './EnterPhonePage';

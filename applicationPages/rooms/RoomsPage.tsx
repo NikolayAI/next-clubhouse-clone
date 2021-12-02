@@ -1,19 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {IRooms} from './types';
-import {Header} from '../../widgets/header';
-import {ConversationCard} from '../../widgets/conversationCard';
-import {Button, Container, H} from '../../shared/ui';
+import { IRooms } from './types';
+import { Header } from '../../widgets/header';
+import { ConversationCard } from '../../widgets/conversationCard';
+import { Button, Container, H } from '../../shared/ui';
 
-const Rooms: React.FC<IRooms> = ({className}) => {
+const Rooms: React.FC<IRooms> = ({ className }) => {
   return (
     <>
-      <Header/>
+      <Header />
       <div className={`rooms-page ${className}`}>
         <Container className="rooms-navigation" justifyContent="space-between">
           <Container>
-            <H className="nav-title" tag="h1" kind="lg">All Conversations</H>
+            <H className="nav-title" tag="h1" kind="lg">
+              All Conversations
+            </H>
             <Button
               className="button-explore"
               kind="primary"
@@ -31,7 +33,7 @@ const Rooms: React.FC<IRooms> = ({className}) => {
           </Container>
         </Container>
         <Container justifyContent="start">
-          <ConversationCard/>
+          <ConversationCard />
         </Container>
       </div>
     </>
