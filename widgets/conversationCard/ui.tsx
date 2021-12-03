@@ -9,12 +9,12 @@ import { Avatar } from '../../entities/user';
 import { Card, Container, H, Span } from '../../shared/ui';
 
 const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
-  title,
-  guests,
-  avatars,
-  guestsCount,
-  speakersCount,
   className,
+  title,
+  guests = [],
+  avatars = [],
+  guestsCount = 0,
+  speakersCount = 0,
 }) => {
   const goToRoomPage = useEvent(goToRoom);
   return (
@@ -29,7 +29,7 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
         justifyContent="start"
       >
         <H className="conversation-title" tag="h3" kind="md">
-          Next or Remix?
+          {title}
         </H>
         <Container
           className="conversation-content"
@@ -41,9 +41,27 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
             justifyContent="start"
             alignItems="start"
           >
-            {/*<Avatar className="alone-avatar" kind="md"/>*/}
-            <Avatar className="first-avatar" kind="sm" />
-            <Avatar className="second-avatar" kind="sm" />
+            {avatars.length === 1 && (
+              <Avatar
+                className="alone-avatar"
+                kind="md"
+                imageUrl={avatars[0]}
+              />
+            )}
+            {avatars.length > 1 && (
+              <>
+                <Avatar
+                  className="first-avatar"
+                  kind="sm"
+                  imageUrl={avatars[0]}
+                />
+                <Avatar
+                  className="second-avatar"
+                  kind="sm"
+                  imageUrl={avatars[1]}
+                />
+              </>
+            )}
           </Container>
           <Container
             className="conversation-description"
@@ -52,33 +70,22 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
             alignItems="start"
           >
             <Container gridAutoFlow="row">
-              <Span className="name" kind="sm" fontWeight="normal">
-                Bruce Lee
-                <Image
-                  src="/images/image10.png"
-                  alt="talk"
-                  height={14}
-                  width={14}
-                />
-              </Span>
-              <Span className="name" kind="sm" fontWeight="normal">
-                Bruce Lee
-                <Image
-                  src="/images/image10.png"
-                  alt="talk"
-                  height={14}
-                  width={14}
-                />
-              </Span>
-              <Span className="name" kind="sm" fontWeight="normal">
-                Bruce Lee
-                <Image
-                  src="/images/image10.png"
-                  alt="talk"
-                  height={14}
-                  width={14}
-                />
-              </Span>
+              {guests.map((guest, i) => (
+                <Span
+                  key={`${guest}-${i}`}
+                  className="name"
+                  kind="sm"
+                  fontWeight="normal"
+                >
+                  {guest}
+                  <Image
+                    src="/images/image10.png"
+                    alt="talk"
+                    height={14}
+                    width={14}
+                  />
+                </Span>
+              ))}
             </Container>
             <Container
               className="conversation-statistics"
@@ -86,7 +93,7 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
               alignItems="end"
             >
               <Span className="stat" kind="sm" fontWeight="normal">
-                87
+                {guestsCount}
                 <Image
                   src="/icons/body.svg"
                   alt="body"
@@ -95,7 +102,7 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
                 />
               </Span>
               <Span className="stat" kind="sm" fontWeight="normal">
-                21
+                {speakersCount}
                 <Image
                   src="/icons/dots.svg"
                   alt="dots"
@@ -113,7 +120,7 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
 
 export const ConversationCard = styled(ConversationCardComponent)`
   & {
-    width: 380px;
+    width: auto;
     cursor: pointer;
   }
 
@@ -126,6 +133,9 @@ export const ConversationCard = styled(ConversationCardComponent)`
 
   .conversation-title {
     margin-top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .speakers-avatars {

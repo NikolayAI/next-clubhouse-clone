@@ -5,8 +5,10 @@ import { IRooms } from './types';
 import { Header } from '../../widgets/header';
 import { ConversationCard } from '../../widgets/conversationCard';
 import { Button, Container, H } from '../../shared/ui';
+import clubHouseRooms from '../../public/rooms.json';
 
 const Rooms: React.FC<IRooms> = ({ className }) => {
+  const rooms = clubHouseRooms ?? [];
   return (
     <>
       <Header />
@@ -32,9 +34,20 @@ const Rooms: React.FC<IRooms> = ({ className }) => {
             />
           </Container>
         </Container>
-        <Container justifyContent="start">
-          <ConversationCard />
-        </Container>
+        <div className="rooms-content">
+          {rooms.map((room) => {
+            return (
+              <ConversationCard
+                key={room.id}
+                title={room.title}
+                avatars={room.avatars}
+                guestsCount={room.guestsCount}
+                guests={room.guests}
+                speakersCount={room.speakersCount}
+              />
+            );
+          })}
+        </div>
       </div>
     </>
   );
@@ -58,5 +71,12 @@ export const RoomsPage = styled(Rooms)`
   .button-explore .button-lead-icon {
     height: 18px;
     width: 18px;
+  }
+
+  .rooms-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 36px;
+    row-gap: 36px;
   }
 `;

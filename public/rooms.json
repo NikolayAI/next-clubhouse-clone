@@ -1,0 +1,166 @@
+[
+  {
+    "id": "61aa355cbd3ee539e209beba",
+    "avatars": ["https://source.unsplash.com/random/100x100?1"],
+    "guestsCount": 57,
+    "speakersCount": 13,
+    "title": "Enim amet proident do ut minim.",
+    "guests": [
+      "Ivan Ivanovich",
+      "Sergei Sergeevich",
+      "Petr Petrovich",
+      "Nikolay Nolaevich",
+      "Ivan Ivanovich"
+    ]
+  },
+  {
+    "id": "61aa355ce720a2c8a64a7df0",
+    "avatars": [
+      "https://source.unsplash.com/random/100x100?1",
+      "https://source.unsplash.com/random/100x100?2"
+    ],
+    "guestsCount": 299,
+    "speakersCount": 4,
+    "title": "Incididunt dolor fugiat nisi officia amet anim officia.",
+    "guests": [
+      "Petr Petrovich",
+      "Petr Petrovich",
+      "Nikolay Nolaevich",
+      "Petr Petrovich",
+      "Nikolay Nolaevich"
+    ]
+  },
+  {
+    "id": "61aa355c9050f6fa14743716",
+    "avatars": [
+      "https://source.unsplash.com/random/100x100?1",
+      "https://source.unsplash.com/random/100x100?2"
+    ],
+    "guestsCount": 171,
+    "speakersCount": 12,
+    "title": "Enim voluptate id esse sint reprehenderit duis ad sit qui proident velit.",
+    "guests": [
+      "Semen Semenovich",
+      "Ivan Ivanovich",
+      "Ivan Ivanovich",
+      "Petr Petrovich",
+      "Petr Petrovich"
+    ]
+  },
+  {
+    "id": "61aa355c3a90ad45f6f2a439",
+    "avatars": [
+      "https://source.unsplash.com/random/100x100?1",
+      "https://source.unsplash.com/random/100x100?2"
+    ],
+    "guestsCount": 283,
+    "speakersCount": 4,
+    "title": "Quis aliqua non incididunt non quis consectetur qui non.",
+    "guests": [
+      "Sergei Sergeevich",
+      "Sergei Sergeevich",
+      "Nikolay Nolaevich",
+      "Semen Semenovich",
+      "Nikolay Nolaevich"
+    ]
+  },
+  {
+    "id": "61aa355c13d6814f4e8a782a",
+    "avatars": ["https://source.unsplash.com/random/100x100?1"],
+    "guestsCount": 215,
+    "speakersCount": 15,
+    "title": "Voluptate anim ipsum elit non quis exercitation adipisicing mollit consectetur veniam pariatur nulla quis sit.",
+    "guests": [
+      "Semen Semenovich",
+      "Nikolay Nolaevich",
+      "Petr Petrovich",
+      "Semen Semenovich",
+      "Nikolay Nolaevich"
+    ]
+  },
+  {
+    "id": "61aa355c07904054896eaa17",
+    "avatars": [
+      "https://source.unsplash.com/random/100x100?1",
+      "https://source.unsplash.com/random/100x100?2"
+    ],
+    "guestsCount": 265,
+    "speakersCount": 15,
+    "title": "Nulla nostrud sit laboris tempor non irure.",
+    "guests": [
+      "Ivan Ivanovich",
+      "Sergei Sergeevich",
+      "Ivan Ivanovich",
+      "Semen Semenovich",
+      "Semen Semenovich"
+    ]
+  },
+  {
+    "id": "61aa355c9195326f72c5c067",
+    "avatars": [
+      "https://source.unsplash.com/random/100x100?1",
+      "https://source.unsplash.com/random/100x100?2"
+    ],
+    "guestsCount": 283,
+    "speakersCount": 10,
+    "title": "Sint do quis tempor laborum amet veniam.",
+    "guests": [
+      "Ivan Ivanovich",
+      "Semen Semenovich",
+      "Sergei Sergeevich",
+      "Ivan Ivanovich",
+      "Nikolay Nolaevich"
+    ]
+  },
+  {
+    "id": "61aa355c809b302847703725",
+    "avatars": [
+      "https://source.unsplash.com/random/100x100?1",
+      "https://source.unsplash.com/random/100x100?2"
+    ],
+    "guestsCount": 213,
+    "speakersCount": 6,
+    "title": "Do dolor laborum duis eu eiusmod reprehenderit qui cillum est et.",
+    "guests": [
+      "Petr Petrovich",
+      "Ivan Ivanovich",
+      "Petr Petrovich",
+      "Semen Semenovich",
+      "Sergei Sergeevich"
+    ]
+  },
+  {
+    "id": "61aa355c98c112558bf49424",
+    "avatars": [
+      "https://source.unsplash.com/random/100x100?1",
+      "https://source.unsplash.com/random/100x100?2"
+    ],
+    "guestsCount": 104,
+    "speakersCount": 6,
+    "title": "Ut consectetur anim id cupidatat.",
+    "guests": [
+      "Petr Petrovich",
+      "Sergei Sergeevich",
+      "Petr Petrovich",
+      "Semen Semenovich",
+      "Semen Semenovich"
+    ]
+  },
+  {
+    "id": "61aa355c11ff4efdcc808a4d",
+    "avatars": [
+      "https://source.unsplash.com/random/100x100?1",
+      "https://source.unsplash.com/random/100x100?2"
+    ],
+    "guestsCount": 22,
+    "speakersCount": 7,
+    "title": "Quis consectetur et eiusmod eiusmod aliqua enim consequat ad.",
+    "guests": [
+      "Sergei Sergeevich",
+      "Ivan Ivanovich",
+      "Semen Semenovich",
+      "Nikolay Nolaevich",
+      "Nikolay Nolaevich"
+    ]
+  }
+]
