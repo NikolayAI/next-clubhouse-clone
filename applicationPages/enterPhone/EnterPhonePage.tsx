@@ -4,9 +4,17 @@ import { useEvent, useStore } from 'effector-react/ssr';
 import styled from 'styled-components';
 
 import { IEnterPhone } from './types';
-import { goToEnterCode, GoToThePathButton } from '../../features/goToThePath';
+import { goToEnterCode } from '../../features/goToThePath';
 import { PhoneNumberInput, userModel } from '../../entities/user';
-import { Card, Container, H, P, PageWrapper, Span } from '../../shared/ui';
+import {
+  Button,
+  Card,
+  Container,
+  H,
+  P,
+  PageWrapper,
+  Span,
+} from '../../shared/ui';
 
 const EnterPhone: React.FC<IEnterPhone> = ({ className }) => {
   const phoneNumber = useStore(userModel.stores.$phoneNumber);
@@ -45,7 +53,7 @@ const EnterPhone: React.FC<IEnterPhone> = ({ className }) => {
           />
         </Container>
         <Container className="card-button-next">
-          <GoToThePathButton
+          <Button
             className="button-next"
             kind="primary"
             text="Next"

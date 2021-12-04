@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 import { IEnterCode } from './types';
-import { goToRooms, GoToThePathButton } from '../../features/goToThePath';
+import { goToRooms } from '../../features/goToThePath';
 import { CodeInput, userModel } from '../../entities/user';
-import { Card, Container, H, P, PageWrapper } from '../../shared/ui';
+import { Button, Card, Container, H, P, PageWrapper } from '../../shared/ui';
 
 const EnterCode: React.FC<IEnterCode> = ({ className }) => {
   const codes = useStore(userModel.stores.$codeNumber);
@@ -40,7 +40,7 @@ const EnterCode: React.FC<IEnterCode> = ({ className }) => {
           />
         </Container>
         <Container className="card-actions">
-          <GoToThePathButton
+          <Button
             kind="primary"
             text="Activate"
             loadingDescription="Activate in progress..."

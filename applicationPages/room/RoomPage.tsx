@@ -4,8 +4,8 @@ import { useEvent } from 'effector-react/ssr';
 
 import { IRoomPage } from './types';
 import { Header } from '../../widgets/header';
-import { goToRooms, GoToThePathButton } from '../../features/goToThePath';
-import { Card, Container, H } from '../../shared/ui';
+import { goToRooms } from '../../features/goToThePath';
+import { Button, Card, Container, H } from '../../shared/ui';
 
 export const Room: React.FC<IRoomPage> = ({ title, className }) => {
   const goToRoomsPage = useEvent(goToRooms);
@@ -15,7 +15,7 @@ export const Room: React.FC<IRoomPage> = ({ title, className }) => {
       <div className={`room-page ${className}`}>
         <Container className="room-navigation" justifyContent="space-between">
           <Container>
-            <GoToThePathButton
+            <Button
               className="button-back"
               kind="link"
               text="All rooms"
@@ -30,7 +30,7 @@ export const Room: React.FC<IRoomPage> = ({ title, className }) => {
               <H tag="h1" kind="lg">
                 {title}
               </H>
-              <GoToThePathButton
+              <Button
                 className="button-leave"
                 kind="ghost"
                 text="Leave quietly"

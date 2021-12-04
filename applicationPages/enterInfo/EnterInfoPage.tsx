@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEvent } from 'effector-react/ssr';
 
 import { IEnterInfo } from './types';
-import { GoToThePathButton, goToChoosePhoto } from '../../features/goToThePath';
+import { goToChoosePhoto } from '../../features/goToThePath';
 import { Avatar } from '../../entities/user';
 import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
@@ -38,7 +38,7 @@ const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
           </Span>
         </Container>
         <Container className="enter-info-actions">
-          <GoToThePathButton
+          <Button
             className="enter-info-button"
             kind="primary"
             leadIconUrl="/icons/sparrow.svg"

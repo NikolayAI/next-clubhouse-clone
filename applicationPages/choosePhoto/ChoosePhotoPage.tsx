@@ -5,9 +5,9 @@ import { useEvent, useStore } from 'effector-react/ssr';
 
 import { IChoosePhoto } from './types';
 import { ChooseAvatarPhoto } from '../../features/chooseAvatarPhoto';
-import { GoToThePathButton, goToEnterPhone } from '../../features/goToThePath';
+import { goToEnterPhone } from '../../features/goToThePath';
 import { Avatar, userModel } from '../../entities/user';
-import { Card, Container, H, PageWrapper, Span } from '../../shared/ui';
+import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({ className }) => {
   const userAvatar = useStore(userModel.stores.$avatar);
@@ -44,7 +44,7 @@ const ChoosePhoto: React.FC<IChoosePhoto> = ({ className }) => {
           <ChooseAvatarPhoto className="choose-photo" setAvatar={setAvatar} />
         </Container>
         <Container className="choose-photo-actions">
-          <GoToThePathButton
+          <Button
             className="action-button-next"
             kind="primary"
             text="Next"

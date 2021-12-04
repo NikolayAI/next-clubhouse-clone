@@ -3,13 +3,9 @@ import styled from 'styled-components';
 import { useEvent } from 'effector-react/ssr';
 
 import { IHeaderComponent } from './types';
-import {
-  goToHome,
-  goToProfile,
-  GoToThePathButton,
-} from '../../features/goToThePath';
+import { goToHome, goToProfile } from '../../features/goToThePath';
 import { Avatar } from '../../entities/user';
-import { Container } from '../../shared/ui';
+import { Button, Container } from '../../shared/ui';
 
 const HeaderComponent: React.FC<IHeaderComponent> = ({ className }) => {
   const onHomeClick = useEvent(goToHome);
@@ -17,7 +13,7 @@ const HeaderComponent: React.FC<IHeaderComponent> = ({ className }) => {
   return (
     <div className={className}>
       <Container className="header" justifyContent="space-between">
-        <GoToThePathButton
+        <Button
           className="home-button"
           kind="link"
           text="Clubhouse"
@@ -25,7 +21,7 @@ const HeaderComponent: React.FC<IHeaderComponent> = ({ className }) => {
           onClick={onHomeClick}
         />
         <Container className="user-info">
-          <GoToThePathButton
+          <Button
             className="user-name-button"
             kind="link"
             text="User Name"

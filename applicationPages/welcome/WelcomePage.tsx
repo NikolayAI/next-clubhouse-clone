@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useEvent } from 'effector-react/ssr';
 
 import { IWelcome } from './types';
-import { goToEnterName, GoToThePathButton } from '../../features/goToThePath';
+import { goToEnterName } from '../../features/goToThePath';
 import {
   Button,
   Card,
@@ -42,7 +42,7 @@ const Welcome: React.FC<IWelcome> = ({ className }) => {
           </P>
         </Container>
         <Container className="welcome-actions">
-          <GoToThePathButton
+          <Button
             className="start-auth"
             kind="primary"
             text="Get your username"

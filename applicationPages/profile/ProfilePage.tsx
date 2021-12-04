@@ -4,7 +4,7 @@ import { useEvent } from 'effector-react/ssr';
 
 import { IProfile } from './types';
 import { Header } from '../../widgets/header';
-import { goToRooms, GoToThePathButton } from '../../features/goToThePath';
+import { goToRooms } from '../../features/goToThePath';
 import { Avatar } from '../../entities/user';
 import { Button, Card, Container, H, P, Span } from '../../shared/ui';
 
@@ -16,7 +16,7 @@ const Profile: React.FC<IProfile> = ({ className }) => {
       <div className={`profile-page ${className}`}>
         <Container className="profile-navigation" justifyContent="start">
           <Container className="back-from-profile">
-            <GoToThePathButton
+            <Button
               className="button-back"
               kind="link"
               text="Back"

@@ -76,7 +76,6 @@ export const RoomsPage = styled(Rooms)`
   .rooms-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 36px;
-    row-gap: 36px;
+    gap: 36px;
   }
 `;
