@@ -5,10 +5,8 @@ import { IRooms } from './types';
 import { Header } from '../../widgets/header';
 import { ConversationCard } from '../../widgets/conversationCard';
 import { Button, Container, H } from '../../shared/ui';
-import clubHouseRooms from '../../public/rooms.json';
 
-const Rooms: React.FC<IRooms> = ({ className }) => {
-  const rooms = clubHouseRooms ?? [];
+const Rooms: React.FC<IRooms> = ({ rooms = [], className }) => {
   return (
     <>
       <Header />

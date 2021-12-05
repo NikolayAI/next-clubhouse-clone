@@ -10,6 +10,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "clsx": "^1.1.1",
     "effector": "^22.1.2",
     "effector-react": "^22.0.4",
