@@ -1,31 +1,17 @@
 import React from 'react';
-import { InferGetServerSidePropsType } from 'next';
+import { allSettled, fork, serialize } from 'effector';
 
 import { RoomsPage } from '../applicationPages';
-import { request } from '../shared/api';
+import { roomsModel } from '../entities/rooms';
 
-// TODO need to set page props type
-const Rooms = ({
-  rooms,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  return <RoomsPage rooms={rooms} />;
+const Rooms = () => {
+  return <RoomsPage />;
 };
 
 export const getServerSideProps = async () => {
-  try {
-    const { data } = await request.get('/rooms.json');
-    return {
-      props: {
-        rooms: data,
-      },
-    };
-  } catch (e) {
-    return {
-      props: {
-        rooms: [],
-      },
-    };
-  }
+  const scope = fork({ values: [[roomsModel.stores.$rooms, []]] });
+  await allSettled(roomsModel.effects.getRoomsFx, { scope });
+  return { props: { initialState: serialize(scope) } };
 };
 
 export default Rooms;

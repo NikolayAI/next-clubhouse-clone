@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useStore } from 'effector-react/ssr';
 
 import { IRooms } from './types';
 import { Header } from '../../widgets/header';
 import { ConversationCard } from '../../widgets/conversationCard';
+import { roomsModel } from '../../entities/rooms';
 import { Button, Container, H } from '../../shared/ui';
 
-const Rooms: React.FC<IRooms> = ({ rooms = [], className }) => {
+const Rooms: React.FC<IRooms> = ({ className }) => {
+  const rooms = useStore(roomsModel.stores.$rooms);
   return (
     <>
       <Header />
