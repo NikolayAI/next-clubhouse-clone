@@ -1,4 +1,4 @@
-import { forward } from 'effector';
+import { forward } from 'effector/compat';
 
 import {
   goToHome,
@@ -56,7 +56,9 @@ forward({
 
 forward({
   from: goToRoom,
-  to: navigatorModel.events.pushToThePath.prepend(() => `${Pages.ROOMS}/2314`),
+  to: navigatorModel.events.pushToThePath.prepend(
+    ({ id }) => `${Pages.ROOMS}/${id}`
+  ),
 });
 
 export const navigationProcess = {};

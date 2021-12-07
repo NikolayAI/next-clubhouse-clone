@@ -9,7 +9,7 @@ import { roomsModel } from '../../entities/rooms';
 import { Button, Container, H } from '../../shared/ui';
 
 const Rooms: React.FC<IRooms> = ({ className }) => {
-  const rooms = useStore(roomsModel.stores.$rooms);
+  const roomsIds = useStore(roomsModel.stores.$roomsIds);
   return (
     <>
       <Header />
@@ -36,17 +36,8 @@ const Rooms: React.FC<IRooms> = ({ className }) => {
           </Container>
         </Container>
         <div className="rooms-content">
-          {rooms.map((room) => {
-            return (
-              <ConversationCard
-                key={room.id}
-                title={room.title}
-                avatars={room.avatars}
-                guestsCount={room.guestsCount}
-                guests={room.guests}
-                speakersCount={room.speakersCount}
-              />
-            );
+          {roomsIds.map((roomId) => {
+            return <ConversationCard id={roomId} key={roomId} />;
           })}
         </div>
       </div>

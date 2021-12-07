@@ -1,6 +1,6 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
-import { fork, Scope, serialize } from 'effector';
+import { fork, Scope, serialize } from 'effector/compat';
 import { Provider } from 'effector-react/ssr';
 
 import { Application } from '../app';

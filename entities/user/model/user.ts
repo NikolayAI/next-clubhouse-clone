@@ -1,4 +1,4 @@
-import { createEvent, createStore, restore } from 'effector';
+import { createEvent, createStore, restore } from 'effector/compat';
 import { NumberFormatValues } from 'react-number-format';
 
 import { ICodeNumber, ICodeNumberEventParam } from './types';

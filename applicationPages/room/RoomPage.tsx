@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useEvent } from 'effector-react/ssr';
+import { useEvent, useStore } from 'effector-react/ssr';
 
 import { IRoomPage } from './types';
 import { Header } from '../../widgets/header';
 import { goToRooms } from '../../features/goToThePath';
+import { roomsModel } from '../../entities/rooms';
 import { Button, Card, Container, H } from '../../shared/ui';
 
-export const Room: React.FC<IRoomPage> = ({ title, className }) => {
+export const Room: React.FC<IRoomPage> = ({ className }) => {
+  const room = useStore(roomsModel.stores.$currentRoom);
   const goToRoomsPage = useEvent(goToRooms);
   return (
     <>
@@ -20,6 +22,8 @@ export const Room: React.FC<IRoomPage> = ({ title, className }) => {
               kind="link"
               text="All rooms"
               leadIconUrl="/images/image6.png"
+              leadIconHeight={18}
+              leadIconWidth={18}
               onClick={goToRoomsPage}
             />
           </Container>
@@ -28,13 +32,15 @@ export const Room: React.FC<IRoomPage> = ({ title, className }) => {
           <Card className="room-content" kind="lg" fullWidth>
             <Container className="content-nav" justifyContent="space-between">
               <H tag="h1" kind="lg">
-                {title}
+                {room.title}
               </H>
               <Button
                 className="button-leave"
                 kind="ghost"
                 text="Leave quietly"
                 leadIconUrl="/images/image11.png"
+                leadIconHeight={18}
+                leadIconWidth={18}
                 onClick={goToRoomsPage}
               />
             </Container>
@@ -61,20 +67,14 @@ export const RoomPage = styled(Room)`
     margin-right: 26px;
   }
 
-  .button-back,
-  .button-leave {
-    .button-lead-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
   .button-back {
     padding: 0;
     font-size: 26px;
   }
 
   .button-leave {
+    margin-left: 24px;
+
     .button-text {
       color: #ff656d;
     }

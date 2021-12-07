@@ -1,27 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { useEvent } from 'effector-react/ssr';
+import { useEvent, useStore } from 'effector-react/ssr';
 
 import { IConversationCardComponent } from './types';
 import { goToRoom } from '../../features/goToThePath';
 import { Avatar } from '../../entities/user';
+import { roomsModel } from '../../entities/rooms';
 import { Card, Container, H, Span } from '../../shared/ui';
 
 const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
+  id,
   className,
-  title,
-  guests = [],
-  avatars = [],
-  guestsCount = 0,
-  speakersCount = 0,
 }) => {
+  const room = useStore(roomsModel.stores.$rooms)[id] ?? {};
   const goToRoomPage = useEvent(goToRoom);
   return (
     <Card
       className={`conversation ${className}`}
       kind="sm"
-      onClick={goToRoomPage}
+      onClick={() => goToRoomPage({ id })}
     >
       <Container
         className="conversation-container"
@@ -29,7 +27,7 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
         justifyContent="start"
       >
         <H className="conversation-title" tag="h3" kind="md">
-          {title}
+          {room.title}
         </H>
         <Container
           className="conversation-content"
@@ -41,24 +39,24 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
             justifyContent="start"
             alignItems="start"
           >
-            {avatars.length === 1 && (
+            {room.avatars?.length === 1 && (
               <Avatar
                 className="alone-avatar"
                 kind="md"
-                imageUrl={avatars[0]}
+                imageUrl={room.avatars[0]}
               />
             )}
-            {avatars.length > 1 && (
+            {room.avatars?.length > 1 && (
               <>
                 <Avatar
                   className="first-avatar"
                   kind="sm"
-                  imageUrl={avatars[0]}
+                  imageUrl={room.avatars[0]}
                 />
                 <Avatar
                   className="second-avatar"
                   kind="sm"
-                  imageUrl={avatars[1]}
+                  imageUrl={room.avatars[1]}
                 />
               </>
             )}
@@ -70,7 +68,7 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
             alignItems="start"
           >
             <Container gridAutoFlow="row">
-              {guests.map((guest, i) => (
+              {room.guests.map((guest, i) => (
                 <Span
                   key={`${guest}-${i}`}
                   className="name"
@@ -93,7 +91,7 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
               alignItems="end"
             >
               <Span className="stat" kind="sm" fontWeight="normal">
-                {guestsCount}
+                {room.guestsCount}
                 <Image
                   src="/icons/body.svg"
                   alt="body"
@@ -102,7 +100,7 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
                 />
               </Span>
               <Span className="stat" kind="sm" fontWeight="normal">
-                {speakersCount}
+                {room.speakersCount}
                 <Image
                   src="/icons/dots.svg"
                   alt="dots"

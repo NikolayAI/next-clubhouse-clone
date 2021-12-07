@@ -21,10 +21,16 @@ const ButtonTag: React.FC<IButtonTag> = ({
   text,
   iconUrl,
   iconAlt,
+  iconHeight,
+  iconWidth,
   leadIconUrl,
   leadIconAlt,
+  leadIconHeight,
+  leadIconWidth,
   suffixIconUrl,
   suffixIconAlt,
+  suffixIconHeight,
+  suffixIconWidth,
   isLoading,
   loadingDescription,
   className,
@@ -42,8 +48,8 @@ const ButtonTag: React.FC<IButtonTag> = ({
           className="button-lead-icon"
           src={leadIconUrl}
           alt={leadIconAlt}
-          height={12}
-          width={11}
+          height={leadIconHeight ?? 12}
+          width={leadIconWidth ?? 12}
         />
       )}
       {!isLoading && text && <span className="button-text">{text}</span>}
@@ -55,8 +61,8 @@ const ButtonTag: React.FC<IButtonTag> = ({
           className="button-icon"
           src={iconUrl}
           alt={iconAlt}
-          height={18}
-          width={18}
+          height={iconHeight ?? 18}
+          width={iconWidth ?? 18}
         />
       )}
       {!isLoading && suffixIconUrl && (
@@ -64,8 +70,8 @@ const ButtonTag: React.FC<IButtonTag> = ({
           className="button-suffix-icon"
           src={suffixIconUrl}
           alt={suffixIconAlt}
-          height={12}
-          width={11}
+          height={suffixIconHeight ?? 12}
+          width={suffixIconWidth ?? 12}
         />
       )}
       {isLoading && <Spinner height={12} width={12} />}

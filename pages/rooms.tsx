@@ -1,5 +1,5 @@
 import React from 'react';
-import { allSettled, fork, serialize } from 'effector';
+import { allSettled, fork, serialize } from 'effector/compat';
 
 import { RoomsPage } from '../applicationPages';
 import { roomsModel } from '../entities/rooms';
@@ -9,7 +9,7 @@ const Rooms = () => {
 };
 
 export const getServerSideProps = async () => {
-  const scope = fork({ values: [[roomsModel.stores.$rooms, []]] });
+  const scope = fork();
   await allSettled(roomsModel.effects.getRoomsFx, { scope });
   return { props: { initialState: serialize(scope) } };
 };

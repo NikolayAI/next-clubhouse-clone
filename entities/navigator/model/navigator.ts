@@ -1,4 +1,4 @@
-import { createEvent, sample } from 'effector';
+import { createEvent, sample } from 'effector/compat';
 import { createGate } from 'effector-react';
 import { NextRouter } from 'next/router';
 

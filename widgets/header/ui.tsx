@@ -18,6 +18,8 @@ const HeaderComponent: React.FC<IHeaderComponent> = ({ className }) => {
           kind="link"
           text="Clubhouse"
           leadIconUrl="/images/image8.png"
+          leadIconHeight={18}
+          leadIconWidth={18}
           onClick={onHomeClick}
         />
         <Container className="user-info">
