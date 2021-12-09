@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d58532a9-cedf-4d8b-9916-44dcd5613ed1" name="Changes" comment="" />
+    <list default="true" id="d58532a9-cedf-4d8b-9916-44dcd5613ed1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="format.on.save" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -41,6 +43,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/frontend/widgets" />
@@ -76,7 +79,7 @@
       <workItem from="1638802115871" duration="7726000" />
       <workItem from="1638883523294" duration="10247000" />
       <workItem from="1638980064458" duration="4432000" />
-      <workItem from="1639063579561" duration="3763000" />
+      <workItem from="1639063579561" duration="4186000" />
     </task>
     <servers />
   </component>
