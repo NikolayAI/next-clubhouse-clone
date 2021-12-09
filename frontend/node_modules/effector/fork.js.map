@@ -1,0 +1,1 @@
+{"version":3,"file":"fork.js","sources":["effector/../../packages/effector/fork.ts"],"sourcesContent":["console.error(\n  \"import from 'effector/fork' is deprecated, use 'effector' instead\",\n)\nexport {hydrate, serialize, scopeBind, fork, allSettled} from 'effector'\n"],"names":["console","error"],"mappings":"uFAAAA,QAAQC,MACN"}
