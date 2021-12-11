@@ -25,6 +25,21 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/profile/[id]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/profile/[id].js"
+    ],
+    "/registration/enter-code": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/registration/enter-code.js"
+    ],
+    "/registration/enter-phone": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/registration/enter-phone.js"
+    ],
     "/rooms": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
