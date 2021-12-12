@@ -21,6 +21,8 @@ const Profile: React.FC<IProfile> = ({ className }) => {
               kind="link"
               text="Back"
               leadIconUrl="/images/image6.png"
+              leadIconHeight={18}
+              leadIconWidth={18}
               onClick={goToMainPage}
             />
           </Container>
