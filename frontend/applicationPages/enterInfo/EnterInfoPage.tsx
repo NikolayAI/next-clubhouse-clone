@@ -4,12 +4,12 @@ import Image from 'next/image';
 import { useEvent } from 'effector-react/ssr';
 
 import { IEnterInfo } from './types';
-import { goToChoosePhoto } from '../../features/goToThePath';
+import { goToEnterName } from '../../features/goToThePath';
 import { Avatar } from '../../entities/user';
 import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
 const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
-  const goToNextPage = useEvent(goToChoosePhoto);
+  const goToNextPage = useEvent(goToEnterName);
   return (
     <PageWrapper className={`enter-info ${className}`}>
       <Container className="enter-info-title" gridAutoFlow="row">
@@ -24,7 +24,7 @@ const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
         </Container>
         <Container className="title-text-container">
           <H className="title-text" tag="h1" kind="md">
-            Do you want import info from Twitter?
+            Do you want import info from GitHub?
           </H>
         </Container>
       </Container>
@@ -41,10 +41,8 @@ const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
           <Button
             className="enter-info-button"
             kind="primary"
-            leadIconUrl="/icons/sparrow.svg"
-            text="Import from Twitter"
+            text="Import from GitHub"
             suffixIconUrl="/icons/arrowRight.svg"
-            onClick={goToNextPage}
           />
         </Container>
         <Container className="enter-info-actions">
@@ -52,6 +50,7 @@ const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
             className="action-button-manual"
             kind="link"
             text="Enter my info manually"
+            onClick={goToNextPage}
           />
         </Container>
       </Card>

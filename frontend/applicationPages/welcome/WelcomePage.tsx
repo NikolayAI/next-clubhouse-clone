@@ -4,19 +4,11 @@ import styled from 'styled-components';
 import { useEvent } from 'effector-react/ssr';
 
 import { IWelcome } from './types';
-import { goToEnterName } from '../../features/goToThePath';
-import {
-  Button,
-  Card,
-  Container,
-  H,
-  P,
-  PageWrapper,
-  Span,
-} from '../../shared/ui';
+import { goToEnterInfo } from '../../features/goToThePath';
+import { Button, Card, Container, H, P, PageWrapper, Span, } from '../../shared/ui';
 
 const Welcome: React.FC<IWelcome> = ({ className }) => {
-  const goToNextPage = useEvent(goToEnterName);
+  const goToNextPage = useEvent(goToEnterInfo);
   return (
     <PageWrapper className={`welcome ${className}`}>
       <Card className="welcome-card" kind="md">

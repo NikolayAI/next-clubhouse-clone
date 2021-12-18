@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEvent, useStore } from 'effector-react/ssr';
 
 import { IEnterName } from './types';
-import { goToEnterInfo } from '../../features/goToThePath';
+import { goToChoosePhoto } from '../../features/goToThePath';
 import { FullNameInput, userModel } from '../../entities/user';
 import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
@@ -12,7 +12,7 @@ const EnterName: React.FC<IEnterName> = ({ className }) => {
   const fullName = useStore(userModel.stores.$fullName);
   const setFullName = useEvent(userModel.events.setFullName);
   const isFullNameValid = useStore(userModel.stores.$isFullNameValid);
-  const goToNextPage = useEvent(goToEnterInfo);
+  const goToNextPage = useEvent(goToChoosePhoto);
   return (
     <PageWrapper className={`enter-name ${className}`}>
       <Container className="enter-name-title" gridAutoFlow="row">
