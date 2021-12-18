@@ -6,7 +6,7 @@
 .pnp.js
 .idea
 /.idea
-/.husky
+/**/.husky
 
 # testing
 /coverage
