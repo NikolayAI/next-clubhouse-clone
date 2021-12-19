@@ -23,10 +23,6 @@ const $codeNumber = createStore<ICodeNumber>({
   4: '',
 });
 
-$codeNumber.on(setCodeNumber, (state, { id, value }) => {
-  return { ...state, [id]: value };
-});
-
 const $isFullNameValid = $fullName.map((fullName) => {
   return fullName.length > 0;
 });
@@ -37,6 +33,10 @@ const $isPhoneNumberValid = $phoneNumber.map(({ formattedValue }) => {
 
 const $isCodeNumberValid = $codeNumber.map((codeNumber) => {
   return Object.values(codeNumber).every((number) => !!number);
+});
+
+$codeNumber.on(setCodeNumber, (state, { id, value }) => {
+  return { ...state, [id]: value };
 });
 
 export const events = {

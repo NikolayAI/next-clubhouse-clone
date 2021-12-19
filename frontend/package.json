@@ -41,5 +41,6 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }

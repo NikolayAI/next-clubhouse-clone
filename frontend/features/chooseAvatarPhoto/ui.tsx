@@ -14,7 +14,7 @@ export const ChooseAvatarPhoto: React.FC<IChooseAvatarPhoto> = ({
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = (e.target.files ?? [])[0];
+    const file = e.target.files?.[0];
     const imageUrl = URL.createObjectURL(file);
     setAvatar(imageUrl);
     e.target.value = '';

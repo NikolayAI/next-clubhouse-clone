@@ -5,11 +5,13 @@ import { useEvent } from 'effector-react/ssr';
 
 import { IEnterInfo } from './types';
 import { goToEnterName } from '../../features/goToThePath';
+import { authGitHub } from '../../features/auth';
 import { Avatar } from '../../entities/user';
 import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
 const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
   const goToNextPage = useEvent(goToEnterName);
+  const goToAuthGitHub = useEvent(authGitHub);
   return (
     <PageWrapper className={`enter-info ${className}`}>
       <Container className="enter-info-title" gridAutoFlow="row">
@@ -43,6 +45,7 @@ const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
             kind="primary"
             text="Import from GitHub"
             suffixIconUrl="/icons/arrowRight.svg"
+            onClick={goToAuthGitHub}
           />
         </Container>
         <Container className="enter-info-actions">
