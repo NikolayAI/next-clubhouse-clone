@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useEvent } from 'effector-react/ssr';
 
 import { IEnterInfo } from './types';
+import { EnterInfoPageGate } from './model';
 import { goToEnterName } from '../../features/goToThePath';
 import { authGitHub } from '../../features/auth';
 import { Avatar } from '../../entities/user';
@@ -14,6 +15,7 @@ const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
   const goToAuthGitHub = useEvent(authGitHub);
   return (
     <PageWrapper className={`enter-info ${className}`}>
+      <EnterInfoPageGate />
       <Container className="enter-info-title" gridAutoFlow="row">
         <Container className="title-icon-container">
           <Image
