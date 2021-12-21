@@ -1,1 +1,1 @@
-import { createEvent, forward } from 'effector/compat';import { sessionModel } from '../../../entities/session';export const authGitHub = createEvent();forward({  from: authGitHub,  to: sessionModel.effects.authGitHubFx,});
+import { createEvent, forward } from 'effector/compat';import { sessionModel } from '../../../entities/session';export const authGitHub = createEvent();forward({  from: authGitHub,  to: sessionModel.authGitHubFx,});
