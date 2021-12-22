@@ -39,14 +39,7 @@ $codeNumber.on(setCodeNumber, (state, { id, value }) => {
   return { ...state, [id]: value };
 });
 
-export const events = {
-  setFullName,
-  setAvatar,
-  setPhoneNumber,
-  setCodeNumber,
-};
-
-export const stores = {
+export {
   $avatar,
   $fullName,
   $isFullNameValid,
@@ -54,4 +47,8 @@ export const stores = {
   $isPhoneNumberValid,
   $codeNumber,
   $isCodeNumberValid,
+  setFullName,
+  setAvatar,
+  setPhoneNumber,
+  setCodeNumber,
 };

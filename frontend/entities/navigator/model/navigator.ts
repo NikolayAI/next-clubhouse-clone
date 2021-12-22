@@ -13,11 +13,8 @@ sample({
   fn: (navigator, path) => navigator.push(path),
 });
 
-export const events = {
+export {
+  $navigator,
   NavigatorGate,
   pushToThePath,
-};
-
-export const stores = {
-  $navigator,
 };

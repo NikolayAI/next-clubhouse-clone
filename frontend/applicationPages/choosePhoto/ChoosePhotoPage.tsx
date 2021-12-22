@@ -10,8 +10,8 @@ import { Avatar, userModel } from '../../entities/user';
 import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({ className }) => {
-  const userAvatar = useStore(userModel.stores.$avatar);
-  const setAvatar = useEvent(userModel.events.setAvatar);
+  const userAvatar = useStore(userModel.$avatar);
+  const setAvatar = useEvent(userModel.setAvatar);
   const goToNextPage = useEvent(goToEnterPhone);
   return (
     <PageWrapper className={`choose-photo ${className}`}>

@@ -8,6 +8,6 @@ import { navigatorModel } from '../../entities/navigator';
 // TODO сделать нормальный хок
 export const WithRouterComponent = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
-  useGate(navigatorModel.events.NavigatorGate, router);
+  useGate(navigatorModel.NavigatorGate, router);
   return <Component {...pageProps} />;
 };

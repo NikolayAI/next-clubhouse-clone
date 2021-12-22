@@ -32,16 +32,10 @@ const $currentRoom = combine(
   (rooms, currentRoomId) => rooms[currentRoomId]
 );
 
-export const events = {
-  setCurrentRoomId,
-};
-
-export const effects = {
-  getRoomsFx,
-};
-
-export const stores = {
+export {
   $rooms,
   $roomsIds,
   $currentRoom,
+  setCurrentRoomId,
+  getRoomsFx
 };

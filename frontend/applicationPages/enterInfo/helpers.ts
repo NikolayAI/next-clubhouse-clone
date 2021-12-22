@@ -1,1 +1,0 @@
-import { sessionModel } from '../../entities/session';import { IAuthResponse } from '../../shared/api';export const setGitHubSession = ({  data}: MessageEvent<IAuthResponse> | MessageEvent) => {  if (data?.source) return;  sessionModel.setGitHubSession(JSON.parse(data));};

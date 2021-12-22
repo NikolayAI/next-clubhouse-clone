@@ -17,9 +17,9 @@ import {
 } from '../../shared/ui';
 
 const EnterPhone: React.FC<IEnterPhone> = ({ className }) => {
-  const phoneNumber = useStore(userModel.stores.$phoneNumber);
-  const isPhoneNumberValid = useStore(userModel.stores.$isPhoneNumberValid);
-  const setPhoneNumber = useEvent(userModel.events.setPhoneNumber);
+  const phoneNumber = useStore(userModel.$phoneNumber);
+  const isPhoneNumberValid = useStore(userModel.$isPhoneNumberValid);
+  const setPhoneNumber = useEvent(userModel.setPhoneNumber);
   const goToNextPage = useEvent(goToEnterCode);
   return (
     <PageWrapper className={`enter-phone ${className}`}>

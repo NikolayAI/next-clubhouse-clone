@@ -9,9 +9,9 @@ import { CodeInput, userModel } from '../../entities/user';
 import { Button, Card, Container, H, P, PageWrapper } from '../../shared/ui';
 
 const EnterCode: React.FC<IEnterCode> = ({ className }) => {
-  const codes = useStore(userModel.stores.$codeNumber);
-  const isCodeNumberValid = useStore(userModel.stores.$isCodeNumberValid);
-  const setCodeNumber = useEvent(userModel.events.setCodeNumber);
+  const codes = useStore(userModel.$codeNumber);
+  const isCodeNumberValid = useStore(userModel.$isCodeNumberValid);
+  const setCodeNumber = useEvent(userModel.setCodeNumber);
   const goToNextPage = useEvent(goToRooms);
   return (
     <PageWrapper className={`enter-phone ${className}`}>

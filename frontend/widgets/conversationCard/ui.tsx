@@ -13,7 +13,7 @@ const ConversationCardComponent: React.FC<IConversationCardComponent> = ({
   id,
   className,
 }) => {
-  const room = useStore(roomsModel.stores.$rooms)[id] ?? {};
+  const room = useStore(roomsModel.$rooms)[id] ?? {};
   const goToRoomPage = useEvent(goToRoom);
   return (
     <Card

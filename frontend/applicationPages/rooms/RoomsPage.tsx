@@ -9,7 +9,7 @@ import { roomsModel } from '../../entities/rooms';
 import { Button, Container, H } from '../../shared/ui';
 
 const Rooms: React.FC<IRooms> = ({ className }) => {
-  const roomsIds = useStore(roomsModel.stores.$roomsIds);
+  const roomsIds = useStore(roomsModel.$roomsIds);
   return (
     <>
       <Header />

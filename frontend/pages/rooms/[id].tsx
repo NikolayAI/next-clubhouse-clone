@@ -13,8 +13,8 @@ export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const scope = fork();
-  await allSettled(roomsModel.effects.getRoomsFx, { scope });
-  await allSettled(roomsModel.events.setCurrentRoomId, {
+  await allSettled(roomsModel.getRoomsFx, { scope });
+  await allSettled(roomsModel.setCurrentRoomId, {
     scope,
     params: context.query?.id,
   });

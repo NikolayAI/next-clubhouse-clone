@@ -9,9 +9,9 @@ import { FullNameInput, userModel } from '../../entities/user';
 import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
 const EnterName: React.FC<IEnterName> = ({ className }) => {
-  const fullName = useStore(userModel.stores.$fullName);
-  const setFullName = useEvent(userModel.events.setFullName);
-  const isFullNameValid = useStore(userModel.stores.$isFullNameValid);
+  const fullName = useStore(userModel.$fullName);
+  const setFullName = useEvent(userModel.setFullName);
+  const isFullNameValid = useStore(userModel.$isFullNameValid);
   const goToNextPage = useEvent(goToChoosePhoto);
   return (
     <PageWrapper className={`enter-name ${className}`}>

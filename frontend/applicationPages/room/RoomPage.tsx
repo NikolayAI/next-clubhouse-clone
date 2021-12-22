@@ -9,7 +9,7 @@ import { roomsModel } from '../../entities/rooms';
 import { Button, Card, Container, H } from '../../shared/ui';
 
 export const Room: React.FC<IRoomPage> = ({ className }) => {
-  const room = useStore(roomsModel.stores.$currentRoom);
+  const room = useStore(roomsModel.$currentRoom);
   const goToRoomsPage = useEvent(goToRooms);
   return (
     <>

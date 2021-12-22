@@ -10,7 +10,7 @@ const Rooms = () => {
 
 export const getServerSideProps = async () => {
   const scope = fork();
-  await allSettled(roomsModel.effects.getRoomsFx, { scope });
+  await allSettled(roomsModel.getRoomsFx, { scope });
   return { props: { initialState: serialize(scope) } };
 };
 
