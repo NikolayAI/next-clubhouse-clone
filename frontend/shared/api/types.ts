@@ -1,4 +1,4 @@
-export interface IAuthResponse {
+export interface IUserResponse {
   fullname: string,
   avatarUrl: string,
   isActive: number,

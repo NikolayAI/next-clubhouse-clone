@@ -1,0 +1,1 @@
+import { userModel } from './index';import { IUserResponse } from '../../shared/api';export const setUser = ({  data}: MessageEvent<IUserResponse> | MessageEvent) => {  if (data?.source) return;  userModel.setUserFx(JSON.parse(data));  window.removeEventListener('message', setUser);};
