@@ -4,11 +4,9 @@ import Image from 'next/image';
 
 import { IButtonTag } from './types';
 import {
-  alignContents,
   backgroundColors,
   borders,
   colors,
-  displays,
   hoverOpacity,
   justifyContents,
   paddings,
@@ -81,9 +79,10 @@ const ButtonTag: React.FC<IButtonTag> = ({
 
 export const Button = styled(ButtonTag)`
   & {
-    display: ${({ iconUrl }) => displays[`${!!iconUrl}`]};
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
     justify-content: ${({ iconUrl }) => justifyContents[`${!!iconUrl}`]};
-    align-content: ${({ iconUrl }) => alignContents[`${!!iconUrl}`]};
     height: 48px;
     width: ${({ iconUrl }) => widths[`${!!iconUrl}`]};
     padding: ${({ text }) => paddings[`${!!text}`]};

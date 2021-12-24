@@ -22,15 +22,7 @@ export const borders = {
   outline: '2px solid #5677AD',
   link: 'none',
 };
-export const displays = {
-  true: 'grid',
-  false: 'inline-block',
-};
 export const justifyContents = {
-  true: 'center',
-  false: 'normal',
-};
-export const alignContents = {
   true: 'center',
   false: 'normal',
 };

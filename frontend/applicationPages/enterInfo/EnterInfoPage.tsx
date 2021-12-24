@@ -1,21 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { useEvent } from 'effector-react/ssr';
+import { useEvent, useStore } from 'effector-react/ssr';
 
 import { IEnterInfo } from './types';
-import { EnterInfoPageGate } from './model';
+import { $isEnterNameButtonDisabled, $isGithubAuthButtonDisabled, $isGithubAuthButtonLoading } from './model';
 import { goToEnterName } from '../../features/goToThePath';
 import { authGitHub } from '../../features/auth';
 import { Avatar } from '../../entities/user';
 import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
 const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
+  const isEnterNameButtonDisabled = useStore($isEnterNameButtonDisabled);
+  const isGithubAuthButtonDisabled = useStore($isGithubAuthButtonDisabled);
+  const isGithubAuthButtonLoading = useStore($isGithubAuthButtonLoading);
   const goToNextPage = useEvent(goToEnterName);
   const goToAuthGitHub = useEvent(authGitHub);
   return (
     <PageWrapper className={`enter-info ${className}`}>
-      <EnterInfoPageGate />
       <Container className="enter-info-title" gridAutoFlow="row">
         <Container className="title-icon-container">
           <Image
@@ -46,8 +48,14 @@ const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
             className="enter-info-button"
             kind="primary"
             text="Import from GitHub"
+            leadIconUrl="/icons/github.svg"
+            leadIconHeight={18}
+            leadIconWidth={18}
             suffixIconUrl="/icons/arrowRight.svg"
             onClick={goToAuthGitHub}
+            loadingDescription="Авторизация"
+            isLoading={isGithubAuthButtonLoading}
+            disabled={isGithubAuthButtonDisabled}
           />
         </Container>
         <Container className="enter-info-actions">
@@ -56,6 +64,7 @@ const EnterInfo: React.FC<IEnterInfo> = ({ className }) => {
             kind="link"
             text="Enter my info manually"
             onClick={goToNextPage}
+            disabled={isEnterNameButtonDisabled}
           />
         </Container>
       </Card>

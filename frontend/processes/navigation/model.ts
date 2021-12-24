@@ -12,7 +12,7 @@ import {
   goToRooms,
 } from '../../features/goToThePath';
 import { navigatorModel } from '../../entities/navigator';
-import { sessionModel } from '../../entities/session';
+import { userModel } from '../../entities/user';
 import { Pages } from '../../shared/constants';
 
 forward({
@@ -26,7 +26,7 @@ forward({
 });
 
 forward({
-  from: sessionModel.authGitHubFx.doneData,
+  from: userModel.setUserFx.doneData,
   to: navigatorModel.pushToThePath.prepend(() => Pages.ENTER_NAME),
 });
 

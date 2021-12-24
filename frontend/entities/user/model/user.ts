@@ -1,11 +1,13 @@
-import { createEffect, createEvent, createStore, restore } from 'effector/compat';
+import { createEffect, createEvent, createStore, restore, sample } from 'effector/compat';
 import { NumberFormatValues } from 'react-number-format';
 
 import { ICodeNumber, ICodeNumberEventParam } from './types';
+import { setUser as setUserHelper } from '../helpers';
 import { IUserResponse } from '../../../shared/api';
 
-const setUserFx = createEffect<IUserResponse, IUserResponse, Error>();
-const $user = restore<IUserResponse>(setUserFx.doneData, {} as IUserResponse);
+const setUser = createEvent<IUserResponse>();
+const setUserFx = createEffect<Window | null, void, Error>();
+const $user = restore<IUserResponse>(setUser, {} as IUserResponse);
 
 const $fullName = createStore<string>('');
 const setFullName = createEvent<string>();
@@ -28,7 +30,11 @@ const $codeNumber = createStore<ICodeNumber>({
   4: '',
 });
 
-setUserFx.use((user) => user);
+setUserFx.use(async (authWindow: Window | null) => {
+  await new Promise<void>((resolve) => {
+    window.addEventListener('message', setUserHelper(authWindow, resolve));
+  });
+});
 
 const $isFullNameValid = $fullName.map((fullName) => {
   return fullName?.length > 0;
@@ -64,5 +70,6 @@ export {
   setAvatar,
   setPhoneNumber,
   setCodeNumber,
+  setUser,
   setUserFx,
 };
