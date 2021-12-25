@@ -14,3 +14,7 @@ export interface IRoomsResponse {
   guestsCount: number;
   speakersCount: number;
 }
+
+export interface IUploadFileResponse {
+  url: string;
+}

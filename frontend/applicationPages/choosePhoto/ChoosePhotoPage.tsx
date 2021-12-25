@@ -4,14 +4,15 @@ import Image from 'next/image';
 import { useEvent, useStore } from 'effector-react/ssr';
 
 import { IChoosePhoto } from './types';
-import { ChooseAvatarPhoto } from '../../features/chooseAvatarPhoto';
+import { SaveFile } from '../../features/saveFile';
 import { goToEnterPhone } from '../../features/goToThePath';
+import { chooseAvatar } from '../../features/saveFile';
 import { Avatar, userModel } from '../../entities/user';
 import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({ className }) => {
   const userAvatar = useStore(userModel.$avatar);
-  const setAvatar = useEvent(userModel.setAvatar);
+  const setAvatar = useEvent(chooseAvatar);
   const goToNextPage = useEvent(goToEnterPhone);
   return (
     <PageWrapper className={`choose-photo ${className}`}>
@@ -41,7 +42,16 @@ const ChoosePhoto: React.FC<IChoosePhoto> = ({ className }) => {
           <Avatar className="avatar-photo" kind="lg" imageUrl={userAvatar} />
         </Container>
         <Container className="choose-photo-actions">
-          <ChooseAvatarPhoto className="choose-photo" setAvatar={setAvatar} />
+          <SaveFile
+            className="choose-photo"
+            component={Button}
+            componentProps={{
+              className: 'action-button-choose-photo',
+              kind: 'link',
+              text: 'Choose a different photo',
+            }}
+            saveFileHandler={setAvatar}
+          />
         </Container>
         <Container className="choose-photo-actions">
           <Button
@@ -62,7 +72,7 @@ export const ChoosePhotoPage = styled(ChoosePhoto)`
     margin-bottom: 40px;
   }
 
-  .action-button-different {
+  .action-button-choose-photo {
     margin-bottom: 20px;
     color: #4f6fa5;
     font-size: 16px;

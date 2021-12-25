@@ -1,5 +1,5 @@
 import { request } from './axios';
-import { IRoomsResponse, IUserResponse } from './types';
+import { IRoomsResponse, IUploadFileResponse, IUserResponse } from './types';
 
 const authGitHub = async () => {
   const { data } = await request.get<IUserResponse>('/auth/github');
@@ -14,7 +14,7 @@ const getRooms = async () => {
 const uploadFile = async (file: File) => {
   const formData = new FormData();
   formData.set('photo', file);
-  const { data } = await request.post('/upload', formData, {
+  const { data } = await request.post<IUploadFileResponse>('/upload', formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
     }

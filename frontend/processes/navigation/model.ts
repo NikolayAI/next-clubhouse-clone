@@ -26,7 +26,7 @@ forward({
 });
 
 forward({
-  from: userModel.setUserFx.doneData,
+  from: userModel.setUserFromGitHubFx.doneData,
   to: navigatorModel.pushToThePath.prepend(() => Pages.ENTER_NAME),
 });
 
@@ -67,4 +67,4 @@ forward({
   to: navigatorModel.pushToThePath.prepend(() => `${Pages.PROFILE}/1`),
 });
 
-export const navigationProcess = {};
+export {};

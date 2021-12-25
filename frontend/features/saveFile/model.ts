@@ -1,0 +1,1 @@
+import { createEvent, forward } from 'effector/compat';import { userModel } from '../../entities/user';export const chooseAvatar = createEvent<File>();forward({  from: chooseAvatar,  to: userModel.setAvatarFx,});

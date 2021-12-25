@@ -5,7 +5,7 @@ import { Provider } from 'effector-react/ssr';
 
 import { Application } from '../app';
 import { navigationProcess } from '../processes';
-import { GlobalStyle } from '../shared/styles/globalStyles';
+import { GlobalStyle } from '../app/styles/globalStyles';
 
 const initProcesses = {
   ...navigationProcess,
