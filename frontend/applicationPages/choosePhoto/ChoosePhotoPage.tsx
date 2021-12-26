@@ -9,9 +9,11 @@ import { goToEnterPhone } from '../../features/goToThePath';
 import { chooseAvatar } from '../../features/saveFile';
 import { Avatar, userModel } from '../../entities/user';
 import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
+import { $fullName } from '../../entities/user/model';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({ className }) => {
   const userAvatar = useStore(userModel.$avatar);
+  const fullName = useStore(userModel.$fullName);
   const setAvatar = useEvent(chooseAvatar);
   const goToNextPage = useEvent(goToEnterPhone);
   return (
@@ -28,7 +30,7 @@ const ChoosePhoto: React.FC<IChoosePhoto> = ({ className }) => {
         </Container>
         <Container className="title-text-container">
           <H className="title-text" tag="h1" kind="md">
-            Okay, User Name!
+            Okay, {fullName}!
           </H>
         </Container>
         <Container className="title-description">

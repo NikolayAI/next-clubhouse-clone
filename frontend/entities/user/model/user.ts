@@ -1,4 +1,9 @@
-import { createEffect, createEvent, createStore, restore } from 'effector/compat';
+import {
+  createEffect,
+  createEvent,
+  createStore,
+  restore,
+} from 'effector/compat';
 import { NumberFormatValues } from 'react-number-format';
 
 import { ICodeNumber, ICodeNumberEventParam } from './types';
@@ -11,6 +16,7 @@ const $user = restore<IUserResponse>(setUser, {} as IUserResponse);
 
 const $fullName = createStore<string>('');
 const setFullName = createEvent<string>();
+$fullName.watch((data) => console.log('NAME: ', data));
 
 const setAvatarFx = createEffect<File, string, Error>();
 const $avatar = restore<string>(setAvatarFx, '');
