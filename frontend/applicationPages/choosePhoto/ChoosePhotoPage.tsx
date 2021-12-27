@@ -4,12 +4,10 @@ import Image from 'next/image';
 import { useEvent, useStore } from 'effector-react/ssr';
 
 import { IChoosePhoto } from './types';
-import { SaveFile } from '../../features/saveFile';
+import { chooseAvatar, SaveFile } from '../../features/saveFile';
 import { goToEnterPhone } from '../../features/goToThePath';
-import { chooseAvatar } from '../../features/saveFile';
 import { Avatar, userModel } from '../../entities/user';
 import { Button, Card, Container, H, PageWrapper, Span } from '../../shared/ui';
-import { $fullName } from '../../entities/user/model';
 
 const ChoosePhoto: React.FC<IChoosePhoto> = ({ className }) => {
   const userAvatar = useStore(userModel.$avatar);
@@ -30,7 +28,7 @@ const ChoosePhoto: React.FC<IChoosePhoto> = ({ className }) => {
         </Container>
         <Container className="title-text-container">
           <H className="title-text" tag="h1" kind="md">
-            Okay, {fullName}!
+            Okay, {fullName || 'Unknown User'}!
           </H>
         </Container>
         <Container className="title-description">

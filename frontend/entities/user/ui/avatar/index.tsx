@@ -19,7 +19,7 @@ const AvatarComponent: React.FC<IAvatarComponent> = ({
         {imageUrl && (
           <Image
             className="avatar-image"
-            src={`http://localhost:3001${imageUrl}`}
+            src={imageUrl}
             alt="user avatar"
             height={sizes[kind]}
             width={sizes[kind]}

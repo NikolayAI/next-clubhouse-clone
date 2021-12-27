@@ -1,9 +1,10 @@
 export interface IUserResponse {
-  fullname: string,
-  avatarUrl: string,
-  isActive: number,
-  username: string,
-  phone: string
+  id: number;
+  fullname: string;
+  avatarUrl: string;
+  isActive: number;
+  username: string;
+  phone: string;
 }
 
 export interface IRoomsResponse {
