@@ -8,11 +8,13 @@ import { NumberFormatValues } from 'react-number-format';
 
 import { ICodeNumber, ICodeNumberEventParam } from './types';
 import { setUser as setUserHelper } from '../helpers';
-import { API, IUserResponse } from '../../../shared/api';
+import { API } from '../../../shared/api';
+import { IUserResponse } from '../../../../contracts';
 
 const setUserFromGitHubFx = createEffect<Window | null, void, Error>();
 const setUser = createEvent<IUserResponse>();
 const $user = restore<IUserResponse>(setUser, {} as IUserResponse);
+$user.watch((data) => console.log('USER: ', data));
 
 const $fullName = createStore<string>('');
 const setFullName = createEvent<string>();

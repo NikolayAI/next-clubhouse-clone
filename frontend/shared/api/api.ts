@@ -1,5 +1,6 @@
 import { request } from './axios';
-import { IRoomsResponse, IUploadFileResponse, IUserResponse } from './types';
+import { IRoomsResponse, IUploadFileResponse } from './types';
+import { IUserResponse } from '../../../contracts';
 
 const authGitHub = async () => {
   const { data } = await request.get<IUserResponse>('/auth/github');
@@ -14,11 +15,15 @@ const getRooms = async () => {
 const uploadFile = async (file: File) => {
   const formData = new FormData();
   formData.set('photo', file);
-  const { data } = await request.post<IUploadFileResponse>('/upload', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
+  const { data } = await request.post<IUploadFileResponse>(
+    '/upload',
+    formData,
+    {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
     }
-  });
+  );
   return data;
 };
 
