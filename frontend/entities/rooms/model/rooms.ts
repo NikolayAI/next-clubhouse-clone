@@ -6,7 +6,8 @@ import {
 } from 'effector/compat';
 
 import { RoomsStoreType } from './types';
-import { API, IRoomsResponse } from '../../../shared/api';
+import { API } from '../../../shared/api';
+import { IRoomsResponse } from '../../../../contracts';
 
 const $rooms = createStore<RoomsStoreType>({});
 const $currentRoomId = createStore<string>('');
@@ -32,10 +33,4 @@ const $currentRoom = combine(
   (rooms, currentRoomId) => rooms[currentRoomId]
 );
 
-export {
-  $rooms,
-  $roomsIds,
-  $currentRoom,
-  setCurrentRoomId,
-  getRoomsFx
-};
+export { $rooms, $roomsIds, $currentRoom, setCurrentRoomId, getRoomsFx };

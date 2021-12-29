@@ -1,6 +1,9 @@
 import { request } from './axios';
-import { IRoomsResponse, IUploadFileResponse } from './types';
-import { IUserResponse } from '../../../contracts';
+import {
+  IRoomsResponse,
+  IUploadFileResponse,
+  IUserResponse,
+} from '../../../contracts';
 
 const authGitHub = async () => {
   const { data } = await request.get<IUserResponse>('/auth/github');
