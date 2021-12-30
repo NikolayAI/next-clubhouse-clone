@@ -14,6 +14,7 @@
     "clsx": "^1.1.1",
     "effector": "^22.1.2",
     "effector-react": "^22.0.4",
+    "js-cookie": "^3.0.1",
     "next": "12",
     "next-fonts": "^1.5.1",
     "react": "^17.0.2",
@@ -23,6 +24,7 @@
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.1",
     "@types/react": "17.0.26",
     "@types/styled-components": "^5.1.15",
     "babel-plugin-styled-components": "^1.13.3",
